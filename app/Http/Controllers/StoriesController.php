@@ -40,9 +40,6 @@ class StoriesController extends Controller {
         $branches = [];
         $stories = [$storyLine, $branches];
         
-        //dd($story);
-        
-        //return $this->show(1);
 		return view('index',compact('stories'));
 	}
     
@@ -80,7 +77,7 @@ class StoriesController extends Controller {
         $line = $input['line'];
         //CHECK for empty lines
         if ($line == "") 
-            return $this->show($input['parentID']);
+            return redirect('/story/' . $input['parentID']);
         
         //CHECK for duplicate lines
         $line = trim ( strtolower ( $line ));
@@ -99,7 +96,9 @@ class StoriesController extends Controller {
         $story-> visits = 0;
         $story-> save();
         
-        return $this->show($story->id);
+        $id = $story->id;
+        
+        return redirect('/story/' . $id);
     }
     
 }

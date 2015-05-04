@@ -4,7 +4,7 @@
 <html> 
 <head>
 <!-- Bad Style Ref -->
-<link rel="stylesheet" type="text/css" href="http://localhost:8000/css/style.css">
+<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 </head>
 </html>
 
@@ -36,7 +36,7 @@ var fontSize = 30,
     branchOffset = 5;
     storyLineOffset = 5;
     maxLineChars = 44
-    showVisits = true;
+    showVisits = false;
     
 //GET PHP var
 var stories = <?php echo json_encode($stories); ?>;
@@ -66,14 +66,22 @@ var colorScale = d3.scale.linear()
     .range([forwardColor, backColor]) 
     .domain([0, 7])
     .clamp(true);
-
-//Node Memory
-var beginning,
-    root,
-    past,
-    current;
     
-var storyLine = [];
+//Scales
+scaleX = d3.scale.linear()
+        .domain([0,20])
+        .range([0,25]);
+
+scaleY = d3.scale.linear()
+        .domain([0,20])
+        .range([0,25]);
+    
+//SVG Shapes
+bookmark = [{"x":0.0, "y":0.0},
+            {"x":0.0,"y":20.0},
+            {"x":5,"y":15},
+            {"x":10.0,"y":20.0},
+            {"x":10.0,"y":0.0}];
 
 var background = svg.append("g"); 
 var storyG = svg.append("g");
@@ -82,14 +90,20 @@ var formG = svg.append("g");
 var formButtonG = svg.append("g");
 var iconG = svg.append("g");
 
-var storyline = stories[0],
-    branches = stories[1];
+var storyLine = stories[0],
+    branches = stories[1],
+    selected;
 
 drawBackground();
 drawStoryLine();
 drawBranches();
 drawForm();
 drawIcons();
+
+//BIND Keyboard events
+d3.select("body").on("keydown", function() {
+    triggerKey(d3.event.keyCode);
+});
 
 window.onresize = function(event) {
     updateWindow();
@@ -106,6 +120,8 @@ function drawIcons() {
         .remove();
     iconG.selectAll("text")
         .remove();
+    iconG.selectAll("polygon")
+        .remove();
     
     var i = iconG.selectAll("text")
             .data(["i"])
@@ -121,7 +137,7 @@ function drawIcons() {
             .attr("cx", width - iconInset )
             .attr("r", iconSize)
             .attr("stroke", backgroundColor)
-            .attr("stroke-width", 1)
+            .attr("stroke-width", 2)
             .attr("fill", 'rgba(255,255,255, 0)')
             .on("click", function() {})
             .on("mouseover", function(d) {
@@ -130,6 +146,22 @@ function drawIcons() {
             .on("mouseout", function(d) {
                 d3.select(this).attr("stroke", backgroundColor); 
                 iconG.selectAll("text").attr('class', 'icon'); });
+    
+    //Bookmark Icon
+    var b = iconG.selectAll("polygon")
+        .data([bookmark])
+        .enter().append("polygon")
+        .attr("points",function(d) { 
+            return d.map(function(d) { return [scaleX(d.x),scaleY(d.y)].join(","); }).join(" "); })
+        .attr("transform", 
+              "translate(" + (width - (iconInset * 2.5)) + "," + iconInset * 0.55 + ")")
+        .attr("fill", 'white')
+        .attr("stroke",backgroundColor)
+        .attr("stroke-width",2)
+        .on("mouseover", function(d) {
+                d3.select(this).attr("stroke", '#454545');  })
+        .on("mouseout", function(d) {
+                d3.select(this).attr("stroke", backgroundColor); });
 }
     
 function drawBackground() {
@@ -150,9 +182,9 @@ function drawStoryLine() {
     storyG.selectAll("text")
         .remove();
     
-    if (storyline.length > 0) 
+    if (storyLine.length > 0) 
         storyG.selectAll("text")
-            .data(storyline)
+            .data(storyLine)
             .enter()
             .append("text")
             .text( storyText )
@@ -164,7 +196,7 @@ function drawStoryLine() {
                         storyLineOffset -
                         focusHeight - 
                         (fontSize * (i + 0.5))} )
-            .on("click", function(d) { clickStoryLine(d) })
+            .on("click", function(d) { clickStory(d) })
             .on("mouseover", function(d,i) {
                      d3.select(this)
                             .attr("fill", storyLineHoverColor )
@@ -189,8 +221,11 @@ function drawBranches() {
         
         //SPLICE Branches into tiers
         var tiers = [];
-        tiers[0] = branches.splice(0, branches.length/2);
-        tiers[1] = branches.splice(0, branches.length*2/3);
+        //The Top tier shows the most popular branch
+        tiers[0] = branches.splice(0, 1);
+        //The Middle tier shows the runner-up branches
+        tiers[1] = branches.splice(0, branches.length*1/3);
+        //The Bottom tier shows the least popular branches
         tiers[2] = branches.splice(0, branches.length);
         
         //CHOOSE a random branch from each third
@@ -201,15 +236,21 @@ function drawBranches() {
             }
         }
         
+        //SET Selected Branch to the top branch
+        if (branches.length > 0)
+            selected = branches[branches.length - 1];
+        else
+            selected = null;
+        
         //SORT Branches to display as a gradient
         branches.sort(function(a,b) { 
-            return parseFloat(a.visits) - parseFloat(b.visits) 
+            return parseFloat(b.visits) - parseFloat(a.visits) 
         });
         
         //SET Branch Color Scale
         branchColorScale = d3.scale.linear()
             .range([backColor, maxBranchColor ]) 
-            .domain([0, branches[branches.length - 1].visits])
+            .domain([0, branches[0].visits])
             .clamp(true);
         
         branchesG.selectAll("text")
@@ -226,7 +267,7 @@ function drawBranches() {
                     branchOffset - 
                     focusHeight + 
                     (fontSize * (i + 0.5))} )
-            .on("click", function(d) { clickBranch(d) })
+            .on("click", function(d) { clickStory(d) })
             .on("mouseover", function(d,i) {
                  d3.select(this)
                         .attr("fill", branchHoverColor )
@@ -241,8 +282,11 @@ function drawBranches() {
 function drawForm() {
     
     if (branches.length == 0)
-        if (storyline.length > 1)
+        if (storyLine.length > 1)
             document.getElementById("line").focus();
+    
+    
+    
     
     document.getElementById("textForm")
         .style.left = 
@@ -280,7 +324,7 @@ function drawForm() {
                  d3.select(this).attr('class', 'formButton'); });
     
     //Move Form off screen at beginning
-    if ((storyline.length == 1) && (branches.length == 0)) {
+    if ((storyLine.length == 1) && (branches.length == 0)) {
         console.log("beginning")
         document.getElementById("textForm")
             .style.marginTop = 
@@ -290,33 +334,45 @@ function drawForm() {
     }
 }
     
+function triggerKey(code) {
+    //Disable Keys if form is active
+    if (document.activeElement.name == 'line')
+        return;
+    
+    //On enter key, 'click' selected branch
+    if (code == 13) {
+        if (selected == null)
+            clickStory(storyLine[0])
+        else
+            clickStory(selected);
+    } else if (code == 16) {
+        if (storyLine.length > 0)
+            clickStory(storyLine[1]);
+    }
+}
+    
 function updateWindow(){
     width = w.innerWidth || e.clientWidth || g.clientWidth;
     height = w.innerHeight|| e.clientHeight|| g.clientHeight;
     svg.attr("width", width).attr("height", height);
     focusHeight = height * focusMultiplier;
 }
-    
+
 function storyText(d) {
     if (showVisits)
-        return (d.line);
+        return (d.line + " " + d.visits);
     else
         return (d.line);
 }
 
 // Display Branches of clicked line
-function clickStoryLine(d) {
+function clickStory(d) {
+    if (d != null) {
+        var route = window.location.href;
+        route = route.replace(/story\/.*/, '');
+        window.location = route + "story/" + d.id;
+    }
     
-    var route = window.location.href;
-    route = route.replace(/story.*/, '');
-    window.location = route + "story/" + d.id;
-}
-    
-function clickBranch(d) {
-    
-    var route = window.location.href;
-    route = route.replace(/story.*/, '');
-    window.location = route + "story/" + d.id;
 }
     
 function storyLineColor(d,i) {
