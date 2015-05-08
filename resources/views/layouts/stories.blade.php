@@ -30,7 +30,6 @@ if(typeof(EventSource)!=="undefined") {
     eSource.onmessage = function(event) {
         //write the received data to the page
         var data = JSON.parse(event.data);
-        console.log(data[1]);
         if (stories[0][0]['id'] == data[0]){
             var route = window.location.href;
             route = route.replace(/story\/.*/, '');
@@ -70,14 +69,16 @@ var svg = d3.select("body").append("svg")
 //Color Scheme   
 var backgroundColor = '#f0f0f0';
 //var backgroundColor = '#aaaaaa';
-var backColor = '#cdcdcd'; //a light shade of mist
-//var backColor = '#ffffff'; //a light shade of mist
+var backColor = '#cbcbcb'; //a light shade of mist
 //var forwardColor = '#777777';
 //var forwardColor = '#3385AD';
-var forwardColor = '#FF6666';
+//var forwardColor = '#FF6666';
 //var forwardColor = '#6B24B2';
+//var forwardColor = '#8A8AE6';
+var forwardColor = '#CC0066';
+var maxBranchColor = '#8A8AE6';
 //var maxBranchColor = '#000000';
-var maxBranchColor = '#3385AD';
+//var maxBranchColor = '#3385AD';
 //var maxBranchColor = inverse(forwardColor);
 var branchColorScale;
 var colorScale = d3.scale.linear()

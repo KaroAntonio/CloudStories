@@ -46,6 +46,12 @@ class StoriesController extends Controller {
     
     public function show($id)
     {
+        session_start(); 
+        if ($id != $_SESSION["newBranch"]) {
+            $_SESSION["lastUpdated"] = 0;
+            $_SESSION["newBranch"] = 0;
+        }
+        
         //Find Current Story
         $story = Story::find($id);
         
