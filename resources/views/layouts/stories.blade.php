@@ -23,6 +23,7 @@ var stories = <?php echo json_encode($stories); ?>;
     
 //RECEIVE SERVER DATA
 //check for browser support
+
 if(typeof(EventSource)!=="undefined") {
     //create an object, passing it the name and location of the server side script
     var eSource = new EventSource("/updateStories.php");
@@ -33,7 +34,7 @@ if(typeof(EventSource)!=="undefined") {
         if (stories[0][0]['id'] == data[0]){
             var route = window.location.href;
             route = route.replace(/story\/.*/, '');
-            window.location = route + "story/" + data[1];
+            //window.location = route + "story/" + data[1];
         }
     };
 }
