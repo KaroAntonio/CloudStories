@@ -52,6 +52,7 @@ class StoriesController extends Controller {
             $_SESSION["newBranch"] = 0;
         }
         
+        
         //Find Current Story
         $story = Story::find($id);
         
@@ -89,6 +90,8 @@ class StoriesController extends Controller {
         }
         
         $stories = [$storyLine, $branches];
+        
+        dd($stories);
         
         return view('index',compact('stories'));
     }
