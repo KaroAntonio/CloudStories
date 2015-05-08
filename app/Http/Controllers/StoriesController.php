@@ -49,7 +49,6 @@ class StoriesController extends Controller {
         session_start(); 
         if (isset($_SESSION["newBranch"]) && !empty($_SESSION["newBranch"])) {
             if ($id != $_SESSION["newBranch"]) {
-                dd($id);
                 $_SESSION["lastUpdated"] = 0;
                 $_SESSION["newBranch"] = 0;
             }
