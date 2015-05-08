@@ -17,7 +17,28 @@
 </div>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
+<script type="text/javascript">
+//GET PHP var
+var stories = <?php echo json_encode($stories); ?>;
+    
+//RECEIVE SERVER DATA
+//check for browser support
+if(typeof(EventSource)!=="undefined") {
+    //create an object, passing it the name and location of the server side script
+    var eSource = new EventSource("/updateStories.php");
+    //detect message receipt
+    eSource.onmessage = function(event) {
+        //write the received data to the page
+        var data = JSON.parse(event.data);
+        console.log(data[1]);
+        if (stories[0][0]['id'] == data[0]){
+            var route = window.location.href;
+            route = route.replace(/story\/.*/, '');
+            window.location = route + "story/" + data[1];
+        }
+    };
+}
+
 var w = window,
     d = document,
     e = d.documentElement,
@@ -38,9 +59,6 @@ var fontSize = 30,
     maxLineChars = 44
     showVisits = false;
     
-//GET PHP var
-var stories = <?php echo json_encode($stories); ?>;
-
 //SET Curser
 document.getElementsByTagName("body")[0].style.cursor = "default";
 
@@ -85,6 +103,7 @@ bookmark = [{"x":0.0, "y":0.0},
 
 var background = svg.append("g"); 
 var storyG = svg.append("g");
+var storyBreakG = svg.append("g");
 var branchesG = svg.append("g");
 var formG = svg.append("g");
 var formButtonG = svg.append("g");
@@ -115,12 +134,14 @@ window.onresize = function(event) {
 };
     
 function drawIcons() {
-    //Info/Help Icon
+    //Info/Help/Settings Icons
     iconG.selectAll("circle")
         .remove();
     iconG.selectAll("text")
         .remove();
     iconG.selectAll("polygon")
+        .remove();
+    iconG.selectAll("path")
         .remove();
     
     var i = iconG.selectAll("text")
@@ -167,7 +188,7 @@ function drawIcons() {
     var gear = iconG.append("path")
         .attr("d", "M293.629,127.806l-5.795-13.739c19.846-44.856,18.53-46.189,14.676-50.08l-25.353-24.77l-2.516-2.12h-2.937c-1.549,0-6.173,0-44.712,17.48l-14.184-5.719c-18.332-45.444-20.212-45.444-25.58-45.444h-35.765c-5.362,0-7.446-0.006-24.448,45.606l-14.123,5.734C86.848,43.757,71.574,38.19,67.452,38.19l-3.381,0.105L36.801,65.032c-4.138,3.891-5.582,5.263,15.402,49.425l-5.774,13.691C0,146.097,0,147.838,0,153.33v35.068c0,5.501,0,7.44,46.585,24.127l5.773,13.667c-19.843,44.832-18.51,46.178-14.655,50.032l25.353,24.8l2.522,2.168h2.951c1.525,0,6.092,0,44.685-17.516l14.159,5.758c18.335,45.438,20.218,45.427,25.598,45.427h35.771c5.47,0,7.41,0,24.463-45.589l14.195-5.74c26.014,11,41.253,16.585,45.349,16.585l3.404-0.096l27.479-26.901c3.909-3.945,5.278-5.309-15.589-49.288l5.734-13.702c46.496-17.967,46.496-19.853,46.496-25.221v-35.029C340.268,146.361,340.268,144.434,293.629,127.806z M170.128,228.474c-32.798,0-59.504-26.187-59.504-58.364c0-32.153,26.707-58.315,59.504-58.315c32.78,0,59.43,26.168,59.43,58.315C229.552,202.287,202.902,228.474,170.128,228.474z" )
         .attr("transform", 
-              "translate(" + (width - (iconInset * 2.8)) + "," + iconInset * 0.55 + ") scale(" + 0.08 + ")")
+              "translate(" + (width - (iconInset * 2.8)) + "," + iconInset * 0.48 + ") scale(" + 0.08 + ")")
         .attr("fill", backgroundColor)
         .attr("stroke",backgroundColor)
         .attr("stroke-width",2)
@@ -196,8 +217,46 @@ function drawStoryLine() {
     //DRAW Story Line
     storyG.selectAll("text")
         .remove();
+    storyBreakG.selectAll("text")
+        .remove();
+    storyBreakG.selectAll("line")
+        .remove();
     
-    if (storyLine.length > 0) 
+    if (storyLine.length > 0) {
+        //Draw Story Breaks
+        storyBreakG.selectAll("line")
+            .data(storyLine)
+            .enter()
+            .append("line")
+            .style("stroke", backgroundColor)
+            .style("stroke-width", function (d,i) {
+                if (!d.top)
+                    return 3;
+                else 
+                    return 0;
+                    })
+            .style("stroke-dasharray", "4, 4")
+            .attr("x1", width/2 - 200)     // x position of the first end of the line
+            .attr("y1", storyBreakY )      // y position of the first end of the line
+            .attr("x2", width/2 + 200)     // x position of the second end of the line
+            .attr("y2", storyBreakY );    // y position of the second end of the line
+        /*
+        storyBreakG.selectAll("text")
+            .data(storyLine)
+            .enter()
+            .append("text")
+            .text( storyBreak )
+            .attr('class','storyBreak')
+            .attr("fill",storyLineColor)
+            .attr("x",(width/2))
+            .attr("y",function (d,i) { 
+                return height -
+                        storyLineOffset -
+                        focusHeight - 
+                        (fontSize * (i + 1.3))} );
+                        */
+        
+        //Draw Lines
         storyG.selectAll("text")
             .data(storyLine)
             .enter()
@@ -206,11 +265,7 @@ function drawStoryLine() {
             .attr('class','storyLine')
             .attr("fill",storyLineColor)
             .attr("x",(width/2))
-            .attr("y",function (d,i) { 
-                return height -
-                        storyLineOffset -
-                        focusHeight - 
-                        (fontSize * (i + 0.5))} )
+            .attr("y", storyLineY )
             .on("click", function(d) { clickStory(d) })
             .on("mouseover", function(d,i) {
                      d3.select(this)
@@ -219,6 +274,8 @@ function drawStoryLine() {
             .on("mouseout", function(d,i) {
                      d3.select(this).attr("fill", colorScale(i) )
                                     .style("font-size", "30"); });
+      
+    }
 }
 
 function drawBranches() {
@@ -295,7 +352,6 @@ function drawBranches() {
 }
     
 function drawForm() {
-    
     if (branches.length == 0)
         if (storyLine.length > 1)
             document.getElementById("line").focus();
@@ -370,12 +426,15 @@ function updateWindow(){
     focusHeight = height * focusMultiplier;
 }
 
-function storyText(d) {
+function storyText(d,i) {
     if (showVisits)
         return (d.line + " " + d.visits);
-    else
+    else {
+        //return (d.line + " \u21AF");
         return (d.line);
+    }  
 }
+  
 
 // Display Branches of clicked line
 function clickStory(d) {
@@ -384,7 +443,20 @@ function clickStory(d) {
         route = route.replace(/story\/.*/, '');
         window.location = route + "story/" + d.id;
     }
-    
+}
+
+function storyLineY(d,i) {
+    return height -
+            storyLineOffset -
+            focusHeight - 
+            (fontSize * (i + 0.5));
+}
+     
+function storyBreakY(d,i) {
+    return height -
+            storyLineOffset -
+            focusHeight - 
+            (fontSize * (i + 1.3));
 }
     
 function storyLineColor(d,i) {

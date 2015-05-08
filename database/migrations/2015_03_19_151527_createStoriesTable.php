@@ -12,6 +12,7 @@ class CreateStoriesTable extends Migration {
 	 */
 	public function up()
 	{
+        /*
 		Schema::create('stories', function(Blueprint $table)
 		{
 			$table->increments('id');
@@ -19,7 +20,10 @@ class CreateStoriesTable extends Migration {
             $table->text('line');
             $table->bigInteger('parentID');
             $table->bigInteger('visits');
+            $table->boolean('top');
+            $table->text('author');
 		});
+        */
 	}
 
 	/**

@@ -12,14 +12,12 @@
 */
 
 get('stories', 'StoriesController@index');
-
 Route::get('/', 'StoriesController@begin');
+Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
+Route::post('story', 'StoriesController@store');
 
 Route::get('home', 'HomeController@index');
-
-Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
-
-Route::post('story', 'StoriesController@store');
+Route::get('welcome', 'WelcomeController@welcome');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

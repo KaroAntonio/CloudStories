@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use Session;
 
 class WelcomeController extends Controller {
 
@@ -33,9 +34,8 @@ class WelcomeController extends Controller {
 		return view('index');
 	}
     
-    public function welcome($var)
+    public function welcome()
 	{
-        dd($var);
 		return view('welcome');
 	}
 

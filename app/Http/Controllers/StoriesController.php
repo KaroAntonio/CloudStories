@@ -35,6 +35,7 @@ class StoriesController extends Controller {
         //Set First Story (For Tweaking)
         $story->line = "Breathe";
         $story->save();
+        $story->top = true;
         
         $storyLine = [ $story ]; 
         $branches = [];
@@ -56,16 +57,32 @@ class StoriesController extends Controller {
         $branches = Story::where('parentID', '=', $story->id)->get();
         
         //Find StoryLine
-        $storyLine = [ $story ];
+        $storyLine = [  ];
         
-        //add all stories to storyline until beginning is found
-        while ($story->id != 1) {
+        //ADD stories to storyline until beginning is found
+        while (true) {
+            //CHECK IF TOP
+            $siblings = Story::where('parentID', '=', $story->parentID)->get();
+            
+            $topVisits = -1;
+            for ($x = 0; $x < count($siblings); $x++) {
+                if ($siblings[$x]->visits > $topVisits){
+                    //dd($siblings);
+                    $topVisits = $siblings[$x]->visits;
+                }
+            } 
+            //dd($siblings);
+            $story->top = $story->visits >= $topVisits;
+            
+            
+            array_push( $storyLine, $story );
+            if ($story->id == 1)
+                break;
             $story = Story::find($story->parentID);
-            array_push($storyLine, $story );
+            
         }
         
         $stories = [$storyLine, $branches];
-        //dd($stories);
         
         return view('index',compact('stories'));
     }
@@ -97,6 +114,9 @@ class StoriesController extends Controller {
         $story-> save();
         
         $id = $story->id;
+        session_start(); 
+        $_SESSION["lastUpdated"] = $story-> parentID;
+        $_SESSION["newBranch"] = $id;
         
         return redirect('/story/' . $id);
     }
