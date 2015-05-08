@@ -47,11 +47,14 @@ class StoriesController extends Controller {
     public function show($id)
     {
         session_start(); 
-        dd($id);
-        if ($id != $_SESSION["newBranch"]) {
-            $_SESSION["lastUpdated"] = 0;
-            $_SESSION["newBranch"] = 0;
-        }
+        if (isset($_SESSION["newBranch"]) && !empty($_SESSION["newBranch"])) {
+            if ($id != $_SESSION["newBranch"]) {
+                dd($id);
+                $_SESSION["lastUpdated"] = 0;
+                $_SESSION["newBranch"] = 0;
+            }
+        } 
+        
         
         
         //Find Current Story
