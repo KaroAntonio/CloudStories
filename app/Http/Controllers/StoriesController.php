@@ -46,7 +46,7 @@ class StoriesController extends Controller {
     
     public function show($id)
     {
-        dd($stories);
+        dd($id);
         session_start(); 
         if ($id != $_SESSION["newBranch"]) {
             $_SESSION["lastUpdated"] = 0;
