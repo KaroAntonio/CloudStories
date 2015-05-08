@@ -46,6 +46,7 @@ class StoriesController extends Controller {
     
     public function show($id)
     {
+        dd($stories);
         session_start(); 
         if ($id != $_SESSION["newBranch"]) {
             $_SESSION["lastUpdated"] = 0;
@@ -91,7 +92,7 @@ class StoriesController extends Controller {
         
         $stories = [$storyLine, $branches];
         
-        dd($stories);
+        
         
         return view('index',compact('stories'));
     }
