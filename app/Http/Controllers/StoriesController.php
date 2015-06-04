@@ -33,7 +33,7 @@ class StoriesController extends Controller {
         $story = Story::find(1);
         
         //Set First Story (For Tweaking)
-        $story->line = "Breathe";
+        //$story->line = "Inhale";
         $story->save();
         $story->top = true;
         
