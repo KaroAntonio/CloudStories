@@ -11,12 +11,18 @@
 <body>
 <div id="textForm"> 
 {!! Form::open(['url'=>'story','id'=>'newStory']) !!}
-{!! Form::text('line', null, array('size' => 44 , 'maxLength' => 80, 'id'=>'line'))  !!}
+{!! Form::text('line', null, array('size' => 49 , 'maxLength' => 80, 'id'=>'line'))  !!}
 {!! Form::hidden('parentID', $stories[0][0]->id) !!}
 {!! Form::close() !!}
 </div>
-
+<div id="story_line"></div>
+<div id="branches"></div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="/jspos/POSTagger.js" type="text/javascript"></script>
+<script src="/jspos/lexer.js" type="text/javascript"></script>
+<script src="/jspos/lexicon.js" type="text/javascript"></script>
 <script type="text/javascript">
 //GET PHP var
 var stories = <?php echo json_encode($stories); ?>;
@@ -44,7 +50,7 @@ var w = window,
     e = d.documentElement,
     g = d.getElementsByTagName('body')[0],
     width = w.innerWidth || e.clientWidth || g.clientWidth,
-    height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    height = (w.innerHeight|| e.clientHeight|| g.clientHeight);
     
 var fontSize = 30,
     iconSize = 12,
@@ -61,11 +67,16 @@ var fontSize = 30,
     
 //SET Curser
 document.getElementsByTagName("body")[0].style.cursor = "default";
+    
+//SET Div dimensions
+document.getElementById("story_line").setAttribute("style","height:500px");
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#story_line").append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g");
+    
+
     
 //Color Scheme   
 var backgroundColor = '#f0f0f0';
@@ -113,12 +124,21 @@ var iconG = svg.append("g");
 
 var storyLine = stories[0],
     branches = stories[1],
-    selected;
+    selected,
+    NN,
+    NNP,
+    NNPS,
+    NNS,
+    PP,
+    PRP,
+    dictionary,
+    generatedLine="";
 
 drawBackground();
 drawStoryLine();
 drawBranches();
 drawForm();
+//generateSentence();
 drawIcons();
 
 //BIND Keyboard events
@@ -150,7 +170,7 @@ function drawIcons() {
             .data(["i"])
             .enter()
             .append("text")
-            .attr("x", width - iconInset - 2)
+            .attr("x", width - iconInset - 0)
             .attr("y", iconInset + 8)
             .attr('class', 'icon')
             .text(function (d) { return d; });
@@ -242,21 +262,6 @@ function drawStoryLine() {
             .attr("y1", storyBreakY )      // y position of the first end of the line
             .attr("x2", width/2 + 200)     // x position of the second end of the line
             .attr("y2", storyBreakY );    // y position of the second end of the line
-        /*
-        storyBreakG.selectAll("text")
-            .data(storyLine)
-            .enter()
-            .append("text")
-            .text( storyBreak )
-            .attr('class','storyBreak')
-            .attr("fill",storyLineColor)
-            .attr("x",(width/2))
-            .attr("y",function (d,i) { 
-                return height -
-                        storyLineOffset -
-                        focusHeight - 
-                        (fontSize * (i + 1.3))} );
-                        */
         
         //Draw Lines
         storyG.selectAll("text")
@@ -264,7 +269,8 @@ function drawStoryLine() {
             .enter()
             .append("text")
             .text( storyText )
-            .attr('class','storyLine')
+            .style("font", "30px sans-serif")
+            .style("font-weight","100")
             .attr("fill",storyLineColor)
             .attr("x",(width/2))
             .attr("y", storyLineY )
@@ -272,15 +278,24 @@ function drawStoryLine() {
             .on("mouseover", function(d,i) {
                      d3.select(this)
                             .attr("fill", storyLineHoverColor )
-                            .style("font-size", "31"); })
+                            .attr("y", storyLineY(d,i) - 2 ); })
             .on("mouseout", function(d,i) {
                      d3.select(this).attr("fill", colorScale(i) )
-                                    .style("font-size", "30"); });
+                                    .attr("y", storyLineY(d,i) ); });
       
     }
 }
 
 function drawBranches() {
+    
+    var generated = {
+        line : generatedLine,
+        visits : 0,
+        id : -1,
+    };
+    
+    if (generatedLine != "")
+        branches.push(generated);
     
     //DRAW Branches
     branchesG.selectAll("text")
@@ -332,9 +347,9 @@ function drawBranches() {
             .enter()
             .append("text")
             .text( storyText )
-            .attr('class','branch')
+            .style("font", "30px sans-serif")
+            .style("font-weight","100")
             .attr("fill", branchColor )
-            .style("font-weight", "400")
             .attr("x",(width/2))
             .attr("y",function (d,i) {
                 return height + 
@@ -345,11 +360,23 @@ function drawBranches() {
             .on("mouseover", function(d,i) {
                  d3.select(this)
                         .attr("fill", branchHoverColor )
-                        .style("font-size", "31"); })
-            .on("mouseout", function(d) {
+                        .style("font-style","italic")
+                        .attr("y",function (d) {
+                        return height + 
+                            branchOffset - 
+                            focusHeight - 
+                            0 +
+                            (fontSize * (i + 0.5))} ); })
+            .on("mouseout", function(d,i) {
                  d3.select(this)
                          .attr("fill", branchColor )
-                         .style("font-size", "30"); })
+                        .style("font-style","normal")
+                         .attr("y",function (d) {
+                        return height + 
+                            branchOffset - 
+                            focusHeight - 
+                            0 +
+                            (fontSize * (i + 0.5))} ); })
     }
 }
     
@@ -386,6 +413,7 @@ function drawForm() {
                 formButtonYOffset + 
                 (branches.length * fontSize)))
             .attr('class', 'formButton')
+            .style("font-weight","100")
             .text(function (d) { return d; })
             .on("click", function() { submitForm() })
             .on("mouseover", function(d) {
@@ -402,6 +430,100 @@ function drawForm() {
         formButtonG.selectAll("text")
                     .attr("y", height * 2);
     }
+}
+    
+function generateSentence() {
+    //return a relevant semi-sensical sentence using already contributed words
+    generatedLine="";
+    parseWords();
+    var words = []
+    var pos = [
+        "NN",
+        "NNP",
+        "NNPS",
+        "NNS",
+        "PP",
+        "JJ",
+        "JJR",
+        "JJS",
+        "PRP"]
+    
+    var allowed = [];
+    
+    
+    for(var i = 0; i< dictionary.length; i++) {
+        //if (pos.indexOf(dictionary[i][1]) != -1) 
+            allowed.push(dictionary[i]);
+    }
+        
+    var is = [];
+    for (var i = 0; i< 2; i++) 
+        is.push(Math.floor((Math.random() * allowed.length)));
+    
+    words.push(allowed[is[0]][0]);
+    words.push(allowed[is[1]][0]);
+    
+    var parts = [
+        "http://api.netspeak.org/netspeak3/search?query=*",
+        "*",
+        "*&topk=100&nmin=2&nmax=10"]
+    
+    var url = parts[0]+words[0]+parts[1]+words[1]+parts[2];
+    
+    var sentence = "";
+    
+    $.ajax({
+        //Use netspeak api
+    url: url,
+ 
+    // The name of the callback parameter, as specified by the YQL service
+    jsonp: "callback",
+ 
+    // Tell jQuery we're expecting JSONP
+    dataType: "jsonp",
+ 
+    // Tell YQL what we want and that we want JSON
+    data: {
+        
+        format: "json"
+    },
+ 
+    // Work with the response
+    success: function( response ) {
+        
+        if (response[4] != undefined) {
+            var t = response[4][Math.floor((Math.random() * response[4].length))]
+            
+            for (var i= 0; i< t[3].length; i++) {
+                sentence += t[3][i][2] + " " 
+            }
+            
+            //console.log(words)
+            generatedLine = sentence;
+            
+        }
+        drawBranches();
+        drawForm();
+    }
+});
+    
+    return sentence
+}
+    
+function parseWords() {
+    //parse lines into nouns already used in the story and 
+    dictionary = [];
+    
+    for(var i=0; i<storyLine.length; i++) {
+        var line = storyLine[i].line
+        var words = new Lexer().lex(line);
+        var taggedWords = new POSTagger().tag(words);
+        for (var j=0; j<taggedWords.length; j++) {
+            
+            dictionary.push(taggedWords[j]);
+        }   
+    }
+    //console.log(dictionary)
 }
     
 function triggerKey(code) {
@@ -441,9 +563,14 @@ function storyText(d,i) {
 // Display Branches of clicked line
 function clickStory(d) {
     if (d != null) {
-        var route = window.location.href;
-        route = route.replace(/story\/.*/, '');
-        window.location = route + "story/" + d.id;
+        if (d.id != -1) {
+            var route = window.location.href;
+            route = route.replace(/story\/.*/, '');
+            window.location = route + "story/" + d.id;
+        } else {
+            $("#line").val(d.line);
+            $("#newStory").submit();
+        }
     }
 }
 
