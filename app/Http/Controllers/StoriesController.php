@@ -27,6 +27,10 @@ class StoriesController extends Controller {
     
     public function getSubtree($id=1) 
     {
+        //Returns 
+        //subtree of a story to a certain depth
+        //a portion of the preceding storyline
+        
         //Find First Story
         $story = Story::find($id);
         
@@ -64,9 +68,20 @@ class StoriesController extends Controller {
         
         //Merge all branches into a single collection
         $tree = new \Illuminate\Database\Eloquent\Collection;
+        
         for ($x = 0; $x < count($branches); $x++) {
             $appended = $tree->merge($branches[$x]);
             $tree = $appended;
+        }
+        
+        //Append preceding lines
+        $height = 20;
+        while ($height >= 0) {
+            if ($story->id == 1)
+                break;
+            $story = Story::find($story->parentID);
+            $tree->push( $story );
+            $height--;
         }
         
         return $tree;
@@ -81,6 +96,9 @@ class StoriesController extends Controller {
     
     public function show($id)
     {
+        return redirect('/');
+        
+        //Depricated
         session_start(); 
         if (isset($_SESSION["newBranch"]) && !empty($_SESSION["newBranch"])) {
             if ($id != $_SESSION["newBranch"]) {

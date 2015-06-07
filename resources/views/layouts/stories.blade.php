@@ -20,7 +20,9 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script src="/jspos/POSTagger.js" type="text/javascript"></script>
+<script src="/js/colors.js" type="text/javascript"></script>
 <script src="/jspos/lexer.js" type="text/javascript"></script>
 <script src="/jspos/lexicon.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -95,18 +97,32 @@ var svg = d3.select("#story_line").append("svg")
         .attr("height", height)
         .append("g");
     
+var bookmarkVisible = false;
+    
+var bookmarkTip = d3.tip()
+    .direction('w') 
+    .offset([20 ,-20])
+    .attr("class","tip")
+    .html(function(d) {
+        return "On Line " + storyLine[0].id +"<form id=\"bookmarkForm\">Go to <input type=\"text\" name=\"line_id\" id=\"line_id\" size=\"5\"></form>";
+        })
+    .style("color", backColor);
+    
+svg.call(bookmarkTip);
+    
 //Color Scheme   
 var backgroundColor = '#f0f0f0';
 var backColor = '#cbcbcb'; //a light shade of mist
 //var forwardColor = '#777777';
-//var forwardColor = '#3385AD';
-var forwardColor = '#FF6666';
+var forwardColor = '#3385AD';
+//var forwardColor = '#FF6666';
 //var forwardColor = '#6B24B2';
 //var forwardColor = '#8A8AE6';
 //var forwardColor = '#CC0066';
+var maxBranchColor = '#FF6666';
 //var maxBranchColor = '#8A8AE6';
 //var maxBranchColor = '#000000';
-var maxBranchColor = '#3385AD';
+//var maxBranchColor = '#3385AD';
 //var maxBranchColor = inverse(forwardColor);
 var branchColorScale;
 var colorScale = d3.scale.linear()
@@ -139,6 +155,11 @@ var formButtonG = svg.append("g");
 var iconG = svg.append("g");
 
 drawAll();
+var last_line = get_cookie("last_line_id");
+if (last_line != "")
+    requestSubtree(
+        last_line,
+        clickStory(findLine(get_cookie("last_line_id"))))
 
 //BIND Keyboard events
 d3.select("body").on("keydown", function() {
@@ -150,6 +171,19 @@ window.onresize = function(event) {
     drawAll();
 };
     
+function disableTipForms() {
+    //This should disable all tips
+    
+    //Disable enter submit
+    $('#bookmarkForm').on("keyup keypress", function(e) {
+      var code = e.keyCode || e.which; 
+      if (code  == 13) {               
+        e.preventDefault();
+        return false;
+      }
+    });
+}
+
 function drawAll() {
     drawBackground();
     drawStoryLine();
@@ -207,7 +241,18 @@ function drawIcons() {
         .on("mouseover", function(d) {
                 d3.select(this).attr("stroke", '#454545');  })
         .on("mouseout", function(d) {
-                d3.select(this).attr("stroke", backgroundColor); });
+                d3.select(this).attr("stroke", backgroundColor) })
+        .on("click", function(d) {
+            if (!bookmarkVisible) {
+                bookmarkVisible = true;
+                bookmarkTip.show(d);
+                disableTipForms();
+            } else {
+                bookmarkVisible = false;
+                bookmarkTip.hide(d) ;
+            }
+            
+            });
     
     //GEAR Icon
     var gear = iconG.append("path")
@@ -242,6 +287,7 @@ function buildStoryLine(id) {
     
     if (findLine(id) == null)
         return;
+    
     //Build Story Line
     storyLine = [findLine(id)];
     storyLine[0].top = isTop(id);
@@ -274,13 +320,11 @@ function findLine(id) {
     
 function findBranches(id) {
     var new_branches = [];
-    
     for(i = 0; i < stories.length; i++) {
         if (stories[i].parentID == id) {
             new_branches.push(stories[i]);
         }
     }
-    
     return new_branches;
 }
     
@@ -574,12 +618,16 @@ function parseWords() {
             dictionary.push(taggedWords[j]);
         }   
     }
-    //console.log(dictionary)
 }
     
 function triggerKey(code) {
     //Disable Keys if form is active
     if (document.activeElement.name == 'line') {
+        if (code == 13) submitForm();
+        return
+    }
+    
+    if (document.activeElement.name == 'line_id') {
         if (code == 13) submitForm();
         return
     }
@@ -614,14 +662,15 @@ function storyText(d,i) {
 
 // Display Branches of clicked line
 function clickStory(d) {
+    set_cookie( "last_line_id", d.id, 200 );
+    bookmarkTip.hide();
+    bookmarkVisible = false;
     if (d != null) {
         if (d.id != -1) {
-            storyLine.unshift(d);
             buildStoryLine(d.id);
             branches = findBranches(storyLine[0].id);
             drawAll();
             requestSubtree(d.id);
-            
         } else {
             $("#line").val(d.line);
             submitForm();
@@ -629,7 +678,7 @@ function clickStory(d) {
     }
 }
     
-function requestSubtree(id) {
+function requestSubtree(id,callback) {
     var xmlhttp;
     if (window.XMLHttpRequest)
       {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -639,12 +688,14 @@ function requestSubtree(id) {
       {// code for IE6, IE5
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
       }
-    xmlhttp.open("GET","/get_subtree/"+id,true);
+    xmlhttp.open("GET","/get_subtree/"+id, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange=function() {
         if (xmlhttp.readyState==4 && xmlhttp.status==200) {
             var subtree = eval("(" + xmlhttp.responseText + ")");
             appendSubtree(subtree);
+            if (callback !== undefined)
+                callback();
         }
       }
 }
@@ -668,7 +719,6 @@ function storyLineColor(d,i) {
 }
     
 function storyLineHoverColor(d,i) {
-    //return increase_brightness(colorScale(0),26);
     return colorScale(0);
 }
 
@@ -681,8 +731,27 @@ function branchColor(d) {
 }
     
 function submitForm() {
-    var newLine = document.forms["lineForm"]["line"].value;
-    var test = newLine.trim().toLowerCase();
+    if (bookmarkVisible == true) {
+        //can only visit lines that have already been read
+        var id = $('#line_id').val();
+        requestSubtree(id, function() {
+            if (findLine(id) == null) {
+                console.log("No Such Line");
+            } else {
+                clickStory(findLine(id))
+            }
+        });
+        bookmarkTip.hide();
+        bookmarkVisible = false;
+        return 
+    }
+    
+    bookmarkTip.hide();
+    bookmarkVisible = false;
+    
+    var newLine = document.forms["lineForm"]["line"].value.trim();
+    var test = newLine.toLowerCase();
+    
     //Validate
     //Discard empty lines
     if (test == "")
@@ -704,62 +773,40 @@ function submitForm() {
     
     $("#line").val("");
     posting.done(function( data ) {
-        stories.push(data);
-        buildStoryLine(data.id)
-        branches = findBranches(data.id)
-        drawAll();
+        appendSubtree([data]);
+        clickStory(data);
     });
-    
 }
 
 function appendSubtree(subtree) {
     storyIDs = [];
     for (var i = 0; i < stories.length; i++)
-        storyIDs.push(stories[i].id)
+        storyIDs.push(Number(stories[i].id))
     
     for (var i = 0; i < subtree.length; i++) 
-        if (storyIDs.indexOf(subtree[i].id) == -1) 
+        if (storyIDs.indexOf(Number(subtree[i].id)) == -1) 
             stories.push(subtree[i]);
 }
-    
-function increase_brightness(hex, percent){
-    // strip the leading # if it's there
-    hex = hex.replace(/^\s*#|\s*$/g, '');
 
-    // convert 3 char codes --> 6, e.g. `E0F` --> `EE00FF`
-    if(hex.length == 3){
-        hex = hex.replace(/(.)/g, '$1$1');
-    }
-
-    var r = parseInt(hex.substr(0, 2), 16),
-        g = parseInt(hex.substr(2, 2), 16),
-        b = parseInt(hex.substr(4, 2), 16);
-
-    return '#' +
-       ((0|(1<<8) + r + (256 - r) * percent / 100).toString(16)).substr(1) +
-       ((0|(1<<8) + g + (256 - g) * percent / 100).toString(16)).substr(1) +
-       ((0|(1<<8) + b + (256 - b) * percent / 100).toString(16)).substr(1);
+function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain ) {
+    // http://www.thesitewizard.com/javascripts/cookies.shtml
+    var domain_string = valid_domain ? ("; domain=" + valid_domain) : '' ;
+    document.cookie = cookie_name + "=" + encodeURIComponent( cookie_value ) +
+      "; max-age=" + 60 * 60 * 24 * lifespan_in_days +
+      "; path=/" + domain_string ;
 }
     
-function inverse(hex) {
-    if (hex.length != 7 || hex.indexOf('#') != 0) {
-        return null;
+function get_cookie ( cookie_name )
+{
+    // http://www.thesitewizard.com/javascripts/cookies.shtml
+    var cookie_string = document.cookie ;
+    if (cookie_string.length != 0) {
+        var cookie_value = cookie_string.match ( cookie_name + '=([^;]*)' );
+        return decodeURIComponent ( cookie_value[1] ) ;
     }
-    var r = (255 - parseInt(hex.substring(1, 3), 16)).toString(16);
-    var g = (255 - parseInt(hex.substring(3, 5), 16)).toString(16);
-    var b = (255 - parseInt(hex.substring(5, 7), 16)).toString(16);
-    var inverse = "#" + pad(r) + pad(g) + pad(b);
+    return '' ;
+}
 
-    return inverse
-}
-    
-function pad(num) {
-    if (num.length < 2) {
-        return "0" + num;
-    } else {
-        return num;
-    }
-}
 
 </script>
 </body>
