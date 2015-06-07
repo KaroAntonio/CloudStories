@@ -662,7 +662,8 @@ function storyText(d,i) {
 
 // Display Branches of clicked line
 function clickStory(d) {
-    set_cookie( "last_line_id", d.id, 200 );
+    if (d != null)
+        set_cookie( "last_line_id", d.id, 200 );
     bookmarkTip.hide();
     bookmarkVisible = false;
     if (d != null) {
