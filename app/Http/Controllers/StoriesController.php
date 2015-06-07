@@ -22,25 +22,60 @@ class StoriesController extends Controller {
 	{
         $stories = $this->story->get();
         
-        //dd($stories);
-        
 		return view('index',compact('stories'));
 	}
     
-    public function begin()
-	{
+    public function getSubtree($id=1) 
+    {
         //Find First Story
-        $story = Story::find(1);
+        $story = Story::find($id);
+        
+        //Increment Story Visits
+        $story->visits = $story->visits + 1;
         
         //Set First Story (For Tweaking)
-        //$story->line = "Inhale";
+        if ($id == 1) {
+            //$story->line = "Inhale";
+            $story->top = true;
+        }
         $story->save();
-        $story->top = true;
         
-        $storyLine = [ $story ]; 
-        $branches = [];
-        $stories = [$storyLine, $branches];
+        $first = new \Illuminate\Database\Eloquent\Collection;
+        $first->add($story);
         
+        //Find all branches to depth d
+        $depth = 5;
+        $branches = [ $first ]; //first level of branches
+        
+        for ($x = 0; $x < $depth; $x++) {
+            //Find Branches 
+            $depth_branches = new \Illuminate\Database\Eloquent\Collection;
+            if (count($branches[$x]) > 0) {
+                for ($y = 0; $y < count($branches[$x]); $y++) {
+                    $new_branches = Story::where('parentID', '=', $branches[$x][$y]->id)->get();
+                    $appended = $depth_branches->merge($new_branches);
+                    $depth_branches = $appended;
+                }
+            } else {
+                break;
+            }
+            array_push($branches, $depth_branches);
+        }
+        
+        //Merge all branches into a single collection
+        $tree = new \Illuminate\Database\Eloquent\Collection;
+        for ($x = 0; $x < count($branches); $x++) {
+            $appended = $tree->merge($branches[$x]);
+            $tree = $appended;
+        }
+        
+        return $tree;
+        
+    }
+    
+    public function begin()
+	{
+        $stories = $this->getSubtree();
 		return view('index',compact('stories'));
 	}
     
@@ -52,9 +87,7 @@ class StoriesController extends Controller {
                 $_SESSION["lastUpdated"] = 0;
                 $_SESSION["newBranch"] = 0;
             }
-        } 
-        
-        
+        }
         
         //Find Current Story
         $story = Story::find($id);
@@ -94,8 +127,6 @@ class StoriesController extends Controller {
         
         $stories = [$storyLine, $branches];
         
-        
-        
         return view('index',compact('stories'));
     }
     
@@ -130,7 +161,7 @@ class StoriesController extends Controller {
         $_SESSION["lastUpdated"] = $story-> parentID;
         $_SESSION["newBranch"] = $id;
         
-        return redirect('/story/' . $id);
+        return $story;
     }
     
 }

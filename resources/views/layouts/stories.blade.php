@@ -10,9 +10,9 @@
 
 <body>
 <div id="textForm"> 
-{!! Form::open(['url'=>'story','id'=>'newStory']) !!}
+{!! Form::open(['url'=>'store','id'=>'lineForm']) !!}
 {!! Form::text('line', null, array('size' => 49 , 'maxLength' => 80, 'id'=>'line'))  !!}
-{!! Form::hidden('parentID', $stories[0][0]->id) !!}
+{!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
 {!! Form::close() !!}
 </div>
 <div id="story_line"></div>
@@ -27,6 +27,14 @@
 //GET PHP var
 var stories = <?php echo json_encode($stories); ?>;
     
+var storyLine,
+    branches,
+    selected,
+    dictionary,
+    generatedLine="";
+    
+buildStoryLine(1);
+
 //RECEIVE SERVER DATA
 //check for browser support
 if(typeof(EventSource)!=="undefined") {
@@ -34,16 +42,27 @@ if(typeof(EventSource)!=="undefined") {
     var eSource = new EventSource("/updateStories.php");
     //detect message receipt
     eSource.onmessage = function(event) {
-        //write the received data to the page
+        //route page to new address if the parent line has a new branch
         var data = JSON.parse(event.data);
-        if (stories[0][0]['id'] == data[0]){
-            var route = window.location.href;
-            route = route.replace(/story\/.*/, '');
-            window.location = route + "story/" + data[1];
+        if (storyLine[0]['id'] == Number(data[0])){
+            requestSubtree(Number(data[0]))
+            if (findLine(data[1]) != null) {
+                buildStoryLine(data[1]);
+                branches = findBranches(data[1]);
+                drawAll();
+            }
         }
     };
 }
-
+    
+//Disable enter submit
+$('#lineForm').on("keyup keypress", function(e) {
+  var code = e.keyCode || e.which; 
+  if (code  == 13) {               
+    e.preventDefault();
+    return false;
+  }
+});
 
 var w = window,
     d = document,
@@ -76,21 +95,18 @@ var svg = d3.select("#story_line").append("svg")
         .attr("height", height)
         .append("g");
     
-
-    
 //Color Scheme   
 var backgroundColor = '#f0f0f0';
-//var backgroundColor = '#aaaaaa';
 var backColor = '#cbcbcb'; //a light shade of mist
 //var forwardColor = '#777777';
 //var forwardColor = '#3385AD';
-//var forwardColor = '#FF6666';
+var forwardColor = '#FF6666';
 //var forwardColor = '#6B24B2';
 //var forwardColor = '#8A8AE6';
-var forwardColor = '#CC0066';
-var maxBranchColor = '#8A8AE6';
+//var forwardColor = '#CC0066';
+//var maxBranchColor = '#8A8AE6';
 //var maxBranchColor = '#000000';
-//var maxBranchColor = '#3385AD';
+var maxBranchColor = '#3385AD';
 //var maxBranchColor = inverse(forwardColor);
 var branchColorScale;
 var colorScale = d3.scale.linear()
@@ -122,24 +138,7 @@ var formG = svg.append("g");
 var formButtonG = svg.append("g");
 var iconG = svg.append("g");
 
-var storyLine = stories[0],
-    branches = stories[1],
-    selected,
-    NN,
-    NNP,
-    NNPS,
-    NNS,
-    PP,
-    PRP,
-    dictionary,
-    generatedLine="";
-
-drawBackground();
-drawStoryLine();
-drawBranches();
-drawForm();
-//generateSentence();
-drawIcons();
+drawAll();
 
 //BIND Keyboard events
 d3.select("body").on("keydown", function() {
@@ -148,12 +147,16 @@ d3.select("body").on("keydown", function() {
 
 window.onresize = function(event) {
     updateWindow();
+    drawAll();
+};
+    
+function drawAll() {
     drawBackground();
     drawStoryLine();
     drawBranches();
     drawForm();
     drawIcons();
-};
+}
     
 function drawIcons() {
     //Info/Help/Settings Icons
@@ -233,6 +236,52 @@ function drawBackground() {
                 .attr("height", 2)
                 .attr("fill", backgroundColor);
     
+}
+    
+function buildStoryLine(id) {
+    
+    if (findLine(id) == null)
+        return;
+    //Build Story Line
+    storyLine = [findLine(id)];
+    storyLine[0].top = isTop(id);
+    
+    while (storyLine[storyLine.length-1].id != 1) {
+        var newLine = findLine(storyLine[storyLine.length-1].parentID);
+        newLine.top = isTop(newLine.id);
+        storyLine.push(newLine);
+    }
+    
+    branches = findBranches(storyLine[0].id);
+}
+    
+function isTop(id){
+    var line = findLine(id);
+    var siblings = findBranches(line.parentID);
+    var topVisits = 0;
+    for (var i = 0; i < siblings.length; i++) 
+            if (Number(siblings[i].visits) > topVisits) 
+                topVisits = siblings[i].visits;
+    return Number(line.visits) >= Number(topVisits);
+}
+    
+function findLine(id) {
+    for (i = 0; i < stories.length; i++) 
+        if (stories[i].id == id)
+            return stories[i]
+    return null
+}
+    
+function findBranches(id) {
+    var new_branches = [];
+    
+    for(i = 0; i < stories.length; i++) {
+        if (stories[i].parentID == id) {
+            new_branches.push(stories[i]);
+        }
+    }
+    
+    return new_branches;
 }
     
 function drawStoryLine() {
@@ -377,6 +426,8 @@ function drawBranches() {
                             focusHeight - 
                             0 +
                             (fontSize * (i + 0.5))} ); })
+    } else {
+        selected = null
     }
 }
     
@@ -528,8 +579,10 @@ function parseWords() {
     
 function triggerKey(code) {
     //Disable Keys if form is active
-    if (document.activeElement.name == 'line')
-        return;
+    if (document.activeElement.name == 'line') {
+        if (code == 13) submitForm();
+        return
+    }
     
     //On enter key, 'click' selected branch
     if (code == 13) {
@@ -542,7 +595,7 @@ function triggerKey(code) {
             clickStory(storyLine[1]);
     }
 }
-    
+
 function updateWindow(){
     width = w.innerWidth || e.clientWidth || g.clientWidth;
     height = w.innerHeight|| e.clientHeight|| g.clientHeight;
@@ -558,22 +611,44 @@ function storyText(d,i) {
         return (d.line);
     }  
 }
-  
 
 // Display Branches of clicked line
 function clickStory(d) {
     if (d != null) {
         if (d.id != -1) {
-            var route = window.location.href;
-            route = route.replace(/story\/.*/, '');
-            window.location = route + "story/" + d.id;
+            storyLine.unshift(d);
+            buildStoryLine(d.id);
+            branches = findBranches(storyLine[0].id);
+            drawAll();
+            requestSubtree(d.id);
+            
         } else {
             $("#line").val(d.line);
-            $("#newStory").submit();
+            submitForm();
         }
     }
 }
-
+    
+function requestSubtree(id) {
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    xmlhttp.open("GET","/get_subtree/"+id,true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            var subtree = eval("(" + xmlhttp.responseText + ")");
+            appendSubtree(subtree);
+        }
+      }
+}
+    
 function storyLineY(d,i) {
     return height -
             storyLineOffset -
@@ -606,7 +681,45 @@ function branchColor(d) {
 }
     
 function submitForm() {
-    document.forms["newStory"].submit();
+    var newLine = document.forms["lineForm"]["line"].value;
+    var test = newLine.trim().toLowerCase();
+    //Validate
+    //Discard empty lines
+    if (test == "")
+        return
+        
+    //Check for duplicates
+    var siblings = findBranches(storyLine[0].id);
+    for (var i = 0; i < siblings.length; i++) {
+        if (siblings[i].line.toLowerCase() == test) {
+            clickStory(siblings[i]);
+            $("#line").val("");
+            return;
+        }
+    }
+            
+    $('#parentID').val(storyLine[0].id);
+    
+    var posting = $.post( 'store', $("#lineForm").serialize() );
+    
+    $("#line").val("");
+    posting.done(function( data ) {
+        stories.push(data);
+        buildStoryLine(data.id)
+        branches = findBranches(data.id)
+        drawAll();
+    });
+    
+}
+
+function appendSubtree(subtree) {
+    storyIDs = [];
+    for (var i = 0; i < stories.length; i++)
+        storyIDs.push(stories[i].id)
+    
+    for (var i = 0; i < subtree.length; i++) 
+        if (storyIDs.indexOf(subtree[i].id) == -1) 
+            stories.push(subtree[i]);
 }
     
 function increase_brightness(hex, percent){
