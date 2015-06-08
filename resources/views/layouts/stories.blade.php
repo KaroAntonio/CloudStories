@@ -782,7 +782,7 @@ function submitForm() {
     //Discard empty lines
     if (test == "") {
         if (branches != 0)
-            clickStory(branches[branches.length - 1])
+            clickStory(branches[0])
         return
     }
         
