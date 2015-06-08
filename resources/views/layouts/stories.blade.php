@@ -154,18 +154,26 @@ var formG = svg.append("g");
 var formButtonG = svg.append("g");
 var iconG = svg.append("g");
 
-drawAll();
-var last_line = get_cookie("last_line_id");
-if (last_line != "")
+
+if (is_cookie("last_line_id")) {
+    var last_line = get_cookie("last_line_id");
     requestSubtree(
         last_line,
-        clickStory(findLine(get_cookie("last_line_id"))))
+        function() {clickStory(findLine(last_line))})
+}
+else drawAll();
 
 //BIND Keyboard events
+var shiftDown = false;
 d3.select("body").on("keydown", function() {
     triggerKey(d3.event.keyCode);
 });
-
+d3.select("body").on("keyup", function() {
+    releaseKey(d3.event.keyCode);
+});
+    
+    
+//Define Window Event
 window.onresize = function(event) {
     updateWindow();
     drawAll();
@@ -284,7 +292,6 @@ function drawBackground() {
 }
     
 function buildStoryLine(id) {
-    
     if (findLine(id) == null)
         return;
     
@@ -294,10 +301,12 @@ function buildStoryLine(id) {
     
     while (storyLine[storyLine.length-1].id != 1) {
         var newLine = findLine(storyLine[storyLine.length-1].parentID);
+        //Because not all stories are sent in request
+        //A null line will be found
+        if (newLine == null) break;
         newLine.top = isTop(newLine.id);
         storyLine.push(newLine);
     }
-    
     branches = findBranches(storyLine[0].id);
 }
     
@@ -310,14 +319,14 @@ function isTop(id){
                 topVisits = siblings[i].visits;
     return Number(line.visits) >= Number(topVisits);
 }
-    
+
 function findLine(id) {
     for (i = 0; i < stories.length; i++) 
         if (stories[i].id == id)
             return stories[i]
     return null
 }
-    
+
 function findBranches(id) {
     var new_branches = [];
     for(i = 0; i < stories.length; i++) {
@@ -593,7 +602,6 @@ function generateSentence() {
                 sentence += t[3][i][2] + " " 
             }
             
-            //console.log(words)
             generatedLine = sentence;
             
         }
@@ -601,7 +609,6 @@ function generateSentence() {
         drawForm();
     }
 });
-    
     return sentence
 }
     
@@ -614,13 +621,19 @@ function parseWords() {
         var words = new Lexer().lex(line);
         var taggedWords = new POSTagger().tag(words);
         for (var j=0; j<taggedWords.length; j++) {
-            
             dictionary.push(taggedWords[j]);
         }   
     }
 }
     
+function releaseKey(code) {
+    console.log(code + " up")
+    if (code == 16)
+        shiftDown = false;
+}
+    
 function triggerKey(code) {
+    console.log(code + " down")
     //Disable Keys if form is active
     if (document.activeElement.name == 'line') {
         if (code == 13) submitForm();
@@ -639,8 +652,12 @@ function triggerKey(code) {
         else
             clickStory(selected);
     } else if (code == 16) {
+        shiftDown = true;
         if (storyLine.length > 0)
-            clickStory(storyLine[1]);
+                clickStory(storyLine[1]);
+    } else if (code == 38 && shiftDown) {
+        if (storyLine.length > 0)
+                clickStory(storyLine[1]);
     }
 }
 
@@ -660,6 +677,12 @@ function storyText(d,i) {
     }  
 }
 
+function showStory(id) {
+    buildStoryLine(id);
+    branches = findBranches(id);
+    drawAll();
+}
+
 // Display Branches of clicked line
 function clickStory(d) {
     if (d != null)
@@ -668,9 +691,7 @@ function clickStory(d) {
     bookmarkVisible = false;
     if (d != null) {
         if (d.id != -1) {
-            buildStoryLine(d.id);
-            branches = findBranches(storyLine[0].id);
-            drawAll();
+            showStory(d.id);
             requestSubtree(d.id);
         } else {
             $("#line").val(d.line);
@@ -695,10 +716,14 @@ function requestSubtree(id,callback) {
         if (xmlhttp.readyState==4 && xmlhttp.status==200) {
             var subtree = eval("(" + xmlhttp.responseText + ")");
             appendSubtree(subtree);
+            if (branches.length == 0) {
+                showStory(storyLine[0].id)
+            }
             if (callback !== undefined)
                 callback();
         }
       }
+    return true;
 }
     
 function storyLineY(d,i) {
@@ -739,7 +764,7 @@ function submitForm() {
             if (findLine(id) == null) {
                 console.log("No Such Line");
             } else {
-                clickStory(findLine(id))
+                clickStory(findLine(id));
             }
         });
         bookmarkTip.hide();
@@ -755,8 +780,11 @@ function submitForm() {
     
     //Validate
     //Discard empty lines
-    if (test == "")
+    if (test == "") {
+        if (branches != 0)
+            clickStory(branches[branches.length - 1])
         return
+    }
         
     //Check for duplicates
     var siblings = findBranches(storyLine[0].id);
@@ -795,6 +823,15 @@ function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain 
     document.cookie = cookie_name + "=" + encodeURIComponent( cookie_value ) +
       "; max-age=" + 60 * 60 * 24 * lifespan_in_days +
       "; path=/" + domain_string ;
+}
+    
+function is_cookie(cookie_name) {
+    var cookie_string = document.cookie ;
+    if (cookie_string.length != 0) {
+        var cookie_value = cookie_string.match ( cookie_name + '=([^;]*)' );
+        return cookie_value != null;
+    }
+    return false;
 }
     
 function get_cookie ( cookie_name )
