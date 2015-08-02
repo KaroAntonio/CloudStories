@@ -48,7 +48,8 @@ trait AuthenticatesAndRegistersUsers {
 		}
 
 		$this->auth->login($this->registrar->create($request->all()));
-
+        
+        return redirect('/'); //Karo's Code
 		return redirect($this->redirectPath());
 	}
 
@@ -78,6 +79,7 @@ trait AuthenticatesAndRegistersUsers {
 
 		if ($this->auth->attempt($credentials, $request->has('remember')))
 		{
+            return redirect('/'); //Karo's Code
 			return redirect()->intended($this->redirectPath());
 		}
 
@@ -107,7 +109,7 @@ trait AuthenticatesAndRegistersUsers {
 	{
 		$this->auth->logout();
 
-		return redirect('/');
+		return redirect('/home');
 	}
 
 	/**
@@ -122,7 +124,7 @@ trait AuthenticatesAndRegistersUsers {
 			return $this->redirectPath;
 		}
 
-		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+		return property_exists($this, 'redirectTo') ? $this->redirectTo : 'welcome';
 	}
 
 	/**

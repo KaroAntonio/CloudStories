@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
-
-<html> 
-<head>
-<!-- Bad Style Ref -->
-<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
-</head>
-</html>
-
-<body>
-@include('content')
-<!--
+<div id='container'>
 <div id="textForm"> 
 {!! Form::open(['url'=>'store','id'=>'lineForm']) !!}
 {!! Form::text('line', null, array('size' => 49 , 'maxLength' => 80, 'id'=>'line'))  !!}
@@ -19,6 +7,8 @@
 </div>
 <div id="story_line"></div>
 <div id="branches"></div>
+</div>
+
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -27,6 +17,7 @@
 <script src="/js/colors.js" type="text/javascript"></script>
 <script src="/jspos/lexer.js" type="text/javascript"></script>
 <script src="/jspos/lexicon.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 //GET PHP var
 var stories = <?php echo json_encode($stories); ?>;
@@ -900,5 +891,3 @@ function get_cookie ( cookie_name )
 
 
 </script>
--->
-</body>

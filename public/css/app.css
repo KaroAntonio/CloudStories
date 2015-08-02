@@ -20,6 +20,7 @@ menu,
 nav,
 section,
 summary {
+    z-index:2;
   display: block;
 }
 audio,
