@@ -37,6 +37,7 @@ function drawBranches() {
     if (generatedLine != "")
         branches.push(generated);
     
+    $('#branches').empty();
     if (branches.length > 0) {
         //SORT braches wrt to visits
         branches.sort(function(a,b) { 
@@ -78,7 +79,7 @@ function drawBranches() {
             .domain([0, branches[0].visits])
             .clamp(true);
         
-        $('#branches').empty();
+        
         for (i = 0; i < branches.length ; i++) {
             var new_line = document.createElement("DIV");
             var d = branches[i];
@@ -100,4 +101,9 @@ function drawBranches() {
     } else {
         selected = null
     }
+    
+    //Focus Form
+    if (branches.length == 0)
+        if (storyLine.length > 1)
+            document.getElementById("line").focus();
 }

@@ -12,6 +12,8 @@ return array(
     'CreateStoriesTable' => $baseDir . '/database/migrations/2015_03_19_151527_createStoriesTable.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
+    'DeleteUsers' => $baseDir . '/database/migrations/2015_08_03_143620_delete_users.php',
+    'ExtendUsers' => $baseDir . '/database/migrations/2015_08_03_142201_extend_users.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Factory.php',

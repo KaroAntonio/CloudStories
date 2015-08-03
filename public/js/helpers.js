@@ -25,11 +25,6 @@ function triggerKey(code) {
         return
     }
     
-    if (document.activeElement.name == 'line_id') {
-        if (code == 13) submitForm();
-        return
-    }
-    
     //On enter key, 'click' selected branch
     if (code == 13) {
         if (selected == null)
