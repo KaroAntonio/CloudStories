@@ -1,0 +1,10 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/newuser/Documents/Karo/Projects/VisualExploration/CloudStories/public/jspos/test.js",
+        "/Users/newuser/Documents/Karo/Projects/VisualExploration/CloudStories/public/js/lines.js",
+        "/Users/newuser/Documents/Karo/Projects/VisualExploration/CloudStories/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/js/respond.min.js",
+        "/Users/newuser/Documents/Karo/Projects/VisualExploration/CloudStories/public/js/helpers.js",
+        "/Users/newuser/Documents/Karo/Projects/VisualExploration/CloudStories/public/js/storyline.js",
+        "/Users/newuser/Documents/Karo/Projects/VisualExploration/CloudStories/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/js/nv.d3.min.js"
+    ]
+}

@@ -573,7 +573,7 @@ function drawForm() {
 }
     
 function redirect_to_login() {
-    window.location.href = "{{URL::to('home')}}";
+    //window.location.href = "{{URL::to('home')}}";
 }
     
 function generateSentence() {
