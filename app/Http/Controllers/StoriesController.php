@@ -32,7 +32,10 @@ class StoriesController extends Controller {
         //a portion of the preceding storyline
         
         //Find First Story
+        if (Story::where('id', '=', $id)->exists() != true)
+            $id=1;
         $story = Story::find($id);
+        
         
         //Increment Story Visits
         $story->visits = $story->visits + 1;
@@ -140,18 +143,14 @@ class StoriesController extends Controller {
             if ($story->id == 1)
                 break;
             $story = Story::find($story->parentID);
-            
         }
-        
         $stories = [$storyLine, $branches];
-        
         return view('index',compact('stories'));
     }
     
     public function store()
     {
         $input = Request::all();
-        
         $line = $input['line'];
         //CHECK for empty lines
         if ($line == "") 
@@ -171,6 +170,7 @@ class StoriesController extends Controller {
         $story = new Story;
         $story-> line = $input['line'];
         $story-> parentID = $input['parentID'];
+        //$story-> authorID = $input['authorID'];
         $story-> visits = 0;
         $story-> save();
         

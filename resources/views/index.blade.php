@@ -6,6 +6,6 @@
 @endsection
 
 @section('content')
-@include('stories/lines')
+@include('content/lines')
 <!--@include('content')-->
 @endsection

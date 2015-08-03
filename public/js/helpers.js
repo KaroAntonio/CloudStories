@@ -12,13 +12,11 @@ function disable_form(tag) {
 }
 
 function releaseKey(code) {
-    console.log(code + " up")
     if (code == 16)
         shiftDown = false;
 }
     
 function triggerKey(code) {
-    console.log(code + " down")
     //Disable Keys if form is active
     if (document.activeElement.name == 'line') {
         if (code == 13) submitForm();

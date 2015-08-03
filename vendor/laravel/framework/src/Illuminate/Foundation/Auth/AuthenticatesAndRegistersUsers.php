@@ -38,7 +38,16 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function postRegister(Request $request)
 	{
-		$validator = $this->registrar->validator($request->all());
+        
+        $new = $request->all();
+        //ADD Default Values
+        $new['rank'] = 0;
+        $new['prestige'] = 0;
+        $new['experience'] = 0;
+        $new['preferences'] = "";
+        $new['line_ids'] = "";
+        
+		$validator = $this->registrar->validator($new);
 
 		if ($validator->fails())
 		{
@@ -46,8 +55,8 @@ trait AuthenticatesAndRegistersUsers {
 				$request, $validator
 			);
 		}
-
-		$this->auth->login($this->registrar->create($request->all()));
+        //dd($new);
+		$this->auth->login($this->registrar->create($new));
         
         return redirect('/'); //Karo's Code
 		return redirect($this->redirectPath());
@@ -124,7 +133,7 @@ trait AuthenticatesAndRegistersUsers {
 			return $this->redirectPath;
 		}
 
-		return property_exists($this, 'redirectTo') ? $this->redirectTo : 'welcome';
+		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
 	}
 
 	/**

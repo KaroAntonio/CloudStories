@@ -10,6 +10,7 @@
 {!! Form::open(['url'=>'store','id'=>'line_form']) !!}
 {!! Form::text('line', null, array('size' => 49 , 'maxLength' => 80, 'id'=>'line'))  !!} 
 {!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
+{!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
 {!! Form::close() !!}
 <div id='add_line_button'>+</div>
 </div>
@@ -36,9 +37,12 @@ var w = window,
     g = d.getElementsByTagName('body')[0],
     width = w.innerWidth || e.clientWidth || g.clientWidth,
     height = (w.innerHeight|| e.clientHeight|| g.clientHeight);
+
+//GET PHP vars
+var stories = <?php echo json_encode($stories); ?>,
+    user = <?php echo json_encode(Auth::user()); ?>;
     
-//GET PHP var
-var stories = <?php echo json_encode($stories); ?>;
+console.log(user)
     
 var storyLine,
     branches,

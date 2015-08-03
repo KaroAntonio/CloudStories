@@ -54,6 +54,7 @@ function requestSubtree(id,callback) {
       {// code for IE6, IE5
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
       }
+    if (id == undefined) id = 1;
     xmlhttp.open("GET","/get_subtree/"+id, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange=function() {
@@ -123,6 +124,7 @@ function submitForm() {
     }
     
     $('#parentID').val(storyLine[0].id);
+    $('#authorID').val(user.id);
     
     var posting = $.post( 'store', $("#line_form").serialize() );
     
