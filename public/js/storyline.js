@@ -91,6 +91,8 @@ function clickStory(d) {
     if (d != null)
         set_cookie( "last_line_id", d.id, 200 );
     if (d != null) {
+        if (user != null)
+            user['experience'] += 1;
         if (d.id != -1) {
             showStory(d.id);
             requestSubtree(d.id);
@@ -124,7 +126,8 @@ function submitForm() {
     }
     
     $('#parentID').val(storyLine[0].id);
-    $('#authorID').val(user.id);
+    var userID = (user == null) ? 0 : user.id
+    $('#authorID').val(userID);
     
     var posting = $.post( 'store', $("#line_form").serialize() );
     

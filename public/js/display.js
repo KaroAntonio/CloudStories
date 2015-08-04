@@ -1,6 +1,7 @@
 function drawAll() {
     drawStoryLine();
     drawBranches();
+    drawStats();
 }
 
 function drawStoryLine() {
@@ -106,4 +107,12 @@ function drawBranches() {
     if (branches.length == 0)
         if (storyLine.length > 1)
             document.getElementById("line").focus();
+}
+
+function drawStats() {
+    if (user != null) {
+        $('#user_stats')[0].innerHTML = 
+            "" + user["experience"] + 
+            " // " + user["prestige"];
+    }
 }

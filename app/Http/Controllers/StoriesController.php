@@ -1,8 +1,10 @@
 <?php namespace App\Http\Controllers;
 
 use App\Story;
+use App\User;
 use Request;
 use DB;
+use Auth;
 
 class StoriesController extends Controller {
     
@@ -36,9 +38,24 @@ class StoriesController extends Controller {
             $id=1;
         $story = Story::find($id);
         
-        
         //Increment Story Visits
         $story->visits = $story->visits + 1;
+        //Award Experience to the reader
+        $reader = Auth::user();
+        if ($reader != null) {
+            $reader = Auth::user();
+            $reader->experience += 1;
+            $reader->save();
+        }
+        
+        //Award Prestige to author
+        $author = User::find($story->authorID);
+        if ($author != null) {
+            if ($author->id != $reader->id) {
+                $author->prestige += 1;
+                $author->save();
+            }
+        }
         
         //Set First Story (For Tweaking)
         if ($id == 1) {
@@ -87,6 +104,14 @@ class StoriesController extends Controller {
             $height--;
         }
         
+        //Bind Author Names
+        for ($x = 0; $x < count($tree); $x++) {
+            $author = User::find($tree[$x]->authorID);
+            if ($author == null)
+                $tree[$x]->author_name = "Anonymous";
+            else
+                $tree[$x]->author_name = $author->name;
+        }
         return $tree;
         
     }
@@ -170,9 +195,20 @@ class StoriesController extends Controller {
         $story = new Story;
         $story-> line = $input['line'];
         $story-> parentID = $input['parentID'];
-        //$story-> authorID = $input['authorID'];
+        $story-> authorID = $input['authorID'];
         $story-> visits = 0;
         $story-> save();
+        
+        //UPDATE user line ID array
+        $user = User::find($input['authorID']);
+        if ($user->line_ids == "") {
+            $line_ids = [];
+        } else {
+            $line_ids = json_decode($user->line_ids);
+        }
+        array_push($line_ids, $story->id);
+        $user->line_ids = json_encode($line_ids);
+        $user->save();
         
         $id = $story->id;
         session_start(); 

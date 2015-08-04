@@ -13,6 +13,7 @@
 {!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
 {!! Form::close() !!}
 <div id='add_line_button'>+</div>
+<div id='user_stats'></div>
 </div>
 </div>
 
@@ -41,8 +42,6 @@ var w = window,
 //GET PHP vars
 var stories = <?php echo json_encode($stories); ?>,
     user = <?php echo json_encode(Auth::user()); ?>;
-    
-console.log(user)
     
 var storyLine,
     branches,
@@ -106,6 +105,7 @@ document.getElementsByTagName("body")[0].style.cursor = "default";
     
 disable_form('#line_form');
 buildStoryLine(1);
+listen_for_bumps()
     
 if (is_cookie("last_line_id")) {
     var last_line = get_cookie("last_line_id");

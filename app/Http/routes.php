@@ -17,7 +17,7 @@ Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
 Route::get('/get_subtree/{id}', ['uses' =>'StoriesController@getSubtree']);
 Route::post('/store', 'StoriesController@store');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'StoriesController@begin');
 Route::get('welcome', 'WelcomeController@welcome');
 
 Route::controllers([

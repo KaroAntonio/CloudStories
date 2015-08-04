@@ -9,14 +9,14 @@ trait AuthenticatesAndRegistersUsers {
 	/**
 	 * The Guard implementation.
 	 *
-	 * @var Guard
+	 * @var \Illuminate\Contracts\Auth\Guard
 	 */
 	protected $auth;
 
 	/**
 	 * The registrar implementation.
 	 *
-	 * @var Registrar
+	 * @var \Illuminate\Contracts\Auth\Registrar
 	 */
 	protected $registrar;
 
@@ -38,27 +38,16 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function postRegister(Request $request)
 	{
+		$validator = $this->registrar->validator($request->all());
         
-        $new = $request->all();
-        //ADD Default Values
-        $new['rank'] = 0;
-        $new['prestige'] = 0;
-        $new['experience'] = 0;
-        $new['preferences'] = "";
-        $new['line_ids'] = "";
-        
-		$validator = $this->registrar->validator($new);
-
 		if ($validator->fails())
 		{
 			$this->throwValidationException(
 				$request, $validator
 			);
 		}
-        //dd($new);
-		$this->auth->login($this->registrar->create($new));
-        
-        return redirect('/'); //Karo's Code
+
+		$this->auth->login($this->registrar->create($request->all()));
 		return redirect($this->redirectPath());
 	}
 
@@ -85,13 +74,12 @@ trait AuthenticatesAndRegistersUsers {
 		]);
 
 		$credentials = $request->only('email', 'password');
-
 		if ($this->auth->attempt($credentials, $request->has('remember')))
 		{
-            return redirect('/'); //Karo's Code
-			return redirect()->intended($this->redirectPath());
+            
+            return redirect()->intended($this->redirectPath());
 		}
-
+        
 		return redirect($this->loginPath())
 					->withInput($request->only('email', 'remember'))
 					->withErrors([
@@ -118,7 +106,7 @@ trait AuthenticatesAndRegistersUsers {
 	{
 		$this->auth->logout();
 
-		return redirect('/home');
+		return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
 	}
 
 	/**
@@ -128,6 +116,7 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function redirectPath()
 	{
+        return('/');
 		if (property_exists($this, 'redirectPath'))
 		{
 			return $this->redirectPath;
