@@ -8,7 +8,7 @@
 <div id="branches"></div>
 <div id="text_form"> 
 {!! Form::open(['url'=>'store','id'=>'line_form']) !!}
-{!! Form::text('line', null, array('size' => 49 , 'maxLength' => 80, 'id'=>'line'))  !!} 
+{!! Form::text('line', null, array('size' => 49 , 'maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!} 
 {!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
 {!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
 {!! Form::close() !!}
@@ -109,7 +109,7 @@ listen_for_bumps()
 
 if (user != null) {
     requestSubtree(
-        last_line,
+        user['current_line'],
         function() {clickStory(findLine(user['current_line']))})
 } else if (is_cookie("last_line_id")) {
     var last_line = get_cookie("last_line_id");

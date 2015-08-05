@@ -38,7 +38,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">WRDS</a></li>
 				</ul>
-
+                @yield('navbar')
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
                     <li class="dropdown">

@@ -7,5 +7,4 @@
 
 @section('content')
 @include('content/lines')
-<!--@include('content')-->
 @endsection

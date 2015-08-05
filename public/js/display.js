@@ -32,6 +32,26 @@ function drawStoryLine() {
 
 function drawBranches() {
     
+    //Color Input Line
+    var shadowStyle = 'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px ' + forwardColor;
+    var unShadow = 'inset 0 0 0px ' + forwardColor;
+    $('#line').focus(
+    function(){
+        //$(this).css('webkitBoxShadow', maxBranchColor);
+        $(this).css('border-color', forwardColor);
+        $(this)[0].style['boxShadow'] = shadowStyle;
+        $(this)[0].style['MozBoxShadow'] = shadowStyle
+        $(this)[0].style['WebKitBoxShadow'] = shadowStyle;
+    });
+    $('#line').blur(
+    function(){
+        //$(this).css('webkitBoxShadow', maxBranchColor);
+        $(this).css('border-color', '#cccccc');
+        $(this)[0].style['boxShadow'] = unShadow;
+        $(this)[0].style['MozBoxShadow'] = unShadow;
+        $(this)[0].style['WebKitBoxShadow'] = unShadow;
+    });
+    
     var generated = {
         line : generatedLine,
         visits : 0,
