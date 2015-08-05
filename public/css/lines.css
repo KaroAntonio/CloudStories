@@ -57,3 +57,8 @@ html, body {
     cursor: pointer;
     color: #bbb;
 }
+
+#add_line_button:hover {
+    color: #777;
+}
+

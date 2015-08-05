@@ -48,7 +48,7 @@ var storyLine,
     selected,
     dictionary,
     generatedLine="";
-    
+
 var fontSize = 30,
     iconSize = 12,
     iconInset = 25,
@@ -60,7 +60,7 @@ var fontSize = 30,
     branchOffset = 5;
     storyLineOffset = 5;
     maxLineChars = 44
-    showVisits = false;
+    debug = false;
     
 //Color Scheme   
 var backgroundColor = '#f0f0f0';
@@ -106,8 +106,12 @@ document.getElementsByTagName("body")[0].style.cursor = "default";
 disable_form('#line_form');
 buildStoryLine(1);
 listen_for_bumps()
-    
-if (is_cookie("last_line_id")) {
+
+if (user != null) {
+    requestSubtree(
+        last_line,
+        function() {clickStory(findLine(user['current_line']))})
+} else if (is_cookie("last_line_id")) {
     var last_line = get_cookie("last_line_id");
     requestSubtree(
         last_line,

@@ -27,13 +27,36 @@ class StoriesController extends Controller {
 		return view('index',compact('stories'));
 	}
     
+    public function resetStoryVisits()
+    {
+        $storyline = Story::get();
+        for ($i = 0; $i < count($storyline); $i++) {
+            $storyline[$i]->visits = 0;
+            $storyline[$i]->save();
+        }
+        dd($storyline);
+    }
+    
+    public function resetPrestige()
+    {
+        $authors = User::get();
+        for ($i = 0; $i < count($authors); $i++) {
+            $authors[$i]->prestige = 0;
+            $authors[$i]->save();
+        }
+        dd($authors);
+    }
+    
     public function updateCurrentLine($id) 
     {
-        if (Auth::user() == null)
+        $reader = Auth::user();
+        if ($reader == null)
             return;
         
+        
         //Find previous line
-        $prev_line_id = Auth::user()->current_line;
+        $prev_line_id = $reader->current_line;
+        
         if (Story::where('id', '=', $prev_line_id)->exists() != true)
             $prev_line_id=1;
         $story = Story::find($prev_line_id);
@@ -44,12 +67,18 @@ class StoriesController extends Controller {
             //UnVisit Story
             if ($story->visits > 0)
                 $story->visits--;
+            $story->save();
             
             //UnAward Prestige from author
             $author = User::find($story->authorID);
-            if ($author != null)
-                if ($author->prestige > 0)
-                    $author->prestige--;
+            if ($author != null) {
+                if ($author->id != $reader->id) {
+                    if ($author->prestige > 0) {
+                        $author->prestige--;
+                        $author->save();
+                    }
+                }
+            }
             
             if ($story->id == 1)
                 break;
@@ -69,11 +98,16 @@ class StoriesController extends Controller {
             
             //Visit Story
             $story->visits++;
+            $story->save();
             
-            //UnAward Prestige from author
+            //Award Prestige from author
             $author = User::find($story->authorID);
-            if ($author != null)
-                $author->prestige++;
+            if ($author != null) {
+                if ($author->id != $reader->id) {
+                    $author->prestige++;
+                    $author->save();
+                }
+            }
             
             if ($story->id == 1)
                 break;
@@ -81,9 +115,8 @@ class StoriesController extends Controller {
             $story = Story::find($story->parentID);
             $storyline->push( $story ); 
         }
-        
-        
-        dd($storyline);
+        Auth::user()->current_line = $id;
+        Auth::user()->save();
     }
     
     public function getSubtree($id=1) 
@@ -97,17 +130,22 @@ class StoriesController extends Controller {
             $id=1;
         $story = Story::find($id);
         
-        //Increment Story Visits
-        $story->visits = $story->visits + 1;
         //Award Experience to the reader
         $reader = Auth::user();
         if ($reader != null) {
-            $reader = Auth::user();
             $reader->experience += 1;
             $reader->save();
         }
         
+        //Update Current Line
+        if ($id != 1)
+            $this->updateCurrentLine($id);
+        
+        //Increment Story Visits
+        //$story->visits = $story->visits + 1;
+        
         //Award Prestige to author
+        /*
         $author = User::find($story->authorID);
         if ($author != null) {
             if ($author->id != $reader->id) {
@@ -115,6 +153,7 @@ class StoriesController extends Controller {
                 $author->save();
             }
         }
+        */
         
         //Set First Story (For Tweaking)
         if ($id == 1) {

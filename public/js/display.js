@@ -8,6 +8,7 @@ function drawStoryLine() {
     $('#story_line').empty();
     for (i = (storyLine.length - 1); i >= 0; i--) {
         var new_line = document.createElement("DIV");
+        var d = storyLine[i];
         new_line.style.color = colorScale(i);
         new_line.onmouseenter = function(e) { 
             return function() { 
@@ -20,8 +21,9 @@ function drawStoryLine() {
         new_line.onclick = function(i) { 
             return function() { clickStory(storyLine[i])}}(i)
         new_line.className = "line";
-        new_line.id = 'line_' + storyLine[i].id;
-        new_line.innerHTML = storyLine[i].line;
+        new_line.id = 'line_' + d.id;
+        new_line.innerHTML = d.line;
+        if (debug) new_line.innerHTML += " {" + d.visits + "}";
         $('#story_line')[0].appendChild(new_line);
     }
     $('#story_line_container')[0].scrollTop = 
@@ -99,6 +101,7 @@ function drawBranches() {
             new_line.id = 'line_' + d.id;
             new_line.className = 'line';
             new_line.innerHTML = d.line;
+            if (debug) new_line.innerHTML += " {" + d.visits + "}";
             $('#branches')[0].appendChild(new_line);
         }
     } else {

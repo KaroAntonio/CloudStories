@@ -4106,6 +4106,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
+    position: absolute;
+    width: 100%;
 }
 
 .navbar-default .navbar-brand {
