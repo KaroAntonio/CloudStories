@@ -27,6 +27,65 @@ class StoriesController extends Controller {
 		return view('index',compact('stories'));
 	}
     
+    public function updateCurrentLine($id) 
+    {
+        if (Auth::user() == null)
+            return;
+        
+        //Find previous line
+        $prev_line_id = Auth::user()->current_line;
+        if (Story::where('id', '=', $prev_line_id)->exists() != true)
+            $prev_line_id=1;
+        $story = Story::find($prev_line_id);
+        
+        //Visit each line in prev storyline
+        while (true) {
+            
+            //UnVisit Story
+            if ($story->visits > 0)
+                $story->visits--;
+            
+            //UnAward Prestige from author
+            $author = User::find($story->authorID);
+            if ($author != null)
+                if ($author->prestige > 0)
+                    $author->prestige--;
+            
+            if ($story->id == 1)
+                break;
+            
+            $story = Story::find($story->parentID);
+        }
+        
+        //Find Current Line
+        if (Story::where('id', '=', $id)->exists() != true)
+            $id=1;
+        $story = Story::find($id);
+        
+        //Visit each line in prev storyline
+        $storyline = new \Illuminate\Database\Eloquent\Collection;
+        $storyline->push( $story );
+        while (true) {
+            
+            //Visit Story
+            $story->visits++;
+            
+            //UnAward Prestige from author
+            $author = User::find($story->authorID);
+            if ($author != null)
+                $author->prestige++;
+            
+            if ($story->id == 1)
+                break;
+            
+            $story = Story::find($story->parentID);
+            $storyline->push( $story ); 
+        }
+        
+        
+        dd($storyline);
+    }
+    
     public function getSubtree($id=1) 
     {
         //Returns 

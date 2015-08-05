@@ -20,6 +20,7 @@ function drawStoryLine() {
         new_line.onclick = function(i) { 
             return function() { clickStory(storyLine[i])}}(i)
         new_line.className = "line";
+        new_line.id = 'line_' + storyLine[i].id;
         new_line.innerHTML = storyLine[i].line;
         $('#story_line')[0].appendChild(new_line);
     }
@@ -95,8 +96,9 @@ function drawBranches() {
                     e.style.color = branchColorScale(d.visits)}}(new_line,i,d);
             new_line.onclick = function(i) { 
                 return function() { clickStory(branches[i])}}(i)
+            new_line.id = 'line_' + d.id;
             new_line.className = 'line';
-            new_line.innerHTML = branches[i].line;
+            new_line.innerHTML = d.line;
             $('#branches')[0].appendChild(new_line);
         }
     } else {

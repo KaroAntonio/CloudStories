@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DeleteAuthorColumn extends Migration {
+class AddCurrentLineColumn extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,8 @@ class DeleteAuthorColumn extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('stories', function($table)
-        {
-            $table->dropColumn('author');
+		Schema::table('users',function(Blueprint $table){ 
+            $table->bigInteger('current_line')->default(1);
         });
 	}
 
@@ -25,8 +24,9 @@ class DeleteAuthorColumn extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('stories',function(Blueprint $table){ 
-            $table->bigInteger('authorID')->default(0);
+		Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('current_line');
         });
 	}
+
 }

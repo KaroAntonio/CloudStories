@@ -37,6 +37,7 @@ class Registrar implements RegistrarContract {
             'prestige' => 0,
             'experience' => 0,
             'preferences' => "",
+            'current_line' => 1,
 			'password' => bcrypt($data['password']),
 		]);
 	}
