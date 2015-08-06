@@ -15,6 +15,10 @@ html, body {
     text-align: center;
 }
 
+#branches {
+    overflow: scroll;
+}
+
 #user_stats {
     text-align: center;
     font-size: 15px;

@@ -10,20 +10,27 @@
     width: 100%;
     text-align: center;
     color: #ddd;
-    font-size: 60px;
+    font-size: 100px;
 }
 
 .title a { 
     text-decoration: none;
-    color: #ddd;
+    color: #eee;
 }
     
 .title a:hover { 
     text-decoration: none;
-    color: #777;
+    color: #FF6666;
 }
 
 .kickstarter-logo {
     height: 15px;
 }
 
+#countdown {
+    color: #ddd;
+}
+
+#countdown:hover {
+    color: #777;
+}

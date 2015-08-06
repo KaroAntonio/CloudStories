@@ -68,7 +68,6 @@ function drawBranches() {
             return parseFloat(a.visits) - parseFloat(b.visits) 
         });
         branches.reverse();
-        
         //SPLICE Branches into tiers
         var tiers = [];
         //The Top tier shows the most popular branch
@@ -103,27 +102,17 @@ function drawBranches() {
             .domain([0, branches[0].visits])
             .clamp(true);
         
+        if (branches.length <= 3)
+            $('#branches').height($('.line').height()*branches.length);
         
-        for (i = 0; i < branches.length ; i++) {
-            var new_line = document.createElement("DIV");
-            var d = branches[i];
-            new_line.style.color = branchColorScale(d.visits);
-            new_line.onmouseenter = function(e,d) { 
-                return function() { 
-                    e.style['font-style'] = 'italic';
-                    e.style.color = colorScale(0)}}(new_line,d);
-            new_line.onmouseout = function(e,i,d) { 
-                return function() { 
-                    e.style['font-style'] = 'normal';
-                    e.style.color = branchColorScale(d.visits)}}(new_line,i,d);
-            new_line.onclick = function(i) { 
-                return function() { clickStory(branches[i])}}(i)
-            new_line.id = 'line_' + d.id;
-            new_line.className = 'line';
-            new_line.innerHTML = d.line;
-            if (debug) new_line.innerHTML += " {" + d.visits + "}";
-            $('#branches')[0].appendChild(new_line);
-        }
+        //Display Top Three Branches
+        for (i = 0; i < branches.length ; i++)
+            drawBranch(branches[i]);
+            
+        //Display The rest of the branches
+        for (i = 0; i < tiers.length; i++ )
+            for (j = 0; j < tiers[i].length; j++) 
+                drawBranch(tiers[i][j]);
     } else {
         selected = null
     }
@@ -132,6 +121,26 @@ function drawBranches() {
     if (branches.length == 0)
         if (storyLine.length > 1)
             document.getElementById("line").focus();
+}
+
+function drawBranch(d) {
+    var new_line = document.createElement("DIV");
+    new_line.style.color = branchColorScale(d.visits);
+    new_line.onmouseenter = function(e,d) { 
+        return function() { 
+            e.style['font-style'] = 'italic';
+            e.style.color = colorScale(0)}}(new_line,d);
+    new_line.onmouseout = function(e,i,d) { 
+        return function() { 
+            e.style['font-style'] = 'normal';
+            e.style.color = branchColorScale(d.visits)}}(new_line,i,d);
+    new_line.onclick = function(i) { 
+        return function() { clickStory(d)}}(i)
+    new_line.id = 'line_' + d.id;
+    new_line.className = 'line';
+    new_line.innerHTML = d.line;
+    if (debug) new_line.innerHTML += " {" + d.visits + "}";
+    $('#branches')[0].appendChild(new_line);
 }
 
 function drawStats() {
