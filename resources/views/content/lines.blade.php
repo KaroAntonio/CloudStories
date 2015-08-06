@@ -110,7 +110,7 @@ document.getElementsByTagName("body")[0].style.cursor = "default";
     
 disable_form('#line_form');
 buildStoryLine(1);
-listen_for_bumps()
+listen_for_bumps();
 
 if (user != null) {
     requestSubtree(

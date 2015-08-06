@@ -55,6 +55,15 @@
 								<input type="password" class="form-control" name="password_confirmation">
 							</div>
 						</div>
+                        <div class="form-group">
+							<div class="col-md-6 col-md-offset-4">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="mail-list" checked> Keep me in the Kickstarter Loop
+									</label>
+								</div>
+							</div>
+						</div>
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">

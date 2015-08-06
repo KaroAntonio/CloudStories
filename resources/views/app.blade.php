@@ -23,6 +23,26 @@
     <!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="../js/countdown.min.js"></script>
+    <script>
+    //Countdown to Kickstarter
+    //http://countdownjs.org/readme.html
+    var c = countdown( 
+        new Date(2015, 10, 17),
+        function (ts) {
+            $('#countdown').html(ts.toString())
+        },
+        countdown.MONTHS | countdown.DAYS | countdown.HOURS|countdown.MINUTES|countdown.SECONDS,
+        countdown.setLabels(
+	' ms| s| m| h| D| W| M| Y| Dc| Ct| Ml',
+	' ms| s| m| h| D| W| M| Y| Dc| Ct| Ml',
+	' : ',
+	' : ',
+	' : ')
+    );
+        
+        
+    </script>
     
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -36,9 +56,25 @@
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">@include('content/title')</a></li>
+					<li>
+                        @if (Auth::guest())
+                        <a  href="{{ url('/auth/register') }}">
+                        <!--<img class="kickstarter-logo" src="assets/kickstarter-logo-grey.png" alt="kick me">-->
+                        <img class="kickstarter-logo" src="../assets/kickstarter-logo-grey.png" 
+onmouseover="this.src='../assets/kickstarter-logo-light.png'"
+onmouseout="this.src='../assets/kickstarter-logo-grey.png'" />
+                        <span class="kickstarter-logo-overlay"></span>
+                        </a>
+                        @else
+                        <a  id="countdown" href="{{ url('/auth/register') }}">
+                        </a>
+                        @endif
+                    </li>
 				</ul>
+                
+                
                 @yield('navbar')
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
