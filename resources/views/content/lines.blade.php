@@ -4,7 +4,7 @@
         <div id='story_line'></div>
     </div>
 </div>
-    <hr id='story_break'>
+<hr id='story_break'>
 <div id="branches"></div>
 <div id="text_form">
 <div class="container-fluid">

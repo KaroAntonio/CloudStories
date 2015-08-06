@@ -8,15 +8,73 @@ html, body {
 
 #story_line_container {
     height: 50%;
-    overflow: scroll;
+    overflow: auto;
+    width: 50%;
+    margin: auto auto;
+    
+    background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+		
+		/* Shadows */
+		radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+		
+		/* Shadows */
+		radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+	
+	/* Opera doesn't support this in the shorthand */
+	background-attachment: local, local, scroll, scroll;
+    
 }
 
 #story_line {
+    
     text-align: center;
 }
 
 #branches {
-    overflow: scroll;
+    overflow: auto;
+    width: 50%;
+    margin: auto auto;
+
+	background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+		
+		/* Shadows */
+		radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+		
+		/* Shadows */
+		radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+	
+	/* Opera doesn't support this in the shorthand */
+	background-attachment: local, scroll, scroll, scroll;
+}
+
+
+
+#branches and (max-width:500px) {
+    width: 100%;
 }
 
 #user_stats {
@@ -41,6 +99,8 @@ html, body {
     margin-top: 0px;
     margin-bottom: 0px;
     background: #bbb;
+    color: #bbb;
+    border-color: #bbb;
 }
 
 #text_form {
@@ -64,6 +124,20 @@ html, body {
 
 #add_line_button:hover {
     color: #777;
+}
+
+@media screen and (max-width: 900px) {
+  /* UNDER 500px CSS here */
+    #story_break {
+        width: 80%;
+    }
+    #story_line_container{
+        width: 100%;
+    }
+    #branches{
+        width: 100%;
+    }
+    
 }
 
 
