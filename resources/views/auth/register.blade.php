@@ -1,6 +1,13 @@
 @extends('app')
 
 @section('content')
+<div class="title-container">
+    <div class="title">
+        <a href="{{ url('/') }}">
+        @include('content/title')
+        </a>
+    </div>
+</div>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">

@@ -299,14 +299,16 @@ class StoriesController extends Controller {
         
         //UPDATE user line ID array
         $user = User::find($input['authorID']);
-        if ($user->line_ids == "") {
-            $line_ids = [];
-        } else {
-            $line_ids = json_decode($user->line_ids);
+        if ($user != null) {
+            if ($user->line_ids == "") {
+                $line_ids = [];
+            } else {
+                $line_ids = json_decode($user->line_ids);
+            }
+            array_push($line_ids, $story->id);
+            $user->line_ids = json_encode($line_ids);
+            $user->save();
         }
-        array_push($line_ids, $story->id);
-        $user->line_ids = json_encode($line_ids);
-        $user->save();
         
         $id = $story->id;
         session_start(); 

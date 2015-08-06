@@ -6,14 +6,19 @@
 </div>
     <hr id='story_break'>
 <div id="branches"></div>
-<div id="text_form"> 
-{!! Form::open(['url'=>'store','id'=>'line_form']) !!}
-{!! Form::text('line', null, array('size' => 49 , 'maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!} 
-{!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
+<div id="text_form">
+<div class="container-fluid">
+    <form id="line_form" class="form-horizontal" role="form" method="POST" action="{{ url('store') }}">
+    {!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
 {!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
-{!! Form::close() !!}
+    <div class="form-group">
+     <input type="text" id="line" class="form-control" size="49" maxLength="80" name="line"> 
+    <!--{!! Form::text('line', null, array('size'=>49,'maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!}-->
+    </div>
+    </form>
 <div id='add_line_button'>+</div>
 <div id='user_stats'></div>
+</div>
 </div>
 </div>
 

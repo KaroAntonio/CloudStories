@@ -1,0 +1,25 @@
+.title-container {
+    width: 100%;
+    height: 30%;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ddd;
+    font-size: 60px;
+}
+
+.title a { 
+    text-decoration: none;
+    color: #ddd;
+}
+    
+.title a:hover { 
+    text-decoration: none;
+    color: #777;
+}
+
