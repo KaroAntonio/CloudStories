@@ -8,14 +8,18 @@
 <div id="branches"></div>
 <div id="text_form">
 <div class="container-fluid">
-    <form id="line_form" class="form-horizontal" role="form" method="POST" action="{{ url('store') }}">
+    
+
+    
+    {!! Form::open(['url'=>'store','id'=>'line_form','class'=>'form-horizontal']) !!}
     {!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
-{!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
+    {!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
     <div class="form-group">
-     <input type="text" id="line" class="form-control" size="49" maxLength="80" name="line"> 
-    <!--{!! Form::text('line', null, array('size'=>49,'maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!}-->
+     {!! Form::text('line', null, array('maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!} 
+    
     </div>
-    </form>
+    {!! Form::close() !!}
+    
 <div id='add_line_button'>+</div>
 <div id='user_stats'></div>
 </div>
@@ -52,6 +56,7 @@ var storyLine,
     branches,
     selected,
     dictionary,
+    num_lines,
     generatedLine="";
 
 var fontSize = 30,
@@ -65,7 +70,7 @@ var fontSize = 30,
     branchOffset = 5;
     storyLineOffset = 5;
     maxLineChars = 44
-    debug = false;
+    debug = true;
     
 //Color Scheme   
 var backgroundColor = '#f0f0f0';
@@ -113,6 +118,10 @@ buildStoryLine(1);
 listen_for_bumps();
 
 if (user != null) {
+    if (user['line_ids'] != "")
+        num_lines = JSON.parse(user['line_ids']).length;
+    else 
+        num_lines = 0;
     requestSubtree(
         user['current_line'],
         function() {clickStory(findLine(user['current_line']))})

@@ -133,6 +133,7 @@ function submitForm() {
     
     $("#line").val("");
     posting.done(function( data ) {
+        num_lines ++;
         appendSubtree([data]);
         clickStory(data);
     });

@@ -107,10 +107,15 @@ html, body {
     text-align: center;
 }
 
+#line {
+    width: 500px;
+}
+
 #line_form {
     display:inline-block;
     text-align: center;
     margin-left: 25px;
+    /*padding-top: 15px;*/
 }
 
 #add_line_button {
@@ -126,7 +131,7 @@ html, body {
     color: #777;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   /* UNDER 500px CSS here */
     #story_break {
         width: 80%;
@@ -137,7 +142,12 @@ html, body {
     #branches{
         width: 100%;
     }
-    
+    #line_form{
+        width:100%;    
+    }
+    #line{
+        width: 90%;
+    }
 }
 
 

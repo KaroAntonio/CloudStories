@@ -23,7 +23,7 @@ function drawStoryLine() {
         new_line.className = "line";
         new_line.id = 'line_' + d.id;
         new_line.innerHTML = d.line;
-        if (debug) new_line.innerHTML += " {" + d.visits + "}";
+        if (debug) setLine(new_line, d);
         $('#story_line')[0].appendChild(new_line);
     }
     $('#story_line_container')[0].scrollTop = 
@@ -115,6 +115,7 @@ function drawBranches() {
                 drawBranch(tiers[i][j]);
     } else {
         selected = null
+        $('#branches').height(3);
     }
     
     //Focus Form
@@ -139,14 +140,19 @@ function drawBranch(d) {
     new_line.id = 'line_' + d.id;
     new_line.className = 'line';
     new_line.innerHTML = d.line;
-    if (debug) new_line.innerHTML += " {" + d.visits + "}";
+    if (debug) setLine(new_line, d);
     $('#branches')[0].appendChild(new_line);
+}
+
+function setLine(line, d) {
+    line.innerHTML += " {" + d.authorID + "," + d.visits + "}";
 }
 
 function drawStats() {
     if (user != null) {
         $('#user_stats')[0].innerHTML = 
             "" + user["experience"] + 
-            " // " + user["prestige"];
+            " // " + user["prestige"] + 
+            " // " + num_lines;
     }
 }

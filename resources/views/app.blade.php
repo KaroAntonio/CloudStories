@@ -24,6 +24,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="../js/countdown.min.js"></script>
+    <script src="https://raw.github.com/TimPietrusky/background-clip-text-polyfill/master/background-clip-text-polyfill.js"></script>
     <script>
     //Countdown to Kickstarter
     //http://countdownjs.org/readme.html
@@ -40,7 +41,7 @@
 	' : ',
 	' : ')
     );
-        
+    
         
     </script>
     
