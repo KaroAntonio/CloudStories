@@ -26,15 +26,17 @@
 </div>
 </div>
 
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-<script src="/jspos/POSTagger.js" type="text/javascript"></script>
-<script src="/js/colors.js" type="text/javascript"></script>
+<!--<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>-->
+<!--
 <script src="/jspos/lexer.js" type="text/javascript"></script>
 <script src="/jspos/lexicon.js" type="text/javascript"></script>
+<script src="/jspos/POSTagger.js" type="text/javascript"></script>
+-->
 <!--My JS-->
+<script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
 <script src="js/storyline.js" type="text/javascript"></script>
 <script src="js/cookies.js" type="text/javascript"></script>
