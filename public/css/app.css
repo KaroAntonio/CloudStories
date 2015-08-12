@@ -1,4 +1,24 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+@font-face {
+    font-family: special;
+    src: url(../fonts/SpecialElite.ttf);
+}
+
+@font-face {
+    font-family: newspaper;
+    src: url(../fonts/OldNewspaperTypes.ttf);
+}
+
+@font-face {
+    font-family: another;
+    src: url(../fonts/atwriter.ttf);
+}
+
+@font-face {
+    font-family: letter;
+    src: url(../fonts/LetterGothicNormal.ttf);
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -884,7 +904,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  /*font-family: "Roboto", Helvetica, Arial, sans-serif;*/
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;

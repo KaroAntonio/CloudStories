@@ -156,3 +156,6 @@ function drawStats() {
             " // " + num_lines;
     }
 }
+
+function displayAlphaWarning() { $('#alpha_warning').css('display','block') }
+function hideAlphaWarning() { $('#alpha_warning').css('display','none') }

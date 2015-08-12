@@ -20,7 +20,9 @@
     </div>
     {!! Form::close() !!}
     
+    
 <div id='add_line_button'>+</div>
+    <div id='alpha_warning'>WARNING: wrdcvlt is in alpha, nothing you write will be permanent!<div>
 <div id='user_stats'></div>
 </div>
 </div>
@@ -114,6 +116,9 @@ d3.select("body").on("keyup", function() {
 
 //SET Curser
 document.getElementsByTagName("body")[0].style.cursor = "default";
+//SET form listeners
+$('#line').on('focus', displayAlphaWarning);
+$('#line').on('focusout', hideAlphaWarning);
     
 disable_form('#line_form');
 buildStoryLine(1);
