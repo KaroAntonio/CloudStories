@@ -102,7 +102,6 @@ html, body {
     text-align: center;
     position: relative;
     display: block;
-    /*background: #fff;*/
 }
 
 .info {
@@ -110,6 +109,7 @@ html, body {
     text-align: center;
     float: right;
     color: #fff;
+    margin-top: 5px;
     transition: color 2s;
 }
 
@@ -176,6 +176,9 @@ html, body {
     }
     #line{
         width: 90%;
+    }
+    .info{
+        display: none;    
     }
 }
 

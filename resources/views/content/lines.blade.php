@@ -15,10 +15,8 @@
      {!! Form::text('line', null, array('maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!} 
     </div>
     {!! Form::close() !!}
-    
-    
 <div id='add_line_button'>+</div>
-    <div id='alpha_warning'>WARNING: wrdcvlt is in testing, nothing you write will be permanent!<div>
+    <div id='alpha_warning'>WARNING: wrdcvlt is in testing, nothing you write will be permanent!</div>
 <div id='user_stats'></div>
 </div>
 </div>

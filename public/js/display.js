@@ -112,9 +112,8 @@ function drawLine(d, cs, parent) {
     var line_info = document.createElement("DIV");
     line_info.innerHTML = "-" + d.author_name;
     line_info.id = 'info_' + d.id;
-    line_info.style.marginLeft = -line_info.offsetWidth + "px";
     line_info.className = 'info';
-    if (debug) line_info.innerHTML += " {" + d.authorID + "," + d.visits + "}";
+    if (debug) line_info.innerHTML += " : " + d.visits + "";
     
     //Draw Line
     var new_line = document.createElement("DIV");
@@ -122,7 +121,6 @@ function drawLine(d, cs, parent) {
     new_line.id = 'line_' + d.id;
     new_line.className = 'line';
     new_line.innerHTML = d.line;
-    
     
     var m_enter = function(e, info, d) { 
         return function() { 
@@ -143,12 +141,13 @@ function drawLine(d, cs, parent) {
     new_line.onmouseout = m_out;
     line_info.onmouseout = m_out;
     
-    new_line.onclick = function(i) { 
-        return function() { clickStory(d)}}(i)
+    new_line.onclick = function(d) { 
+        return function() { clickStory(d)}}(d)
     
     parent[0].appendChild(line_info);
     parent[0].appendChild(new_line);
-    
+    //Offest author tag aftern element is attached to DOM
+    line_info.style.marginLeft = -line_info.offsetWidth + "px";
     
 }
 
