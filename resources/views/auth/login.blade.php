@@ -12,6 +12,7 @@
         <a href="{{ url('/') }}">
             @include('content/title')
         </a>
+        
     </div>
 </div>
 <div class="container-fluid centered">

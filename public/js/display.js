@@ -6,26 +6,9 @@ function drawAll() {
 
 function drawStoryLine() {
     $('#story_line').empty();
-    for (i = (storyLine.length - 1); i >= 0; i--) {
-        var new_line = document.createElement("DIV");
-        var d = storyLine[i];
-        new_line.style.color = colorScale(i);
-        new_line.onmouseenter = function(e) { 
-            return function() { 
-                e.style['font-style'] = 'italic';
-                e.style.color = colorScale(0)}}(new_line);
-        new_line.onmouseout = function(e,i) { 
-            return function() { 
-                e.style['font-style'] = 'normal';
-                e.style.color = colorScale(i)}}(new_line,i);
-        new_line.onclick = function(i) { 
-            return function() { clickStory(storyLine[i])}}(i)
-        new_line.className = "line";
-        new_line.id = 'line_' + d.id;
-        new_line.innerHTML = d.line;
-        if (debug) setLine(new_line, d);
-        $('#story_line')[0].appendChild(new_line);
-    }
+    for (i = (storyLine.length - 1); i >= 0; i--) 
+        drawLine(storyLine[i],colorScale,$('#story_line'));
+    
     $('#story_line_container')[0].scrollTop = 
         $('#story_line_container')[0].scrollHeight;
 }
@@ -107,12 +90,12 @@ function drawBranches() {
         
         //Display Top Three Branches
         for (i = 0; i < branches.length ; i++)
-            drawBranch(branches[i]);
+            drawLine(branches[i],branchColorScale,$('#branches'));
             
         //Display The rest of the branches
         for (i = 0; i < tiers.length; i++ )
             for (j = 0; j < tiers[i].length; j++) 
-                drawBranch(tiers[i][j]);
+                drawLine(tiers[i][j],branchColorScale,$('#branches'));
     } else {
         selected = null
         $('#branches').height(3);
@@ -124,28 +107,49 @@ function drawBranches() {
             document.getElementById("line").focus();
 }
 
-function drawBranch(d) {
+function drawLine(d, cs, parent) {
+    //Draw info
+    var line_info = document.createElement("DIV");
+    line_info.innerHTML = "-" + d.author_name;
+    line_info.id = 'info_' + d.id;
+    line_info.style.marginLeft = -line_info.offsetWidth + "px";
+    line_info.className = 'info';
+    if (debug) line_info.innerHTML += " {" + d.authorID + "," + d.visits + "}";
+    
+    //Draw Line
     var new_line = document.createElement("DIV");
-    new_line.style.color = branchColorScale(d.visits);
-    new_line.onmouseenter = function(e,d) { 
-        return function() { 
-            e.style['font-style'] = 'italic';
-            e.style.color = colorScale(0)}}(new_line,d);
-    new_line.onmouseout = function(e,i,d) { 
-        return function() { 
-            e.style['font-style'] = 'normal';
-            e.style.color = branchColorScale(d.visits)}}(new_line,i,d);
-    new_line.onclick = function(i) { 
-        return function() { clickStory(d)}}(i)
+    new_line.style.color = cs(d.visits);
     new_line.id = 'line_' + d.id;
     new_line.className = 'line';
     new_line.innerHTML = d.line;
-    if (debug) setLine(new_line, d);
-    $('#branches')[0].appendChild(new_line);
-}
-
-function setLine(line, d) {
-    line.innerHTML += " {" + d.authorID + "," + d.visits + "}";
+    
+    
+    var m_enter = function(e, info, d) { 
+        return function() { 
+            //info.style.display = 'inline';
+            info.style.color = '#aaa';
+            e.style['font-style'] = 'italic';
+            e.style.color = colorScale(0)}}(new_line, line_info, d);
+    var m_out = function(e, info, i,d) { 
+        return function() { 
+            //info.style.display = 'none';
+            info.style.color = '#fff';
+            //line_info.style.marginLeft = 0 + "px";
+            e.style['font-style'] = 'normal';
+            e.style.color = cs(d.visits)}}(new_line, line_info, i,d);
+    
+    new_line.onmouseenter = m_enter;
+    line_info.onmouseenter = m_enter;
+    new_line.onmouseout = m_out;
+    line_info.onmouseout = m_out;
+    
+    new_line.onclick = function(i) { 
+        return function() { clickStory(d)}}(i)
+    
+    parent[0].appendChild(line_info);
+    parent[0].appendChild(new_line);
+    
+    
 }
 
 function drawStats() {

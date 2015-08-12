@@ -8,21 +8,17 @@
 <div id="branches"></div>
 <div id="text_form">
 <div class="container-fluid">
-    
-
-    
     {!! Form::open(['url'=>'store','id'=>'line_form','class'=>'form-horizontal']) !!}
     {!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
     {!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
     <div class="form-group">
      {!! Form::text('line', null, array('maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!} 
-    
     </div>
     {!! Form::close() !!}
     
     
 <div id='add_line_button'>+</div>
-    <div id='alpha_warning'>WARNING: wrdcvlt is in alpha, nothing you write will be permanent!<div>
+    <div id='alpha_warning'>WARNING: wrdcvlt is in testing, nothing you write will be permanent!<div>
 <div id='user_stats'></div>
 </div>
 </div>
