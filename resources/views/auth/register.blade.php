@@ -14,6 +14,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"></div>
 				<div class="panel-body">
+                    <div id="registration-intro">is coming to kickstarter, register and we'll let you know ;)</div>
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -24,7 +25,7 @@
 							</ul>
 						</div>
 					@endif
-
+                    
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -59,7 +60,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="mail-list" checked> Keep me in the Kickstarter Loop
+										<input type="checkbox" name="mail-list" checked> Keep me in the cvlt Loop
 									</label>
 								</div>
 							</div>
@@ -68,7 +69,7 @@
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Register
+									Drink the Kool-Aid (Register)
 								</button>
 							</div>
 						</div>

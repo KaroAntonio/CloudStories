@@ -16,7 +16,7 @@
     </div>
     {!! Form::close() !!}
 <div id='add_line_button'>+</div>
-    <div id='alpha_warning'>WARNING: wrdcvlt is in testing, nothing you write will be permanent!</div>
+    <div id='alpha_warning'>WARNING: wrdcvlt is in testing, anything written is dust in the wind.</div>
 <div id='user_stats'></div>
 </div>
 </div>
@@ -74,10 +74,10 @@ var fontSize = 30,
 var backgroundColor = '#f0f0f0';
 var backColor = '#cbcbcb'; //a light shade of mist
 //var forwardColor = '#777777';
-var forwardColor = '#3385AD';
+//var forwardColor = '#3385AD';
 //var forwardColor = '#FF6666';
 //var forwardColor = '#6B24B2';
-//var forwardColor = '#8A8AE6';
+var forwardColor = '#8A8AE6';
 //var forwardColor = '#CC0066';
 var maxBranchColor = '#FF6666';
 //var maxBranchColor = '#8A8AE6';
@@ -130,7 +130,7 @@ if (user != null) {
     var last_line = get_cookie("last_line_id");
     requestSubtree(
         last_line,
-        function() {clickStory(findLine(last_line))})
+        'click')
 }
 else drawAll();
 

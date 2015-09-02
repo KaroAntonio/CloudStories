@@ -69,7 +69,7 @@ onmouseout="this.src='../assets/kickstarter-logo-grey.png'" />
                         <span class="kickstarter-logo-overlay"></span>
                         </a>
                         @else
-                        <a  id="countdown" href="{{ url('/auth/register') }}">
+                        <a  id="countdown" href="https://www.kickstarter.com/projects/2043140548/1156187219?token=de89b4d1">
                         </a>
                         @endif
                     </li>

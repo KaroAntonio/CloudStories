@@ -107,6 +107,13 @@ function drawBranches() {
             document.getElementById("line").focus();
 }
 
+function colorLine(d, cs, line, parent) {
+    if (parent[0].id == 'branches')
+        line.style.color = cs(d.visits);
+    else 
+        line.style.color = cs(storyLine.indexOf(d));
+}
+
 function drawLine(d, cs, parent) {
     //Draw info
     var line_info = document.createElement("DIV");
@@ -117,24 +124,25 @@ function drawLine(d, cs, parent) {
     
     //Draw Line
     var new_line = document.createElement("DIV");
-    new_line.style.color = cs(d.visits);
+    colorLine(d, cs, new_line, parent)
+    
     new_line.id = 'line_' + d.id;
     new_line.className = 'line';
     new_line.innerHTML = d.line;
     
-    var m_enter = function(e, info, d) { 
+    var m_enter = function(line, info, d) { 
         return function() { 
             //info.style.display = 'inline';
             info.style.color = '#aaa';
-            e.style['font-style'] = 'italic';
-            e.style.color = colorScale(0)}}(new_line, line_info, d);
-    var m_out = function(e, info, i,d) { 
+            line.style['font-style'] = 'italic';
+            line.style.color = colorScale(0)}}(new_line, line_info, d);
+    var m_out = function(line, info, i,d) { 
         return function() { 
             //info.style.display = 'none';
             info.style.color = '#fff';
             //line_info.style.marginLeft = 0 + "px";
-            e.style['font-style'] = 'normal';
-            e.style.color = cs(d.visits)}}(new_line, line_info, i,d);
+            line.style['font-style'] = 'normal';
+            colorLine(d, cs, new_line, parent)}}(new_line, line_info, i,d);
     
     new_line.onmouseenter = m_enter;
     line_info.onmouseenter = m_enter;

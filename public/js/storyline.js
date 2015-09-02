@@ -64,8 +64,12 @@ function requestSubtree(id,callback) {
             if (branches.length == 0) {
                 showStory(storyLine[0].id)
             }
-            if (callback !== undefined)
-                callback();
+            if (callback !== undefined) {
+                if (callback == 'click')
+                    clickStory(subtree[0])
+                else
+                    callback();
+            }
         }
       }
     return true;
