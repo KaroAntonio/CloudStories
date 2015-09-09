@@ -29,7 +29,7 @@
     //Countdown to Kickstarter
     //http://countdownjs.org/readme.html
     var c = countdown( 
-        new Date(2015, 10, 17),
+        new Date(2015, 9, 17),
         function (ts) {
             $('#countdown').html(ts.toString())
         },
@@ -90,6 +90,7 @@ onmouseout="this.src='../assets/kickstarter-logo-grey.png'" />
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/settings') }}">Settings</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>

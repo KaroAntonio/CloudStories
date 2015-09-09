@@ -17,14 +17,17 @@ Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
 Route::get('/get_subtree/{id}', ['uses' =>'StoriesController@getSubtree']);
 Route::get('/update_current_line/{id}', ['uses' =>'StoriesController@updateCurrentLine']);
 
-//DISABLE IF NOT IN USE
-Route::get('/reset_prestige', ['uses' =>'StoriesController@resetPrestige']);
-Route::get('/reset_story_visits', ['uses' =>'StoriesController@resetStoryVisits']);
+//DISABLE IF NOT IN USE *LOTS OF DANGER*
+//Route::get('/reset_prestige', ['uses' =>'StoriesController@resetPrestige']);
+//Route::get('/reset_story_visits', ['uses' =>'StoriesController@resetStoryVisits']);
 
 Route::post('/store', 'StoriesController@store');
+Route::get('/opt_out', 'UsersController@optOut');
+Route::get('/opt_in', 'UsersController@optIn');
 
 Route::get('home', 'StoriesController@begin');
 Route::get('welcome', 'WelcomeController@welcome');
+Route::get('settings', 'UsersController@settings');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

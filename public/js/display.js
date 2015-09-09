@@ -2,6 +2,7 @@ function drawAll() {
     drawStoryLine();
     drawBranches();
     drawStats();
+    //drawBackground();
 }
 
 function drawStoryLine() {
@@ -139,7 +140,7 @@ function drawLine(d, cs, parent) {
     var m_out = function(line, info, i,d) { 
         return function() { 
             //info.style.display = 'none';
-            info.style.color = '#fff';
+            info.style.color = 'transparent';
             //line_info.style.marginLeft = 0 + "px";
             line.style['font-style'] = 'normal';
             colorLine(d, cs, new_line, parent)}}(new_line, line_info, i,d);

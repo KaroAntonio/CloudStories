@@ -1,5 +1,5 @@
 <div id='container'>
-<div id='story_line_container'>
+<div id='story_line_container' class='story_line_container_shadows'>
     <div class='valign bottom'>
         <div id='story_line'></div>
     </div>
@@ -21,7 +21,7 @@
 </div>
 </div>
 </div>
-
+<div id='background'></div>
 <!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -37,6 +37,11 @@
 <script src="js/storyline.js" type="text/javascript"></script>
 <script src="js/cookies.js" type="text/javascript"></script>
 <script src="js/display.js" type="text/javascript"></script>
+<script src="js/sketch.js" type="text/javascript"></script>
+<!--P5.JS-->
+<script language="javascript" src="p5/p5.js"></script>
+<script language="javascript" src="p5/addons/p5.dom.js"></script>
+<script language="javascript" src="p5/addons/p5.sound.js"></script>
 
 <script>
 var w = window,
@@ -133,5 +138,4 @@ if (user != null) {
         'click')
 }
 else drawAll();
-
 </script>
