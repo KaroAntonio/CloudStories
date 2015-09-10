@@ -73,7 +73,8 @@ class UsersController extends Controller {
     
     public function settings()
     {
-        return view('settings');
+        $optStatus = Auth::user()->wants_mail;
+        return view('settings',compact('optStatus'));
     }
     
     /**
@@ -86,12 +87,14 @@ class UsersController extends Controller {
     {
         Auth::user()->wants_mail = 0;
         Auth::user()->save();
+        return Auth::user()->wants_mail;
     }
     
     public function optIn()
     {
         Auth::user()->wants_mail = 1;
         Auth::user()->save();
+        return Auth::user()->wants_mail;
     }
 
 	/**

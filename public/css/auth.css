@@ -35,6 +35,15 @@
         text-decoration: none;
         color: #FF6666;
     }
+    
+    .words_link a:hover {
+        background-image: url('../assets/ink-oil.gif');
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+        color: #FF6666;
+    }
 }  
 
 .kickstarter-logo {

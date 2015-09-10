@@ -20,8 +20,24 @@ a:hover {
 }
 
 #centered {
-    padding-top: 20%;
+    padding-top: 16%;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: left;
+    width: 400px;
+}
+
+.inline {
+    font-size: 30px;
+    color: #aaa;
+    display: inline;
+}
+
+#container {
+    width: inherit;
+}
+
+.bordered {
+    border: #bbb solid 3px;
+    padding: 10px;
 }
