@@ -19,8 +19,124 @@
     src: url(../fonts/LetterGothicNormal.ttf);
 }
 
+@font-face {
+    font-family: apple;
+    src: url(../fonts/Apple.ttf);
+}
+
+@font-face {
+    font-family: thin_pixel;
+    src: url(../fonts/thin_pixel-7.ttf);
+}
+
+@font-face {
+    font-family: munro;
+    src: url(../fonts/munro/Munro.ttf);
+}
+
+@font-face {
+    font-family: freepixel;
+    src: url(../fonts/FreePixel.ttf);
+}
+
+@font-face {
+    font-family: pr;
+    src: url(../fonts/pr/PRNumber3.ttf);
+}
+
+@font-face {
+    font-family: shaston320;
+    src: url(../fonts/shaston/Shaston320.ttf);
+}
+
+@font-face {
+    font-family: LCDSolid;
+    src: url(../fonts/LCD_Solid.ttf);
+}
+
+@font-face {
+    font-family: mozart;
+    src: url(../fonts/MOZART_0.ttf);
+}
+
+@font-face {
+    font-family: info;
+    src: url(../fonts/informa/INFO56_0.ttf);
+}
+
+@font-face {
+    font-family: shy;
+    src: url(../fonts/shylock_nbp.ttf);
+}
+
+@font-face {
+    font-family: glasstown;
+    src: url(../fonts/glasstown_nbp.ttf);
+}
+
+@font-face {
+    font-family: guru;
+    src: url(../fonts/GURU0.ttf);
+}
+
+@font-face {
+    font-family: mercutio;
+    src: url(../fonts/mercutio/mercutio_sc.ttf);
+}
+
+@font-face {
+    font-family: hello;
+    src: url(../fonts/hellovetica.ttf);
+}
+
+@font-face {
+    font-family: fs;
+    src: url(../fonts/fs_songarak.ttf);
+}
+
+@font-face {
+    font-family: rosen;
+    src: url(../fonts/rosenguild/ROSEN_0.ttf);
+}
+
+@font-face {
+    font-family: adv_pixel;
+    src: url(../fonts/advanced_pixel-7.ttf);
+}
+
+@font-face {
+    font-family: perf_pixel;
+    src: url(../fonts/perfect_pixel/PerfectPixel.ttf);
+}
+
+@font-face {
+    font-family: high_pixel;
+    src: url(../fonts/high_pixel-7.ttf);
+}
+
+@font-face {
+    font-family: goethe;
+    src: url(../fonts/goethe/Goethe.ttf);
+}
+
+@font-face {
+    font-family: graph;
+    src: url(../fonts/Graph-35-pix.ttf);
+}
+
+@font-face { 
+    font-family: moonphase;
+    src: url(../fonts/moonphase.ttf);
+}
+
+@font-face { 
+    font-family: retro;
+    src: url(../fonts/retro.ttf);
+}
+
+
 html {
-  font-family: sans-serif;
+  font-family: freepixel; /*shy, freepixel, fs, info, perf_pixel, ~ pr ~moonphase*/
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
     height: 100%;

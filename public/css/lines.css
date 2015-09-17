@@ -8,9 +8,11 @@
     src: url(../fonts/OldNewspaperTypes.ttf);
 }
 
+
+
 html, body {
     height: 100%;
-    /*font-family: newspaper;*/
+    /*font-family: apple;*/
 }
 
 #container {
@@ -115,7 +117,7 @@ html, body {
 .valign.middle > div { vertical-align: middle; }
 
 .line {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     position: relative;
     display: block;
@@ -144,6 +146,7 @@ html, body {
 
 #text_form {
     text-align: center;
+    padding-top: 5px;
 }
 
 #line {
@@ -158,7 +161,8 @@ html, body {
 }
 
 #add_line_button {
-    line-height: 50px;
+    font-family: sans-serif;
+    line-height: 10px;
     margin-left: 15px;
     font-size: 25px;
     display:inline-block;

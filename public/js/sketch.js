@@ -6,23 +6,19 @@ function setup() {
     //console.log(stringColor('moondrop', forwardColor))
 }
 
-function drawBackground() {
-    renderStoryShells();
-}
-
 function renderStoryShells() {
     //$('#story_line').css('background', '#fff')
     //$('.line').css('color', '#fff')
     background('#fff')
     var s = 50;
     for (var i = storyLine.length - 1; i >= 0; i--) {
-        fill(stringColor(storyLine[i].line, forwardColor))
+        fill(stringColor(storyLine[i].line, forwardColor, 0.95))
         noStroke();
         ellipse(window.innerWidth/2, window.innerHeight/2, i*s, i*s)    
     }
 }
 
-function stringColor(w,c) {
+function stringColor(w,c, s) {
     //returns a hexcode interpretation of a string
     var sum = 0;
     for (var i = 0; i < w.length; i++) {
@@ -32,7 +28,7 @@ function stringColor(w,c) {
         sum+= 13118481
         //sum += parseInt(c.substring(1,6), 16);
     //Modulus the max value for a 6 digit hex
-    return shadeColor(("#" + (sum%16777215).toString(16)), 0.95)
+    return shadeColor(("#" + (sum%16777215).toString(16)), s)
 }
 
 //http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors

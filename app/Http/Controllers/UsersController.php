@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use Mail;
 
 use Illuminate\Http\Request;
 
@@ -70,6 +71,20 @@ class UsersController extends Controller {
 	{
 		//
 	}
+    
+    public function sendVerificationEmail() {
+        $user = null;
+        try {
+            Mail::send('emails.verification', ['user' => $user] , function ($m)  use ($user){
+                $m->from('us@example.com', 'Laravel');
+                $m->to('karoantonio@gmail.com', 'Hamurabi')->subject('I am seeking warmth peoples!');
+            });
+        } catch (Exception $e) {
+            dd('Errrrrp');
+        }
+        
+        return 'Success!';
+    }
     
     public function settings()
     {

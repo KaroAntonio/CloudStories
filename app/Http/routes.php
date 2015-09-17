@@ -20,6 +20,7 @@ Route::get('/update_current_line/{id}', ['uses' =>'StoriesController@updateCurre
 //DISABLE IF NOT IN USE *LOTS OF DANGER*
 //Route::get('/reset_prestige', ['uses' =>'StoriesController@resetPrestige']);
 //Route::get('/reset_story_visits', ['uses' =>'StoriesController@resetStoryVisits']);
+Route::get('/email_test', 'UsersController@sendVerificationEmail');
 
 Route::post('/store', 'StoriesController@store');
 Route::get('/opt_out', 'UsersController@optOut');

@@ -1,0 +1,1 @@
+click here to verify your email {{md5(uniqid(rand(), true))}}

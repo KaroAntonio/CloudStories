@@ -7,7 +7,7 @@
 @section('content')
 <div id="centered">
 <div id="container" class="">
-<div class="inline">Email: </div>
+<div class="inline">Email List: </div>
 <div id="optToggle" class="button inline" onclick="toggleOptStatus()"></div>
 <div class="button words_link">
     <a href="{{ url('/') }}"> back to the words </a>

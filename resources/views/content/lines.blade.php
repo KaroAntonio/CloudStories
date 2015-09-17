@@ -20,28 +20,29 @@
 <div id='user_stats'></div>
 </div>
 </div>
+    <div id='tree_container'></div>
 </div>
 <div id='background'></div>
-<!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<!--<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>-->
 <!--
 <script src="/jspos/lexer.js" type="text/javascript"></script>
 <script src="/jspos/lexicon.js" type="text/javascript"></script>
 <script src="/jspos/POSTagger.js" type="text/javascript"></script>
 -->
-<!--My JS-->
-<script src="js/colors.js" type="text/javascript"></script>
-<script src="js/helpers.js" type="text/javascript"></script>
-<script src="js/storyline.js" type="text/javascript"></script>
-<script src="js/cookies.js" type="text/javascript"></script>
-<script src="js/display.js" type="text/javascript"></script>
-<script src="js/sketch.js" type="text/javascript"></script>
 <!--P5.JS-->
 <script language="javascript" src="p5/p5.js"></script>
 <script language="javascript" src="p5/addons/p5.dom.js"></script>
 <script language="javascript" src="p5/addons/p5.sound.js"></script>
+<!--My JS-->
+<script src="js/colors.js" type="text/javascript"></script>
+<script src="js/helpers.js" type="text/javascript"></script>
+<script src="js/storyline.js" type="text/javascript"></script>
+<script src="js/tree.js" type="text/javascript"></script>
+<script src="js/cookies.js" type="text/javascript"></script>
+<script src="js/display.js" type="text/javascript"></script>
+<script src="js/sketch.js" type="text/javascript"></script>
+
 
 <script>
 var w = window,
@@ -54,6 +55,7 @@ var w = window,
 //GET PHP vars
 var stories = <?php echo json_encode($stories); ?>,
     user = <?php echo json_encode(Auth::user()); ?>;
+    
     
 var storyLine,
     branches,
@@ -70,10 +72,20 @@ var fontSize = 30,
     formXOffset = 320,
     formButtonYOffset = 25,
     maxBranches = 3,
-    branchOffset = 5;
-    storyLineOffset = 5;
-    maxLineChars = 44
+    branchOffset = 5,
+    storyLineOffset = 5,
+    maxLineChars = 44,
+    enableWarning = true,
     debug = true;
+    
+//D3 Tree Layout    
+//Tree Projection
+var diagonal;
+var tree,
+    svg;
+var node_i = 0,
+    duration = 750,
+    root;
     
 //Color Scheme   
 var backgroundColor = '#f0f0f0';
@@ -116,8 +128,10 @@ d3.select("body").on("keyup", function() {
 //SET Curser
 document.getElementsByTagName("body")[0].style.cursor = "default";
 //SET form listeners
-$('#line').on('focus', displayAlphaWarning);
-$('#line').on('focusout', hideAlphaWarning);
+if (enableWarning) {
+    $('#line').on('focus', displayAlphaWarning);
+    $('#line').on('focusout', hideAlphaWarning);
+}
     
 disable_form('#line_form');
 buildStoryLine(1);
@@ -138,4 +152,7 @@ if (user != null) {
         'click')
 }
 else drawAll();
+    
+    
+
 </script>

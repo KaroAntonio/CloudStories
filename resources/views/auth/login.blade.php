@@ -61,8 +61,8 @@
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot the Magic Word?</a>
+                                <!--ADD FEATURE-->
+								<!--<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot the Magic Word?</a>-->
 							</div>
 						</div>
 					</form>

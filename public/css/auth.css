@@ -12,8 +12,8 @@
     width: 100%;
     text-align: center;
     color: #ddd;
-    font-size: 120px;
-    
+    font-family: info;
+    font-size: 160px; /*120*/
 }
 
 .title a { 

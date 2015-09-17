@@ -3,6 +3,15 @@ function drawAll() {
     drawBranches();
     drawStats();
     //drawBackground();
+    //drawTree();
+}
+
+function drawTree() {
+    initTree();
+}
+
+function drawBackground() {
+    renderStoryShells();
 }
 
 function drawStoryLine() {
@@ -17,8 +26,14 @@ function drawStoryLine() {
 function drawBranches() {
     
     //Color Input Line
+    var formOutlineColor = '#eee'
     var shadowStyle = 'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px ' + forwardColor;
     var unShadow = 'inset 0 0 0px ' + forwardColor;
+    $('#line').css('border-color', formOutlineColor);
+    $('#line')[0].style['boxShadow'] = unShadow;
+    $('#line')[0].style['MozBoxShadow'] = unShadow;
+    $('#line')[0].style['WebKitBoxShadow'] = unShadow;
+    
     $('#line').focus(
     function(){
         //$(this).css('webkitBoxShadow', maxBranchColor);
@@ -30,7 +45,7 @@ function drawBranches() {
     $('#line').blur(
     function(){
         //$(this).css('webkitBoxShadow', maxBranchColor);
-        $(this).css('border-color', '#cccccc');
+        $(this).css('border-color', formOutlineColor);
         $(this)[0].style['boxShadow'] = unShadow;
         $(this)[0].style['MozBoxShadow'] = unShadow;
         $(this)[0].style['WebKitBoxShadow'] = unShadow;
@@ -81,8 +96,11 @@ function drawBranches() {
         });
         
         //SET Branch Color Scale
+        var bc = backColor
+        if (branches[0].visits == 0)
+            bc = maxBranchColor
         branchColorScale = d3.scale.linear()
-            .range([backColor, maxBranchColor ]) 
+            .range([bc, maxBranchColor ]) 
             .domain([0, branches[0].visits])
             .clamp(true);
         
