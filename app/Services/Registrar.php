@@ -2,6 +2,7 @@
 
 use App\User;
 use Validator;
+use UsersController;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
 class Registrar implements RegistrarContract {
@@ -39,6 +40,7 @@ class Registrar implements RegistrarContract {
             'preferences' => "",
             'current_line' => 1,
 			'password' => bcrypt($data['password']),
+            'validation_key' => md5(uniqid(rand(), true)),
 		]);
 	}
 

@@ -4768,7 +4768,6 @@ a.thumbnail.active {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  border-radius: 4px;
 }
 .alert h4 {
   margin-top: 0;
@@ -4830,7 +4829,6 @@ a.thumbnail.active {
 }
 .alert-danger {
   background-color: #f2dede;
-  border-color: #ebccd1;
   color: #a94442;
 }
 .alert-danger hr {

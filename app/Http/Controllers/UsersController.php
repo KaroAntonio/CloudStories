@@ -1,11 +1,12 @@
 <?php namespace App\Http\Controllers;
 
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use Mail;
-
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class UsersController extends Controller {
 
@@ -72,18 +73,45 @@ class UsersController extends Controller {
 		//
 	}
     
-    public function sendVerificationEmail() {
+    public function sendValidationEmail() {
         $user = null;
         try {
-            Mail::send('emails.verification', ['user' => $user] , function ($m)  use ($user){
-                $m->from('us@example.com', 'Laravel');
-                $m->to('karoantonio@gmail.com', 'Hamurabi')->subject('I am seeking warmth peoples!');
+            Mail::send('emails.validation', ['user' => $user] , function ($m)  use ($user){
+                $m->from('mailbot@wrdcvlt.com', 'wrdcvlt');
+                $m->to('karoantonio@gmail.com', 'The Cvlt')->subject('Prove yourself to the cvlt');
             });
         } catch (Exception $e) {
-            dd('Errrrrp');
+            dd('Validation Email Send Failure');
         }
-        
-        return 'Success!';
+    }
+    
+    public function updatePreferences(Request $request)
+    {
+        $preferences = $request->all();
+        Auth::user()->preferences = json_encode($preferences);
+        Auth::user()->save();
+        return response()->json($preferences);
+    }
+    
+    public function onRegister()
+    {
+        $this->sendValidationEmail();
+        return redirect('/');
+    }
+    
+    public function validateEmail($validation_key) 
+    {
+        //Validate User Email
+        if (Auth::user() != null) {
+            if (Auth::user()->validation_key == $validation_key) {
+                Auth::user()->validated = true;
+                Auth::user()->save();
+            } 
+        } else {
+            $msg = 'Log in and follow the validation link again to validate, please.';
+            return view('auth.login', compact('msg'));
+        }
+        return redirect('/');
     }
     
     public function settings()
@@ -120,7 +148,18 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        if (Auth::user() == null) {
+            return ('Who are you?');    
+        }
+        if (Auth::user()->id == 1) {
+            $user = User::find($id);
+            if ($user == null) 
+                return ('user does not exist');
+            $user->delete();
+            return ($user->email." destroyed");
+        } else {
+            return ('You do not have that power');
+        }
 	}
 
 }

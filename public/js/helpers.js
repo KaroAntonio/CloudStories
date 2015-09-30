@@ -1,5 +1,4 @@
 //Helper Functions
-
 function listen_for_bumps() {
     //RECEIVE SERVER DATA
     //check for browser support
@@ -20,6 +19,38 @@ function listen_for_bumps() {
             }
         };
     }
+}
+
+function initPrefs(p) {
+    //initialize uninitialize prefs
+    if (!('tips_enabled' in p))
+        p['tips_enabled'] = true;
+    else {
+        if (p['tips_enabled'] === "true")
+            p['tips_enabled'] = true;
+        else p['tips_enabled'] = false;
+    }
+    return p;
+}
+
+function postPreferences(p) {
+    //http://laravel.io/forum/04-03-2014-simple-ajax-post-response-in-laravel-4
+    $.ajaxSetup({
+       headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
+    var posting = $.post( 'update_prefs', p, onSuccess );
+}
+
+function onSuccess(data, status, xhr)
+			{
+				console.log(data, status, xhr);
+			}
+
+function stripHTML(html)
+{
+   var tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent || tmp.innerText || "";
 }
 
 function disable_form(tag) {

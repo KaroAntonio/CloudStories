@@ -20,6 +20,8 @@
 <div id='user_stats'></div>
 </div>
 </div>
+    <div id='tips_container'>
+    </div>
     <div id='tree_container'></div>
 </div>
 <div id='background'></div>
@@ -33,16 +35,17 @@
 <!--P5.JS-->
 <script language="javascript" src="p5/p5.js"></script>
 <script language="javascript" src="p5/addons/p5.dom.js"></script>
-<script language="javascript" src="p5/addons/p5.sound.js"></script>
+<!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
 <script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
+<script src="js/tips.js" type="text/javascript"></script>
+<script src="js/tip_library.js" type="text/javascript"></script>
 <script src="js/storyline.js" type="text/javascript"></script>
 <script src="js/tree.js" type="text/javascript"></script>
 <script src="js/cookies.js" type="text/javascript"></script>
 <script src="js/display.js" type="text/javascript"></script>
 <script src="js/sketch.js" type="text/javascript"></script>
-
 
 <script>
 var w = window,
@@ -54,8 +57,8 @@ var w = window,
 
 //GET PHP vars
 var stories = <?php echo json_encode($stories); ?>,
-    user = <?php echo json_encode(Auth::user()); ?>;
-    
+    user = <?php echo json_encode(Auth::user()); ?>,
+    preferences;
     
 var storyLine,
     branches,
@@ -75,7 +78,9 @@ var fontSize = 30,
     branchOffset = 5,
     storyLineOffset = 5,
     maxLineChars = 44,
-    enableWarning = true,
+    enableWarning = true, //Input warning that lines will not be commited
+    tips_enabled = true,
+    visited = false, //the site has been visited before
     debug = true;
     
 //D3 Tree Layout    
@@ -125,18 +130,35 @@ d3.select("body").on("keyup", function() {
     releaseKey(d3.event.keyCode);
 });
 
-//SET Curser
+//INITIALIZE Preferences
+try {
+    preferences = JSON.parse(user.preferences);
+} catch (e){
+    preferences = {}
+}
+initPrefs(preferences);
+    
+//INITIALIZE Tips
+if (user != null) {
+    tips_enabled = preferences['tips_enabled']
+} else {
+    tips_enabled = !is_cookie("tips_enabled");
+}
+initTips();
+
+//SET Cursor
 document.getElementsByTagName("body")[0].style.cursor = "default";
 //SET form listeners
 if (enableWarning) {
     $('#line').on('focus', displayAlphaWarning);
     $('#line').on('focusout', hideAlphaWarning);
 }
-    
+
 disable_form('#line_form');
 buildStoryLine(1);
 listen_for_bumps();
 
+//DISPLAY current lines
 if (user != null) {
     if (user['line_ids'] != "")
         num_lines = JSON.parse(user['line_ids']).length;
@@ -152,7 +174,5 @@ if (user != null) {
         'click')
 }
 else drawAll();
-    
-    
 
 </script>

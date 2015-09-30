@@ -38,7 +38,9 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function postRegister(Request $request)
 	{
-		$validator = $this->registrar->validator($request->all());
+        //What you think should be here is in app\Services\Registrar.php
+		
+        $validator = $this->registrar->validator($request->all());
         
 		if ($validator->fails())
 		{
@@ -48,6 +50,7 @@ trait AuthenticatesAndRegistersUsers {
 		}
 		$this->auth->login($this->registrar->create($request->all()));
 		return redirect($this->redirectPath());
+        
 	}
 
 	/**

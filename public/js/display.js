@@ -24,7 +24,6 @@ function drawStoryLine() {
 }
 
 function drawBranches() {
-    
     //Color Input Line
     var formOutlineColor = '#eee'
     var shadowStyle = 'inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px ' + forwardColor;
@@ -136,7 +135,8 @@ function colorLine(d, cs, line, parent) {
 function drawLine(d, cs, parent) {
     //Draw info
     var line_info = document.createElement("DIV");
-    line_info.innerHTML = "-" + d.author_name;
+    if (d.author_name != 'Anonymous')
+        line_info.innerHTML = "-" + d.author_name;
     line_info.id = 'info_' + d.id;
     line_info.className = 'info';
     if (debug) line_info.innerHTML += " : " + d.visits + "";

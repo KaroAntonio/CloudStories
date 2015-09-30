@@ -109,6 +109,12 @@ function clickStory(d) {
 
 function submitForm() {
     var newLine = document.forms["line_form"]["line"].value.trim();
+    
+    //Strip HTML Tags
+    newLine = stripHTML(newLine);
+    //Set Line
+    $("#line").val(newLine);
+    
     var test = newLine.toLowerCase();
     
     //Validate
@@ -129,6 +135,7 @@ function submitForm() {
         }
     }
     
+    //Set Hidden Forms w Meta Data
     $('#parentID').val(storyLine[0].id);
     var userID = (user == null) ? 0 : user.id
     $('#authorID').val(userID);

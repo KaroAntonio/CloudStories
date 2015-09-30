@@ -8,8 +8,6 @@
     src: url(../fonts/OldNewspaperTypes.ttf);
 }
 
-
-
 html, body {
     height: 100%;
     /*font-family: apple;*/
@@ -36,8 +34,31 @@ html, body {
     overflow: auto;
     width: 60%;
     margin: auto auto;
-    
-    
+}
+
+#tips_container {
+    width: 60%;
+    margin: auto auto;
+    margin-top: 20px;
+    color: #FF6666;
+    font-size: 20px;
+    text-align: center;
+}
+
+#tip_default {
+    color: #ccc;
+}
+
+#tip_default:hover {
+    cursor: pointer;
+    color: #FF6666;
+}
+
+#tip_title {
+}
+
+#tip_content {
+    font-size: 16px;
 }
 
 .story_line_container_shadows {
@@ -68,7 +89,6 @@ html, body {
 }
 
 #story_line {
-    
     text-align: center;
 }
 
@@ -187,6 +207,9 @@ html, body {
   /* UNDER 500px CSS here */
     #story_break {
         width: 80%;
+    }
+    #tips_container {
+        width: 100%;
     }
     #story_line_container{
         width: 100%;

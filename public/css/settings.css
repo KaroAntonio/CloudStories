@@ -9,7 +9,6 @@ a:hover {
 }
 
 .button {
-    font-size: 30px;
     color: #aaa;
     cursor: pointer;
 }
@@ -28,12 +27,18 @@ a:hover {
 }
 
 .inline {
-    font-size: 30px;
     color: #aaa;
     display: inline;
 }
 
-#container {
+.action {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#prefs_container {
+    font-size: 30px;
+    color: #aaa;
     width: inherit;
 }
 
