@@ -11,11 +11,11 @@
 |
 */
 
+//START
+Route::get('/', 'StoriesController@begin');
+
 //Stories
-get('stories', 'StoriesController@index');
-//Route::get('/', 'StoriesController@begin');
-Route::get('/', 'WelcomeController@welcome');
-Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
+//Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
 Route::get('/get_subtree/{id}', ['uses' =>'StoriesController@getSubtree']);
 Route::get('/update_current_line/{id}', ['uses' =>'StoriesController@updateCurrentLine']);
 Route::post('/store', 'StoriesController@store');

@@ -166,7 +166,7 @@ class StoriesController extends Controller {
         $first->add($story);
         
         //Find all branches to depth d
-        $depth = 15;
+        $depth = 1;
         $branches = [ $first ]; //first level of branches
         
         for ($x = 0; $x < $depth; $x++) {
