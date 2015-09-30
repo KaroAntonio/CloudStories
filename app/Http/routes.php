@@ -13,7 +13,8 @@
 
 //Stories
 get('stories', 'StoriesController@index');
-Route::get('/', 'StoriesController@begin');
+//Route::get('/', 'StoriesController@begin');
+Route::get('/', 'WelcomeController@welcome');
 Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
 Route::get('/get_subtree/{id}', ['uses' =>'StoriesController@getSubtree']);
 Route::get('/update_current_line/{id}', ['uses' =>'StoriesController@updateCurrentLine']);
@@ -42,8 +43,8 @@ Route::get('/destroy_user/{email}', 'UsersController@destroy');
 Route::post('/update_prefs', 'UsersController@updatePreferences');
 
 
-Route::get('home', 'StoriesController@begin');
-Route::get('welcome', 'WelcomeController@welcome');
+Route::get('home', 'WelcomeController@index');
+//Route::get('home', 'StoriesController@begin');
 Route::get('settings', 'UsersController@settings');
 
 Route::controllers([

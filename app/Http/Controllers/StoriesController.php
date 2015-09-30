@@ -223,52 +223,6 @@ class StoriesController extends Controller {
     public function show($id)
     {
         return redirect('/');
-        
-        //Depricated
-        session_start(); 
-        if (isset($_SESSION["newBranch"]) && !empty($_SESSION["newBranch"])) {
-            if ($id != $_SESSION["newBranch"]) {
-                $_SESSION["lastUpdated"] = 0;
-                $_SESSION["newBranch"] = 0;
-            }
-        }
-        
-        //Find Current Story
-        $story = Story::find($id);
-        
-        //Increment Story Visits
-        $story->visits = $story->visits + 1;
-        $story->save();
-        
-        //Find Branches
-        $branches = Story::where('parentID', '=', $story->id)->get();
-        
-        //Find StoryLine
-        $storyLine = [  ];
-        
-        //ADD stories to storyline until beginning is found
-        while (true) {
-            //CHECK IF TOP
-            $siblings = Story::where('parentID', '=', $story->parentID)->get();
-            
-            $topVisits = -1;
-            for ($x = 0; $x < count($siblings); $x++) {
-                if ($siblings[$x]->visits > $topVisits){
-                    //dd($siblings);
-                    $topVisits = $siblings[$x]->visits;
-                }
-            } 
-            //dd($siblings);
-            $story->top = $story->visits >= $topVisits;
-            
-            
-            array_push( $storyLine, $story );
-            if ($story->id == 1)
-                break;
-            $story = Story::find($story->parentID);
-        }
-        $stories = [$storyLine, $branches];
-        return view('index',compact('stories'));
     }
     
     public function store()
