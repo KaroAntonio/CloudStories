@@ -25,6 +25,7 @@
     <div id='tree_container'></div>
 </div>
 <div id='background'></div>
+<!--JQUERY-->
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <!--
@@ -34,9 +35,11 @@
 -->
 <!--P5.JS-->
 <script language="javascript" src="p5/p5.js"></script>
-<script language="javascript" src="p5/addons/p5.dom.js"></script>
+<!--<script language="javascript" src="p5/addons/p5.dom.js"></script>-->
 <!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
+<script src="js/0_resource.min.js" type="text/javascript"></script>
+<!--
 <script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
 <script src="js/tips.js" type="text/javascript"></script>
@@ -46,6 +49,7 @@
 <script src="js/cookies.js" type="text/javascript"></script>
 <script src="js/display.js" type="text/javascript"></script>
 <script src="js/sketch.js" type="text/javascript"></script>
+-->
 
 <script>
 var w = window,

@@ -25,7 +25,10 @@
 </div>
 </div>
 </div>
+<script src="js/0_resource.min.js" type="text/javascript"></script>
+<!--
 <script src="js/helpers.js" type="text/javascript"></script>
+-->
 <script>
 var optStatus = JSON.parse("{{ $optStatus }}");
 var user = <?php echo json_encode(Auth::user()); ?>;

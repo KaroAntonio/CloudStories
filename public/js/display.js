@@ -135,7 +135,7 @@ function colorLine(d, cs, line, parent) {
 function drawLine(d, cs, parent) {
     //Draw info
     var line_info = document.createElement("DIV");
-    if (d.author_name != 'Anonymous')
+    if (d.author_name != 'Anonymous' && d.author_name != undefined)
         line_info.innerHTML = "-" + d.author_name;
     line_info.id = 'info_' + d.id;
     line_info.className = 'info';
