@@ -119,13 +119,14 @@ class StoriesController extends Controller {
         Auth::user()->save();
     }
     
-    public function getSubtree($id=1) 
+    public function getSubtree($id=1, $depth = 11) 
     {
         //Returns 
         //subtree of a story to a certain depth
         //a portion of the preceding storyline
         
         //Find First Story
+        
         if (Story::where('id', '=', $id)->exists() != true)
             $id=1;
         $story = Story::find($id);
@@ -166,7 +167,6 @@ class StoriesController extends Controller {
         $first->add($story);
         
         //Find all branches to depth d
-        $depth = 1;
         $branches = [ $first ]; //first level of branches
         
         for ($x = 0; $x < $depth; $x++) {
@@ -216,7 +216,7 @@ class StoriesController extends Controller {
     
     public function begin()
 	{
-        $stories = $this->getSubtree();
+        $stories = $this->getSubtree(1,1);
 		return view('index',compact('stories'));
 	}
     

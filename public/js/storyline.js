@@ -44,7 +44,7 @@ function findLine(id) {
     return null
 }
 
-function requestSubtree(id,callback) {
+function requestSubtree(id, depth, callback) {
     var xmlhttp;
     if (window.XMLHttpRequest)
       {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -55,7 +55,7 @@ function requestSubtree(id,callback) {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
       }
     if (id == undefined) id = 1;
-    xmlhttp.open("GET","/get_subtree/"+id, true);
+    xmlhttp.open("GET","/get_subtree/"+id+"/"+depth, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange=function() {
         if (xmlhttp.readyState==4 && xmlhttp.status==200) {
@@ -99,7 +99,7 @@ function clickStory(d) {
             user['experience'] += 1;
         if (d.id != -1) {
             showStory(d.id);
-            requestSubtree(d.id);
+            requestSubtree(d.id, subtree_depth);
         } else {
             $("#line").val(d.line);
             submitForm();

@@ -1,5 +1,3 @@
-//JS FILE HOLDING ALL JS FOR PRODUCTION
-
 function increase_brightness(hex, percent){
     // strip the leading # if it's there
     hex = hex.replace(/^\s*#|\s*$/g, '');
@@ -37,8 +35,318 @@ function pad(num) {
     } else {
         return num;
     }
+}/*
+ countdown.js v2.6.0 http://countdownjs.org
+ Copyright (c)2006-2014 Stephen M. McKamey.
+ Licensed under The MIT License.
+*/
+var module,countdown=function(v){function A(a,b){var c=a.getTime();a.setMonth(a.getMonth()+b);return Math.round((a.getTime()-c)/864E5)}function w(a){var b=a.getTime(),c=new Date(b);c.setMonth(a.getMonth()+1);return Math.round((c.getTime()-b)/864E5)}function x(a,b){b=b instanceof Date||null!==b&&isFinite(b)?new Date(+b):new Date;if(!a)return b;var c=+a.value||0;if(c)return b.setTime(b.getTime()+c),b;(c=+a.milliseconds||0)&&b.setMilliseconds(b.getMilliseconds()+c);(c=+a.seconds||0)&&b.setSeconds(b.getSeconds()+
+c);(c=+a.minutes||0)&&b.setMinutes(b.getMinutes()+c);(c=+a.hours||0)&&b.setHours(b.getHours()+c);(c=+a.weeks||0)&&(c*=7);(c+=+a.days||0)&&b.setDate(b.getDate()+c);(c=+a.months||0)&&b.setMonth(b.getMonth()+c);(c=+a.millennia||0)&&(c*=10);(c+=+a.centuries||0)&&(c*=10);(c+=+a.decades||0)&&(c*=10);(c+=+a.years||0)&&b.setFullYear(b.getFullYear()+c);return b}function D(a,b){return y(a)+(1===a?p[b]:q[b])}function n(){}function k(a,b,c,e,l,d){0<=a[c]&&(b+=a[c],delete a[c]);b/=l;if(1>=b+1)return 0;if(0<=a[e]){a[e]=
++(a[e]+b).toFixed(d);switch(e){case "seconds":if(60!==a.seconds||isNaN(a.minutes))break;a.minutes++;a.seconds=0;case "minutes":if(60!==a.minutes||isNaN(a.hours))break;a.hours++;a.minutes=0;case "hours":if(24!==a.hours||isNaN(a.days))break;a.days++;a.hours=0;case "days":if(7!==a.days||isNaN(a.weeks))break;a.weeks++;a.days=0;case "weeks":if(a.weeks!==w(a.refMonth)/7||isNaN(a.months))break;a.months++;a.weeks=0;case "months":if(12!==a.months||isNaN(a.years))break;a.years++;a.months=0;case "years":if(10!==
+a.years||isNaN(a.decades))break;a.decades++;a.years=0;case "decades":if(10!==a.decades||isNaN(a.centuries))break;a.centuries++;a.decades=0;case "centuries":if(10!==a.centuries||isNaN(a.millennia))break;a.millennia++;a.centuries=0}return 0}return b}function B(a,b,c,e,l,d){var f=new Date;a.start=b=b||f;a.end=c=c||f;a.units=e;a.value=c.getTime()-b.getTime();0>a.value&&(f=c,c=b,b=f);a.refMonth=new Date(b.getFullYear(),b.getMonth(),15,12,0,0);try{a.millennia=0;a.centuries=0;a.decades=0;a.years=c.getFullYear()-
+b.getFullYear();a.months=c.getMonth()-b.getMonth();a.weeks=0;a.days=c.getDate()-b.getDate();a.hours=c.getHours()-b.getHours();a.minutes=c.getMinutes()-b.getMinutes();a.seconds=c.getSeconds()-b.getSeconds();a.milliseconds=c.getMilliseconds()-b.getMilliseconds();var g;0>a.milliseconds?(g=s(-a.milliseconds/1E3),a.seconds-=g,a.milliseconds+=1E3*g):1E3<=a.milliseconds&&(a.seconds+=m(a.milliseconds/1E3),a.milliseconds%=1E3);0>a.seconds?(g=s(-a.seconds/60),a.minutes-=g,a.seconds+=60*g):60<=a.seconds&&(a.minutes+=
+m(a.seconds/60),a.seconds%=60);0>a.minutes?(g=s(-a.minutes/60),a.hours-=g,a.minutes+=60*g):60<=a.minutes&&(a.hours+=m(a.minutes/60),a.minutes%=60);0>a.hours?(g=s(-a.hours/24),a.days-=g,a.hours+=24*g):24<=a.hours&&(a.days+=m(a.hours/24),a.hours%=24);for(;0>a.days;)a.months--,a.days+=A(a.refMonth,1);7<=a.days&&(a.weeks+=m(a.days/7),a.days%=7);0>a.months?(g=s(-a.months/12),a.years-=g,a.months+=12*g):12<=a.months&&(a.years+=m(a.months/12),a.months%=12);10<=a.years&&(a.decades+=m(a.years/10),a.years%=
+10,10<=a.decades&&(a.centuries+=m(a.decades/10),a.decades%=10,10<=a.centuries&&(a.millennia+=m(a.centuries/10),a.centuries%=10)));b=0;!(e&1024)||b>=l?(a.centuries+=10*a.millennia,delete a.millennia):a.millennia&&b++;!(e&512)||b>=l?(a.decades+=10*a.centuries,delete a.centuries):a.centuries&&b++;!(e&256)||b>=l?(a.years+=10*a.decades,delete a.decades):a.decades&&b++;!(e&128)||b>=l?(a.months+=12*a.years,delete a.years):a.years&&b++;!(e&64)||b>=l?(a.months&&(a.days+=A(a.refMonth,a.months)),delete a.months,
+7<=a.days&&(a.weeks+=m(a.days/7),a.days%=7)):a.months&&b++;!(e&32)||b>=l?(a.days+=7*a.weeks,delete a.weeks):a.weeks&&b++;!(e&16)||b>=l?(a.hours+=24*a.days,delete a.days):a.days&&b++;!(e&8)||b>=l?(a.minutes+=60*a.hours,delete a.hours):a.hours&&b++;!(e&4)||b>=l?(a.seconds+=60*a.minutes,delete a.minutes):a.minutes&&b++;!(e&2)||b>=l?(a.milliseconds+=1E3*a.seconds,delete a.seconds):a.seconds&&b++;if(!(e&1)||b>=l){var h=k(a,0,"milliseconds","seconds",1E3,d);if(h&&(h=k(a,h,"seconds","minutes",60,d))&&(h=
+k(a,h,"minutes","hours",60,d))&&(h=k(a,h,"hours","days",24,d))&&(h=k(a,h,"days","weeks",7,d))&&(h=k(a,h,"weeks","months",w(a.refMonth)/7,d))){e=h;var n,p=a.refMonth,q=p.getTime(),r=new Date(q);r.setFullYear(p.getFullYear()+1);n=Math.round((r.getTime()-q)/864E5);if(h=k(a,e,"months","years",n/w(a.refMonth),d))if(h=k(a,h,"years","decades",10,d))if(h=k(a,h,"decades","centuries",10,d))if(h=k(a,h,"centuries","millennia",10,d))throw Error("Fractional unit overflow");}}}finally{delete a.refMonth}return a}
+function d(a,b,c,e,d){var f;c=+c||222;e=0<e?e:NaN;d=0<d?20>d?Math.round(d):20:0;var k=null;"function"===typeof a?(f=a,a=null):a instanceof Date||(null!==a&&isFinite(a)?a=new Date(+a):("object"===typeof k&&(k=a),a=null));var g=null;"function"===typeof b?(f=b,b=null):b instanceof Date||(null!==b&&isFinite(b)?b=new Date(+b):("object"===typeof b&&(g=b),b=null));k&&(a=x(k,b));g&&(b=x(g,a));if(!a&&!b)return new n;if(!f)return B(new n,a,b,c,e,d);var k=c&1?1E3/30:c&2?1E3:c&4?6E4:c&8?36E5:c&16?864E5:6048E5,
+h,g=function(){f(B(new n,a,b,c,e,d),h)};g();return h=setInterval(g,k)}var s=Math.ceil,m=Math.floor,p,q,r,t,u,f,y,z;n.prototype.toString=function(a){var b=z(this),c=b.length;if(!c)return a?""+a:u;if(1===c)return b[0];a=r+b.pop();return b.join(t)+a};n.prototype.toHTML=function(a,b){a=a||"span";var c=z(this),e=c.length;if(!e)return(b=b||u)?"\x3c"+a+"\x3e"+b+"\x3c/"+a+"\x3e":b;for(var d=0;d<e;d++)c[d]="\x3c"+a+"\x3e"+c[d]+"\x3c/"+a+"\x3e";if(1===e)return c[0];e=r+c.pop();return c.join(t)+e};n.prototype.addTo=
+function(a){return x(this,a)};z=function(a){var b=[],c=a.millennia;c&&b.push(f(c,10));(c=a.centuries)&&b.push(f(c,9));(c=a.decades)&&b.push(f(c,8));(c=a.years)&&b.push(f(c,7));(c=a.months)&&b.push(f(c,6));(c=a.weeks)&&b.push(f(c,5));(c=a.days)&&b.push(f(c,4));(c=a.hours)&&b.push(f(c,3));(c=a.minutes)&&b.push(f(c,2));(c=a.seconds)&&b.push(f(c,1));(c=a.milliseconds)&&b.push(f(c,0));return b};d.MILLISECONDS=1;d.SECONDS=2;d.MINUTES=4;d.HOURS=8;d.DAYS=16;d.WEEKS=32;d.MONTHS=64;d.YEARS=128;d.DECADES=256;
+d.CENTURIES=512;d.MILLENNIA=1024;d.DEFAULTS=222;d.ALL=2047;var E=d.setFormat=function(a){if(a){if("singular"in a||"plural"in a){var b=a.singular||[];b.split&&(b=b.split("|"));var c=a.plural||[];c.split&&(c=c.split("|"));for(var d=0;10>=d;d++)p[d]=b[d]||p[d],q[d]=c[d]||q[d]}"string"===typeof a.last&&(r=a.last);"string"===typeof a.delim&&(t=a.delim);"string"===typeof a.empty&&(u=a.empty);"function"===typeof a.formatNumber&&(y=a.formatNumber);"function"===typeof a.formatter&&(f=a.formatter)}},C=d.resetFormat=
+function(){p=" millisecond; second; minute; hour; day; week; month; year; decade; century; millennium".split(";");q=" milliseconds; seconds; minutes; hours; days; weeks; months; years; decades; centuries; millennia".split(";");r=" and ";t=", ";u="";y=function(a){return a};f=D};d.setLabels=function(a,b,c,d,f,k,m){E({singular:a,plural:b,last:c,delim:d,empty:f,formatNumber:k,formatter:m})};d.resetLabels=C;C();v&&v.exports?v.exports=d:"function"===typeof window.define&&"undefined"!==typeof window.define.amd&&
+window.define("countdown",[],function(){return d});return d}(module);
+//Helper Functions
+function listen_for_bumps() {
+    //RECEIVE SERVER DATA
+    //check for browser support
+    if(typeof(EventSource)!=="undefined") {
+        //create an object, passing it the name and location of the server side script
+        var eSource = new EventSource("/updateStories.php");
+        //detect message receipt
+        eSource.onmessage = function(event) {
+            //route page to new address if the parent line has a new branch
+            var data = JSON.parse(event.data);
+            if (storyLine[0]['id'] == Number(data[0])){
+                requestSubtree(Number(data[0]))
+                if (findLine(data[1]) != null) {
+                    buildStoryLine(data[1]);
+                    branches = findBranches(data[1]);
+                    drawAll();
+                }
+            }
+        };
+    }
 }
 
+function initPrefs(p) {
+    //initialize uninitialize prefs
+    if (!('tips_enabled' in p))
+        p['tips_enabled'] = true;
+    else {
+        if (p['tips_enabled'] === "true")
+            p['tips_enabled'] = true;
+        else p['tips_enabled'] = false;
+    }
+    return p;
+}
+
+function postPreferences(p) {
+    //http://laravel.io/forum/04-03-2014-simple-ajax-post-response-in-laravel-4
+    $.ajaxSetup({
+       headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
+    var posting = $.post( 'update_prefs', p, onSuccess );
+}
+
+function onSuccess(data, status, xhr)
+			{
+				console.log(data, status, xhr);
+			}
+
+function stripHTML(html)
+{
+   var tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent || tmp.innerText || "";
+}
+
+function disable_form(tag) {
+    //Disable enter submit
+    $(tag).on("keyup keypress", function(e) {
+        var code = e.keyCode || e.which; 
+        if (code  == 13) {               
+            e.preventDefault();
+            return false;
+        }
+    });
+}
+
+function releaseKey(code) {
+    if (code == 16)
+        shiftDown = false;
+}
+    
+function triggerKey(code) {
+    //Disable Keys if form is active
+    if (document.activeElement.name == 'line') {
+        if (code == 13) submitForm();
+        return
+    }
+    
+    //On enter key, 'click' selected branch
+    if (code == 13) {
+        if (selected == null)
+            clickStory(storyLine[0])
+        else
+            clickStory(selected);
+    } else if (code == 16) {
+        shiftDown = true;
+        if (storyLine.length > 0)
+                clickStory(storyLine[1]);
+    } else if (code == 38 && shiftDown) {
+        if (storyLine.length > 0)
+                clickStory(storyLine[1]);
+    }
+}
+function buildStoryLine(id) {
+    if (findLine(id) == null)
+        return;
+    
+    //Build Story Line
+    storyLine = [findLine(id)];
+    storyLine[0].top = isTop(id);
+    
+    while (storyLine[storyLine.length-1].id != 1) {
+        var newLine = findLine(storyLine[storyLine.length-1].parentID);
+        //Because not all stories are sent in request
+        //A null line will be found
+        if (newLine == null) break;
+        newLine.top = isTop(newLine.id);
+        storyLine.push(newLine);
+    }
+    branches = findBranches(storyLine[0].id);
+}
+
+function isTop(id){
+    var line = findLine(id);
+    var siblings = findBranches(line.parentID);
+    var topVisits = 0;
+    for (var i = 0; i < siblings.length; i++) 
+            if (Number(siblings[i].visits) > topVisits) 
+                topVisits = siblings[i].visits;
+    return Number(line.visits) >= Number(topVisits);
+}
+
+function findBranches(id) {
+    var new_branches = [];
+    for(i = 0; i < stories.length; i++) {
+        if (stories[i].parentID == id) {
+            new_branches.push(stories[i]);
+        }
+    }
+    return new_branches;
+}
+
+function findLine(id) {
+    for (i = 0; i < stories.length; i++) 
+        if (stories[i].id == id)
+            return stories[i]
+    return null
+}
+
+function requestSubtree(id, depth, callback) {
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    if (id == undefined) id = 1;
+    xmlhttp.open("GET","/get_subtree/"+id+"/"+depth, true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            var subtree = eval("(" + xmlhttp.responseText + ")");
+            appendSubtree(subtree);
+            if (branches.length == 0) {
+                showStory(storyLine[0].id)
+            }
+            if (callback !== undefined) {
+                if (callback == 'click')
+                    clickStory(subtree[0])
+                else
+                    callback();
+            }
+        }
+      }
+    return true;
+}
+
+function appendSubtree(subtree) {
+    storyIDs = [];
+    for (var i = 0; i < stories.length; i++)
+        storyIDs.push(Number(stories[i].id))
+    
+    for (var i = 0; i < subtree.length; i++) 
+        if (storyIDs.indexOf(Number(subtree[i].id)) == -1) 
+            stories.push(subtree[i]);
+}
+
+function showStory(id) {
+    buildStoryLine(id);
+    branches = findBranches(id);
+    drawAll();
+}
+
+function clickStory(d) {
+    if (d != null)
+        set_cookie( "last_line_id", d.id, 200 );
+    if (d != null) {
+        if (user != null)
+            user['experience'] += 1;
+        if (d.id != -1) {
+            showStory(d.id);
+            requestSubtree(d.id, subtree_depth);
+        } else {
+            $("#line").val(d.line);
+            submitForm();
+        }
+    }
+}
+
+function submitForm() {
+    var newLine = document.forms["line_form"]["line"].value.trim();
+    
+    //Strip HTML Tags
+    newLine = stripHTML(newLine);
+    //Set Line
+    $("#line").val(newLine);
+    
+    var test = newLine.toLowerCase();
+    
+    //Validate
+    //Discard empty lines
+    if (test == "") {
+        if (branches != 0)
+            clickStory(branches[0])
+        return
+    }
+        
+    //Check for duplicates
+    var siblings = findBranches(storyLine[0].id);
+    for (var i = 0; i < siblings.length; i++) {
+        if (siblings[i].line.toLowerCase() == test) {
+            clickStory(siblings[i]);
+            $("#line").val("");
+            return;
+        }
+    }
+    
+    //Set Hidden Forms w Meta Data
+    $('#parentID').val(storyLine[0].id);
+    var userID = (user == null) ? 0 : user.id
+    $('#authorID').val(userID);
+    
+    var posting = $.post( 'store', $("#line_form").serialize() );
+    
+    $("#line").val("");
+    posting.done(function( data ) {
+        num_lines ++;
+        appendSubtree([data]);
+        clickStory(data);
+    });
+}
+function initTips() {
+    //initialize listeners on all dom elements
+    hideTip();
+    var tip_keys = Object.keys(tip_library);
+    for (var i = 0; i < tip_keys.length; i++){   
+        $(tip_keys[i]).on('mouseover',function(tip_key){
+            return function() {
+                showTip(tip_key);
+            };
+        }(tip_keys[i]))
+        $(tip_keys[i]).on('mouseout',function(tip_key){
+            return function() {
+                hideTip(tip_key);
+            };
+        }(tip_keys[i]))
+    }
+}
+
+function disableTips() {
+    tips_enabled = false;
+    $('#tips_container')[0].innerHTML = "";
+    preferences['tips_enabled'] = false;
+    console.log(preferences)
+    postPreferences(preferences);
+    set_cookie( "tips_enabled", false, 200 );
+}
+
+function hideTip(tip_key) {
+    //Clear tips and potentially show a default tip
+    if (tips_enabled) {
+        //$('#tips_container')[0].innerHTML = "<div id='tip_default' onclick='disableTips()'>Turn off Tips</div>";
+        showTip('default');
+        $(tip_key).css('background','transparent')
+        $(tip_key).css('border','none')
+    }
+}
+
+function showTip(tip_key) {
+    if (tips_enabled) {
+        var tip = tip_library[tip_key];
+        $('#tips_container')[0].innerHTML = "";
+        var content = "<div id='tip_title'>"+tip.title+"</div>"
+            +"<div id='tip_content'>"+tip.content+"</div>";
+        $('#tips_container')[0].innerHTML = content;
+        //$(tip_key).css('background','#fcfcfc')
+        //$(tip_key).css('border','dashed 2px #FF6666')
+    }
+}
 function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain ) {
     // http://www.thesitewizard.com/javascripts/cookies.shtml
     var domain_string = valid_domain ? ("; domain=" + valid_domain) : '' ;
@@ -65,30 +373,7 @@ function get_cookie ( cookie_name )
         return decodeURIComponent ( cookie_value[1] ) ;
     }
     return '' ;
-}
-
-/*
- countdown.js v2.6.0 http://countdownjs.org
- Copyright (c)2006-2014 Stephen M. McKamey.
- Licensed under The MIT License.
-*/
-var module,countdown=function(v){function A(a,b){var c=a.getTime();a.setMonth(a.getMonth()+b);return Math.round((a.getTime()-c)/864E5)}function w(a){var b=a.getTime(),c=new Date(b);c.setMonth(a.getMonth()+1);return Math.round((c.getTime()-b)/864E5)}function x(a,b){b=b instanceof Date||null!==b&&isFinite(b)?new Date(+b):new Date;if(!a)return b;var c=+a.value||0;if(c)return b.setTime(b.getTime()+c),b;(c=+a.milliseconds||0)&&b.setMilliseconds(b.getMilliseconds()+c);(c=+a.seconds||0)&&b.setSeconds(b.getSeconds()+
-c);(c=+a.minutes||0)&&b.setMinutes(b.getMinutes()+c);(c=+a.hours||0)&&b.setHours(b.getHours()+c);(c=+a.weeks||0)&&(c*=7);(c+=+a.days||0)&&b.setDate(b.getDate()+c);(c=+a.months||0)&&b.setMonth(b.getMonth()+c);(c=+a.millennia||0)&&(c*=10);(c+=+a.centuries||0)&&(c*=10);(c+=+a.decades||0)&&(c*=10);(c+=+a.years||0)&&b.setFullYear(b.getFullYear()+c);return b}function D(a,b){return y(a)+(1===a?p[b]:q[b])}function n(){}function k(a,b,c,e,l,d){0<=a[c]&&(b+=a[c],delete a[c]);b/=l;if(1>=b+1)return 0;if(0<=a[e]){a[e]=
-+(a[e]+b).toFixed(d);switch(e){case "seconds":if(60!==a.seconds||isNaN(a.minutes))break;a.minutes++;a.seconds=0;case "minutes":if(60!==a.minutes||isNaN(a.hours))break;a.hours++;a.minutes=0;case "hours":if(24!==a.hours||isNaN(a.days))break;a.days++;a.hours=0;case "days":if(7!==a.days||isNaN(a.weeks))break;a.weeks++;a.days=0;case "weeks":if(a.weeks!==w(a.refMonth)/7||isNaN(a.months))break;a.months++;a.weeks=0;case "months":if(12!==a.months||isNaN(a.years))break;a.years++;a.months=0;case "years":if(10!==
-a.years||isNaN(a.decades))break;a.decades++;a.years=0;case "decades":if(10!==a.decades||isNaN(a.centuries))break;a.centuries++;a.decades=0;case "centuries":if(10!==a.centuries||isNaN(a.millennia))break;a.millennia++;a.centuries=0}return 0}return b}function B(a,b,c,e,l,d){var f=new Date;a.start=b=b||f;a.end=c=c||f;a.units=e;a.value=c.getTime()-b.getTime();0>a.value&&(f=c,c=b,b=f);a.refMonth=new Date(b.getFullYear(),b.getMonth(),15,12,0,0);try{a.millennia=0;a.centuries=0;a.decades=0;a.years=c.getFullYear()-
-b.getFullYear();a.months=c.getMonth()-b.getMonth();a.weeks=0;a.days=c.getDate()-b.getDate();a.hours=c.getHours()-b.getHours();a.minutes=c.getMinutes()-b.getMinutes();a.seconds=c.getSeconds()-b.getSeconds();a.milliseconds=c.getMilliseconds()-b.getMilliseconds();var g;0>a.milliseconds?(g=s(-a.milliseconds/1E3),a.seconds-=g,a.milliseconds+=1E3*g):1E3<=a.milliseconds&&(a.seconds+=m(a.milliseconds/1E3),a.milliseconds%=1E3);0>a.seconds?(g=s(-a.seconds/60),a.minutes-=g,a.seconds+=60*g):60<=a.seconds&&(a.minutes+=
-m(a.seconds/60),a.seconds%=60);0>a.minutes?(g=s(-a.minutes/60),a.hours-=g,a.minutes+=60*g):60<=a.minutes&&(a.hours+=m(a.minutes/60),a.minutes%=60);0>a.hours?(g=s(-a.hours/24),a.days-=g,a.hours+=24*g):24<=a.hours&&(a.days+=m(a.hours/24),a.hours%=24);for(;0>a.days;)a.months--,a.days+=A(a.refMonth,1);7<=a.days&&(a.weeks+=m(a.days/7),a.days%=7);0>a.months?(g=s(-a.months/12),a.years-=g,a.months+=12*g):12<=a.months&&(a.years+=m(a.months/12),a.months%=12);10<=a.years&&(a.decades+=m(a.years/10),a.years%=
-10,10<=a.decades&&(a.centuries+=m(a.decades/10),a.decades%=10,10<=a.centuries&&(a.millennia+=m(a.centuries/10),a.centuries%=10)));b=0;!(e&1024)||b>=l?(a.centuries+=10*a.millennia,delete a.millennia):a.millennia&&b++;!(e&512)||b>=l?(a.decades+=10*a.centuries,delete a.centuries):a.centuries&&b++;!(e&256)||b>=l?(a.years+=10*a.decades,delete a.decades):a.decades&&b++;!(e&128)||b>=l?(a.months+=12*a.years,delete a.years):a.years&&b++;!(e&64)||b>=l?(a.months&&(a.days+=A(a.refMonth,a.months)),delete a.months,
-7<=a.days&&(a.weeks+=m(a.days/7),a.days%=7)):a.months&&b++;!(e&32)||b>=l?(a.days+=7*a.weeks,delete a.weeks):a.weeks&&b++;!(e&16)||b>=l?(a.hours+=24*a.days,delete a.days):a.days&&b++;!(e&8)||b>=l?(a.minutes+=60*a.hours,delete a.hours):a.hours&&b++;!(e&4)||b>=l?(a.seconds+=60*a.minutes,delete a.minutes):a.minutes&&b++;!(e&2)||b>=l?(a.milliseconds+=1E3*a.seconds,delete a.seconds):a.seconds&&b++;if(!(e&1)||b>=l){var h=k(a,0,"milliseconds","seconds",1E3,d);if(h&&(h=k(a,h,"seconds","minutes",60,d))&&(h=
-k(a,h,"minutes","hours",60,d))&&(h=k(a,h,"hours","days",24,d))&&(h=k(a,h,"days","weeks",7,d))&&(h=k(a,h,"weeks","months",w(a.refMonth)/7,d))){e=h;var n,p=a.refMonth,q=p.getTime(),r=new Date(q);r.setFullYear(p.getFullYear()+1);n=Math.round((r.getTime()-q)/864E5);if(h=k(a,e,"months","years",n/w(a.refMonth),d))if(h=k(a,h,"years","decades",10,d))if(h=k(a,h,"decades","centuries",10,d))if(h=k(a,h,"centuries","millennia",10,d))throw Error("Fractional unit overflow");}}}finally{delete a.refMonth}return a}
-function d(a,b,c,e,d){var f;c=+c||222;e=0<e?e:NaN;d=0<d?20>d?Math.round(d):20:0;var k=null;"function"===typeof a?(f=a,a=null):a instanceof Date||(null!==a&&isFinite(a)?a=new Date(+a):("object"===typeof k&&(k=a),a=null));var g=null;"function"===typeof b?(f=b,b=null):b instanceof Date||(null!==b&&isFinite(b)?b=new Date(+b):("object"===typeof b&&(g=b),b=null));k&&(a=x(k,b));g&&(b=x(g,a));if(!a&&!b)return new n;if(!f)return B(new n,a,b,c,e,d);var k=c&1?1E3/30:c&2?1E3:c&4?6E4:c&8?36E5:c&16?864E5:6048E5,
-h,g=function(){f(B(new n,a,b,c,e,d),h)};g();return h=setInterval(g,k)}var s=Math.ceil,m=Math.floor,p,q,r,t,u,f,y,z;n.prototype.toString=function(a){var b=z(this),c=b.length;if(!c)return a?""+a:u;if(1===c)return b[0];a=r+b.pop();return b.join(t)+a};n.prototype.toHTML=function(a,b){a=a||"span";var c=z(this),e=c.length;if(!e)return(b=b||u)?"\x3c"+a+"\x3e"+b+"\x3c/"+a+"\x3e":b;for(var d=0;d<e;d++)c[d]="\x3c"+a+"\x3e"+c[d]+"\x3c/"+a+"\x3e";if(1===e)return c[0];e=r+c.pop();return c.join(t)+e};n.prototype.addTo=
-function(a){return x(this,a)};z=function(a){var b=[],c=a.millennia;c&&b.push(f(c,10));(c=a.centuries)&&b.push(f(c,9));(c=a.decades)&&b.push(f(c,8));(c=a.years)&&b.push(f(c,7));(c=a.months)&&b.push(f(c,6));(c=a.weeks)&&b.push(f(c,5));(c=a.days)&&b.push(f(c,4));(c=a.hours)&&b.push(f(c,3));(c=a.minutes)&&b.push(f(c,2));(c=a.seconds)&&b.push(f(c,1));(c=a.milliseconds)&&b.push(f(c,0));return b};d.MILLISECONDS=1;d.SECONDS=2;d.MINUTES=4;d.HOURS=8;d.DAYS=16;d.WEEKS=32;d.MONTHS=64;d.YEARS=128;d.DECADES=256;
-d.CENTURIES=512;d.MILLENNIA=1024;d.DEFAULTS=222;d.ALL=2047;var E=d.setFormat=function(a){if(a){if("singular"in a||"plural"in a){var b=a.singular||[];b.split&&(b=b.split("|"));var c=a.plural||[];c.split&&(c=c.split("|"));for(var d=0;10>=d;d++)p[d]=b[d]||p[d],q[d]=c[d]||q[d]}"string"===typeof a.last&&(r=a.last);"string"===typeof a.delim&&(t=a.delim);"string"===typeof a.empty&&(u=a.empty);"function"===typeof a.formatNumber&&(y=a.formatNumber);"function"===typeof a.formatter&&(f=a.formatter)}},C=d.resetFormat=
-function(){p=" millisecond; second; minute; hour; day; week; month; year; decade; century; millennium".split(";");q=" milliseconds; seconds; minutes; hours; days; weeks; months; years; decades; centuries; millennia".split(";");r=" and ";t=", ";u="";y=function(a){return a};f=D};d.setLabels=function(a,b,c,d,f,k,m){E({singular:a,plural:b,last:c,delim:d,empty:f,formatNumber:k,formatter:m})};d.resetLabels=C;C();v&&v.exports?v.exports=d:"function"===typeof window.define&&"undefined"!==typeof window.define.amd&&
-window.define("countdown",[],function(){return d});return d}(module);
-
-function drawAll() {
+}function drawAll() {
     drawStoryLine();
     drawBranches();
     drawStats();
@@ -279,101 +564,6 @@ function drawStats() {
 
 function displayAlphaWarning() { $('#alpha_warning').css('display','block') }
 function hideAlphaWarning() { $('#alpha_warning').css('display','none') }
-
-//Helper Functions
-function listen_for_bumps() {
-    //RECEIVE SERVER DATA
-    //check for browser support
-    if(typeof(EventSource)!=="undefined") {
-        //create an object, passing it the name and location of the server side script
-        var eSource = new EventSource("/updateStories.php");
-        //detect message receipt
-        eSource.onmessage = function(event) {
-            //route page to new address if the parent line has a new branch
-            var data = JSON.parse(event.data);
-            if (storyLine[0]['id'] == Number(data[0])){
-                requestSubtree(Number(data[0]))
-                if (findLine(data[1]) != null) {
-                    buildStoryLine(data[1]);
-                    branches = findBranches(data[1]);
-                    drawAll();
-                }
-            }
-        };
-    }
-}
-
-function initPrefs(p) {
-    //initialize uninitialize prefs
-    if (!('tips_enabled' in p))
-        p['tips_enabled'] = true;
-    else {
-        if (p['tips_enabled'] === "true")
-            p['tips_enabled'] = true;
-        else p['tips_enabled'] = false;
-    }
-    return p;
-}
-
-function postPreferences(p) {
-    //http://laravel.io/forum/04-03-2014-simple-ajax-post-response-in-laravel-4
-    $.ajaxSetup({
-       headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-    });
-    var posting = $.post( 'update_prefs', p, onSuccess );
-}
-
-function onSuccess(data, status, xhr)
-			{
-				console.log(data, status, xhr);
-			}
-
-function stripHTML(html)
-{
-   var tmp = document.createElement("DIV");
-   tmp.innerHTML = html;
-   return tmp.textContent || tmp.innerText || "";
-}
-
-function disable_form(tag) {
-    //Disable enter submit
-    $(tag).on("keyup keypress", function(e) {
-        var code = e.keyCode || e.which; 
-        if (code  == 13) {               
-            e.preventDefault();
-            return false;
-        }
-    });
-}
-
-function releaseKey(code) {
-    if (code == 16)
-        shiftDown = false;
-}
-    
-function triggerKey(code) {
-    //Disable Keys if form is active
-    if (document.activeElement.name == 'line') {
-        if (code == 13) submitForm();
-        return
-    }
-    
-    //On enter key, 'click' selected branch
-    if (code == 13) {
-        if (selected == null)
-            clickStory(storyLine[0])
-        else
-            clickStory(selected);
-    } else if (code == 16) {
-        shiftDown = true;
-        if (storyLine.length > 0)
-                clickStory(storyLine[1]);
-    } else if (code == 38 && shiftDown) {
-        if (storyLine.length > 0)
-                clickStory(storyLine[1]);
-    }
-}
-
 //DRAW A BACKGROUND USING P5.JS
 
 function setup() {
@@ -418,158 +608,6 @@ function blendColors(c0, c1, p) {
     return "#"+(0x1000000+(Math.round((R2-R1)*p)+R1)*0x10000+(Math.round((G2-G1)*p)+G1)*0x100+(Math.round((B2-B1)*p)+B1)).toString(16).slice(1);
 }
 
-function buildStoryLine(id) {
-    if (findLine(id) == null)
-        return;
-    
-    //Build Story Line
-    storyLine = [findLine(id)];
-    storyLine[0].top = isTop(id);
-    
-    while (storyLine[storyLine.length-1].id != 1) {
-        var newLine = findLine(storyLine[storyLine.length-1].parentID);
-        //Because not all stories are sent in request
-        //A null line will be found
-        if (newLine == null) break;
-        newLine.top = isTop(newLine.id);
-        storyLine.push(newLine);
-    }
-    branches = findBranches(storyLine[0].id);
-}
-
-function isTop(id){
-    var line = findLine(id);
-    var siblings = findBranches(line.parentID);
-    var topVisits = 0;
-    for (var i = 0; i < siblings.length; i++) 
-            if (Number(siblings[i].visits) > topVisits) 
-                topVisits = siblings[i].visits;
-    return Number(line.visits) >= Number(topVisits);
-}
-
-function findBranches(id) {
-    var new_branches = [];
-    for(i = 0; i < stories.length; i++) {
-        if (stories[i].parentID == id) {
-            new_branches.push(stories[i]);
-        }
-    }
-    return new_branches;
-}
-
-function findLine(id) {
-    for (i = 0; i < stories.length; i++) 
-        if (stories[i].id == id)
-            return stories[i]
-    return null
-}
-
-function requestSubtree(id,callback) {
-    var xmlhttp;
-    if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-      }
-    else
-      {// code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-    if (id == undefined) id = 1;
-    xmlhttp.open("GET","/get_subtree/"+id, true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            var subtree = eval("(" + xmlhttp.responseText + ")");
-            appendSubtree(subtree);
-            if (branches.length == 0) {
-                showStory(storyLine[0].id)
-            }
-            if (callback !== undefined) {
-                if (callback == 'click')
-                    clickStory(subtree[0])
-                else
-                    callback();
-            }
-        }
-      }
-    return true;
-}
-
-function appendSubtree(subtree) {
-    storyIDs = [];
-    for (var i = 0; i < stories.length; i++)
-        storyIDs.push(Number(stories[i].id))
-    
-    for (var i = 0; i < subtree.length; i++) 
-        if (storyIDs.indexOf(Number(subtree[i].id)) == -1) 
-            stories.push(subtree[i]);
-}
-
-function showStory(id) {
-    buildStoryLine(id);
-    branches = findBranches(id);
-    drawAll();
-}
-
-function clickStory(d) {
-    if (d != null)
-        set_cookie( "last_line_id", d.id, 200 );
-    if (d != null) {
-        if (user != null)
-            user['experience'] += 1;
-        if (d.id != -1) {
-            showStory(d.id);
-            requestSubtree(d.id);
-        } else {
-            $("#line").val(d.line);
-            submitForm();
-        }
-    }
-}
-
-function submitForm() {
-    var newLine = document.forms["line_form"]["line"].value.trim();
-    
-    //Strip HTML Tags
-    newLine = stripHTML(newLine);
-    //Set Line
-    $("#line").val(newLine);
-    
-    var test = newLine.toLowerCase();
-    
-    //Validate
-    //Discard empty lines
-    if (test == "") {
-        if (branches != 0)
-            clickStory(branches[0])
-        return
-    }
-        
-    //Check for duplicates
-    var siblings = findBranches(storyLine[0].id);
-    for (var i = 0; i < siblings.length; i++) {
-        if (siblings[i].line.toLowerCase() == test) {
-            clickStory(siblings[i]);
-            $("#line").val("");
-            return;
-        }
-    }
-    
-    //Set Hidden Forms w Meta Data
-    $('#parentID').val(storyLine[0].id);
-    var userID = (user == null) ? 0 : user.id
-    $('#authorID').val(userID);
-    
-    var posting = $.post( 'store', $("#line_form").serialize() );
-    
-    $("#line").val("");
-    posting.done(function( data ) {
-        num_lines ++;
-        appendSubtree([data]);
-        clickStory(data);
-    });
-}
-
 //js object binding elements to their tip content
 tip_library = {
     'default':{
@@ -601,56 +639,6 @@ tip_library = {
         'content':'on kickstarter'
     },
 }
-
-function initTips() {
-    //initialize listeners on all dom elements
-    hideTip();
-    var tip_keys = Object.keys(tip_library);
-    for (var i = 0; i < tip_keys.length; i++){   
-        $(tip_keys[i]).on('mouseover',function(tip_key){
-            return function() {
-                showTip(tip_key);
-            };
-        }(tip_keys[i]))
-        $(tip_keys[i]).on('mouseout',function(tip_key){
-            return function() {
-                hideTip(tip_key);
-            };
-        }(tip_keys[i]))
-    }
-}
-
-function disableTips() {
-    tips_enabled = false;
-    $('#tips_container')[0].innerHTML = "";
-    preferences['tips_enabled'] = false;
-    console.log(preferences)
-    postPreferences(preferences);
-    set_cookie( "tips_enabled", false, 200 );
-}
-
-function hideTip(tip_key) {
-    //Clear tips and potentially show a default tip
-    if (tips_enabled) {
-        //$('#tips_container')[0].innerHTML = "<div id='tip_default' onclick='disableTips()'>Turn off Tips</div>";
-        showTip('default');
-        $(tip_key).css('background','transparent')
-        $(tip_key).css('border','none')
-    }
-}
-
-function showTip(tip_key) {
-    if (tips_enabled) {
-        var tip = tip_library[tip_key];
-        $('#tips_container')[0].innerHTML = "";
-        var content = "<div id='tip_title'>"+tip.title+"</div>"
-            +"<div id='tip_content'>"+tip.content+"</div>";
-        $('#tips_container')[0].innerHTML = content;
-        //$(tip_key).css('background','#fcfcfc')
-        //$(tip_key).css('border','dashed 2px #FF6666')
-    }
-}
-
 function buildTree(stories, rootID) {
     //Starting at the root line, 
     //build a tree representation of the stories array

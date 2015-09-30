@@ -16,7 +16,7 @@ Route::get('/', 'StoriesController@begin');
 
 //Stories
 //Route::get('/story/{id}', ['uses' =>'StoriesController@show']);
-Route::get('/get_subtree/{id}', ['uses' =>'StoriesController@getSubtree']);
+Route::get('/get_subtree/{id}/{depth}', ['uses' =>'StoriesController@getSubtree']);
 Route::get('/update_current_line/{id}', ['uses' =>'StoriesController@updateCurrentLine']);
 Route::post('/store', 'StoriesController@store');
 

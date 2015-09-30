@@ -87,6 +87,9 @@ var fontSize = 30,
     visited = false, //the site has been visited before
     debug = true;
     
+//Request & Ajax params
+var subtree_depth = 15;
+    
 //D3 Tree Layout    
 //Tree Projection
 var diagonal;
@@ -170,11 +173,13 @@ if (user != null) {
         num_lines = 0;
     requestSubtree(
         user['current_line'],
+        2,
         function() {clickStory(findLine(user['current_line']))})
 } else if (is_cookie("last_line_id")) {
     var last_line = get_cookie("last_line_id");
     requestSubtree(
         last_line,
+        2,
         'click')
 }
 else drawAll();
