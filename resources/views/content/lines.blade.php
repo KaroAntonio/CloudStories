@@ -34,7 +34,7 @@
 <script src="/jspos/POSTagger.js" type="text/javascript"></script>
 -->
 <!--P5.JS-->
-<script language="javascript" src="p5/p5.min.js"></script>
+<!--<script language="javascript" src="p5/p5.min.js"></script>-->
 <!--<script language="javascript" src="p5/addons/p5.dom.js"></script>-->
 <!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
