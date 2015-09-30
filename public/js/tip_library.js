@@ -2,7 +2,7 @@
 tip_library = {
     'default':{
         'title':'wrdcvlt',
-        'content':'[wurd-kuhlt] noun<br><div id="tip_default" onclick="disableTips()">Turn off Tips</div>'
+        'content':'[wurd-kuhlt] noun<br>i. a non-linear tree-narrative that grows off attention<br>ii. a group of word cultivators<br><div id="tip_default" onclick="disableTips()">Turn off Tips</div>'
     },
     '.info':{
         'title':'Line Info',
