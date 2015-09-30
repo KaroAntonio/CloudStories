@@ -35,7 +35,8 @@ function pad(num) {
     } else {
         return num;
     }
-}/*
+}
+/*
  countdown.js v2.6.0 http://countdownjs.org
  Copyright (c)2006-2014 Stephen M. McKamey.
  Licensed under The MIT License.
@@ -373,7 +374,8 @@ function get_cookie ( cookie_name )
         return decodeURIComponent ( cookie_value[1] ) ;
     }
     return '' ;
-}function drawAll() {
+}
+function drawAll() {
     drawStoryLine();
     drawBranches();
     drawStats();
@@ -612,7 +614,7 @@ function blendColors(c0, c1, p) {
 tip_library = {
     'default':{
         'title':'wrdcvlt',
-        'content':'[wurd-kuhlt] noun<br>i. a branching story<br>ii. an obsessive group that tends lovingly to the tree<br><div id="tip_default" onclick="disableTips()">Turn off Tips</div>'
+        'content':'[wurd-kuhlt] noun<br>i. a branching story tree<br>ii. an obsessive group that tends lovingly to the tree<br><div id="tip_default" onclick="disableTips()">Turn off Tips</div>'
     },
     '.info':{
         'title':'Line Info',
