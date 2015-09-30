@@ -42,7 +42,7 @@ function showTip(tip_key) {
         var content = "<div id='tip_title'>"+tip.title+"</div>"
             +"<div id='tip_content'>"+tip.content+"</div>";
         $('#tips_container')[0].innerHTML = content;
-        $(tip_key).css('background','#fcfcfc')
+        //$(tip_key).css('background','#fcfcfc')
         //$(tip_key).css('border','dashed 2px #FF6666')
     }
 }

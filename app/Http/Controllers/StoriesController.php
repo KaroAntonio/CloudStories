@@ -254,6 +254,8 @@ class StoriesController extends Controller {
         //UPDATE user line ID array
         $user = User::find($input['authorID']);
         if ($user != null) {
+            $story-> author_name = $user->name;
+            
             if ($user->line_ids == "") {
                 $line_ids = [];
             } else {
@@ -263,7 +265,6 @@ class StoriesController extends Controller {
             $user->line_ids = json_encode($line_ids);
             $user->save();
         }
-        $story-> author_name = $user->name;
         
         $id = $story->id;
         session_start(); 
