@@ -25,6 +25,20 @@
     <div id='tree_container'></div>
 </div>
 <div id='background'></div>
+<div id='veil'>
+<div id='welcome_banner'>
+         <div class="title-container">
+    <div class="title">
+        <a>
+            @include('content/title')
+        </a>
+        
+    </div>
+</div>
+</div>
+    <div id='banner_tips'></div>
+    <div id='banner_nav'></div>
+</div>
 <!--JQUERY-->
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -150,8 +164,13 @@ initPrefs(preferences);
 if (user != null) {
     tips_enabled = preferences['tips_enabled']
 } else {
-    tips_enabled = !is_cookie("tips_enabled");
 }
+    
+//Banner Tips
+if (user == null) showBannerTip(0);
+else hideBannerTip();
+    
+//Explorational Tips
 initTips();
 
 //SET Cursor
@@ -174,13 +193,13 @@ if (user != null) {
         num_lines = 0;
     requestSubtree(
         user['current_line'],
-        2,
+        1,
         function() {clickStory(findLine(user['current_line']))})
 } else if (is_cookie("last_line_id")) {
     var last_line = get_cookie("last_line_id");
     requestSubtree(
         last_line,
-        2,
+        1,
         'click')
 }
 else drawAll();

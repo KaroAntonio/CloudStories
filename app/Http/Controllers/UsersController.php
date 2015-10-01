@@ -88,8 +88,10 @@ class UsersController extends Controller {
     public function updatePreferences(Request $request)
     {
         $preferences = $request->all();
-        Auth::user()->preferences = json_encode($preferences);
-        Auth::user()->save();
+        if (Auth::user() != null) {
+            Auth::user()->preferences = json_encode($preferences);
+            Auth::user()->save();
+        }
         return response()->json($preferences);
     }
     
