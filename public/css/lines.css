@@ -47,7 +47,7 @@ html, body {
 /*TIPS*/
 #banner_tips {
     width: 100%;
-    height: 120px;
+    min-height: 120px;
     margin: auto auto auto auto;
     position: relative;
     color: #FF6666;
