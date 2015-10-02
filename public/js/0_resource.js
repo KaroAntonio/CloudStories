@@ -373,20 +373,21 @@ function showBannerTip(i) {
     //Add Nav arrows to tip
     //$('#banner_tips')[0].innerHTML += '<div id="banner_nav"></div>'
     $('#banner_nav')[0].innerHTML = "";
-    $('#banner_nav')[0].innerHTML += "<div id='tip_nav_left' class='nav_button' onclick='showBannerTip("+(i-1)+")'><-</div>";
+    //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_left' class='nav_button' onclick='showBannerTip("+(i-1)+")'><-</div>";
+    $('#banner_nav')[0].innerHTML += "<div id='next_button' class='nav_button' onclick='showBannerTip("+(i+1)+")'>NEXT></div>";
     $('#banner_nav')[0].innerHTML += "<div id='start_button' class='nav_button'>START</div>";
-    $('#banner_nav')[0].innerHTML += "<div id='tip_nav_right' class='nav_button' onclick='showBannerTip("+(i+1)+")'>-></div>";
+    //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_right' class='nav_button' onclick='showBannerTip("+(i+1)+")'>-></div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_register' class='nav_link' onclick='location.href=\"/auth/register\"'>register</div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_login' class='nav_link' onclick='location.href=\"/auth/login\"'>login</div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='close_tips' class='nav_button'>X</div>";
     
     
-    if (i == 0) $('#tip_nav_left')[0].style.visibility = 'hidden';
+    //if (i == 0) $('#tip_nav_left')[0].style.visibility = 'hidden';
     if (getTipKey(intro_library, i+1) == undefined) {
-        $('#tip_nav_right')[0].style.visibility = 'hidden';
-        
+        //$('#tip_nav_right')[0].style.visibility = 'hidden';
+        $('#next_button')[0].style.display = 'none';
     } else {
-        $('#start_button')[0].style.visibility = 'hidden';
+        $('#start_button')[0].style.display = 'none';
     }
     $('#close_tips').on('click',hideBannerTip);
     $('#start_button').on('click',hideBannerTip);
