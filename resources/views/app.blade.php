@@ -5,6 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="_token" content="{{ csrf_token() }}"/>
+    <meta property="og:image" content="/assets/subliminal.gif" />
+    <meta property="og:title" content="wrdcvlt" />
+    <meta property="og:description" content="an internet stories" />
 	<title>@include('content/title')</title>
     
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">

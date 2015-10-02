@@ -28,6 +28,10 @@ tip_library = {
         'title':'Spread the cvlt',
         'content':'on kickstarter'
     },
+    '#suggest_line_button':{
+        'title':'Get a Suggestion',
+        'content':'summon the forces of [the internet] to craft a line'
+    },
 }
 
 intro_library = {

@@ -254,17 +254,26 @@ html, body {
     /*padding-top: 15px;*/
 }
 
-#add_line_button {
-    font-family: sans-serif;
+#suggest_line_button {
     line-height: 10px;
     margin-left: 15px;
     font-size: 25px;
+}
+
+#add_line_button {
+    line-height: 10px;
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.line_button {
+    /*font-family: sans-serif;*/
     display:inline-block;
+    font-family: sans-serif;
     cursor: pointer;
     color: #bbb;
 }
-
-#add_line_button:hover {
+.line_button:hover {
     color: #777;
 }
 

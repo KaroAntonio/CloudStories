@@ -107,6 +107,18 @@ function clickStory(d) {
     }
 }
 
+function suggestLine() {
+    //Suggest a random, or a hopefully contextual line
+    var generators = [
+        function() { return generate(); },
+        function() { qinit(); return GenRandomSentence() },
+    ]
+    
+    var s = generators[get_random(generators.length - 1)]()
+    
+    $("#line").val(s);
+}
+
 function submitForm() {
     var newLine = document.forms["line_form"]["line"].value.trim();
     

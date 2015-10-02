@@ -8,6 +8,7 @@
 <div id="branches"></div>
 <div id="text_form">
 <div class="container-fluid">
+    <div id='suggest_line_button' class='line_button' onclick='suggestLine()'>...</div>
     {!! Form::open(['url'=>'store','id'=>'line_form','class'=>'form-horizontal']) !!}
     {!! Form::hidden('parentID', null, array('id'=>'parentID')) !!}
     {!! Form::hidden('authorID', null, array('id'=>'authorID')) !!}
@@ -15,7 +16,8 @@
      {!! Form::text('line', null, array('maxLength' => 80, 'id'=>'line','class'=>'form-control'))  !!} 
     </div>
     {!! Form::close() !!}
-<div id='add_line_button'>+</div>
+<div id='add_line_button' class='line_button' onclick='submitForm()'>+</div>
+
     <div id='alpha_warning'>WARNING: wrdcvlt is in testing, anything written is dust in the wind.</div>
 <div id='user_stats'></div>
 </div>
@@ -53,9 +55,9 @@
 <!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
 
-<script src="js/0_resource.min.js" type="text/javascript"></script>
+<!--<script src="js/0_resource.min.js" type="text/javascript"></script>-->
 
-<!--
+
 <script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
 <script src="js/tips.js" type="text/javascript"></script>
@@ -65,7 +67,9 @@
 <script src="js/cookies.js" type="text/javascript"></script>
 <script src="js/display.js" type="text/javascript"></script>
 <script src="js/sketch.js" type="text/javascript"></script>
--->
+<script src="js/sentence_gen.js" type="text/javascript"></script>
+<script src="js/nonsense_gen.js" type="text/javascript"></script>
+
 
 
 <script>
@@ -85,8 +89,7 @@ var storyLine,
     branches,
     selected,
     dictionary,
-    num_lines,
-    generatedLine="";
+    num_lines;
 
 var fontSize = 30,
     iconSize = 12,

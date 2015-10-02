@@ -50,14 +50,6 @@ function drawBranches() {
         $(this)[0].style['WebKitBoxShadow'] = unShadow;
     });
     
-    var generated = {
-        line : generatedLine,
-        visits : 0,
-        id : -1,
-    };
-    
-    if (generatedLine != "")
-        branches.push(generated);
     /*
     var lh = $('.line').height();
     var padding = Math.min(lh/2,

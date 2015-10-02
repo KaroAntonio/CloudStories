@@ -93,3 +93,9 @@ function triggerKey(code) {
                 clickStory(storyLine[1]);
     }
 }
+
+function get_random(int)
+{
+    var ranNum= Math.floor(Math.random()*int);
+    return ranNum;
+}
