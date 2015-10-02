@@ -20,7 +20,6 @@ function disableTips() {
     tips_enabled = false;
     $('#tips_container')[0].innerHTML = "";
     preferences['tips_enabled'] = false;
-    console.log(preferences)
     postPreferences(preferences);
     set_cookie( "tips_enabled", false, 200 );
 }
@@ -41,7 +40,6 @@ function showTip(tip_key, tag, showTitle, large, library) {
     library = typeof library !== 'undefined' ?  library : tip_library;
     if (tips_enabled) {
         var tip = library[tip_key];
-        console.log(tag);
         $(tag)[0].innerHTML = "";
         var content = "";
         if (showTitle & large) 
