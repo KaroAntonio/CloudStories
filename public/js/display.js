@@ -103,12 +103,23 @@ function drawBranches() {
             .domain([0, branches[0].visits])
             .clamp(true);
         
-        if (branches.length <= 3)
-            $('#branches').height($('.line').height()*branches.length);
+        if (branches.length <= 3) {
+            /*
+            var lh = $('.line').height();
+            var padding = Math.min(lh/2,
+                                   (branches.length - 1) * lh).toString() + "px"
+            $('#branches').css('padding-top', padding)
+            $('#branches').css('padding-bottom', padding)
+            */
+            $('#branches').height(
+                $('.line').height()*branches.length
+                //Math.min($('.line').height()*branches.length, $('.line').height())
+            );
+        }
         
         //Display Top Three Branches
         for (i = 0; i < branches.length ; i++)
-            drawLine(branches[i],branchColorScale,$('#branches'));
+            drawLine(branches[i],branchColorScale,$('#branches'), i==0);
             
         //Display The rest of the branches
         for (i = 0; i < tiers.length; i++ )
@@ -132,7 +143,8 @@ function colorLine(d, cs, line, parent) {
         line.style.color = cs(storyLine.indexOf(d));
 }
 
-function drawLine(d, cs, parent) {
+function drawLine(d, cs, parent, isFirst) {
+    isFirst = typeof isFirst !== 'undefined' ?  isFirst : false;
     //Draw info
     var line_info = document.createElement("DIV");
     if (d.author_name != 'Anonymous' && d.author_name != undefined)
@@ -148,6 +160,11 @@ function drawLine(d, cs, parent) {
     new_line.id = 'line_' + d.id;
     new_line.className = 'line';
     new_line.innerHTML = d.line;
+    
+    if (isFirst) {
+        //new_line.innerHTML  = "> " + new_line.innerHTML + " <"
+        //new_line.style['border-bottom'] = '2px dashed #ff0000';
+    }
     
     var m_enter = function(line, info, d) { 
         return function() { 

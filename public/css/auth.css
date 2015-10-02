@@ -13,7 +13,19 @@
     text-align: center;
     color: #ddd;
     font-family: info;
+    padding-left: 26px;
     font-size: 160px; /*120*/
+    cursor: pointer;
+}
+
+.title_vanilla {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ddd;
+    font-family: sans-serif;
+    font-size: 120px; /*120*/
     cursor: pointer;
 }
 
@@ -44,6 +56,7 @@
         -webkit-text-fill-color: transparent;
         text-decoration: none;
         color: #FF6666;
+        cursor: pointer;
     }
 }  
 

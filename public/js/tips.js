@@ -71,8 +71,8 @@ function showBannerTip(i) {
     $('#banner_nav')[0].innerHTML = "";
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_left' class='nav_button' onclick='showBannerTip("+(i-1)+")'><-</div>";
     $('#banner_nav')[0].innerHTML += "<div id='next_button' class='nav_button' onclick='showBannerTip("+(i+1)+")'>NEXT></div>";
-    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='nav_button' onclick='location.href=\"/auth/register\"'>REGISTER</div>";
-    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='nav_button'>LATER</div>";
+    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='words_link' onclick='location.href=\"/auth/register\"'><a class='nav_button'>REGISTER<a></div>";
+    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='regular_button'>LATER</div>";
     
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_right' class='nav_button' onclick='showBannerTip("+(i+1)+")'>-></div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_register' class='nav_link' onclick='location.href=\"/auth/register\"'>register</div>";

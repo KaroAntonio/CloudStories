@@ -1,8 +1,8 @@
-//js object binding elements to their tip content
+//js objects binding elements to their tip content
 tip_library = {
     'default':{
         'title':'wrdcvlt',
-        'content':'[wurd-kuhlt] noun<br>i. a branching story tree<br>ii. an obsessive group that tends lovingly to said tree<br><div id="disable_tips" class="nav_button" onclick="disableTips()">Turn off Tips</div>'
+        'content':'[wurd-kuhlt] noun<br>i. a branching story tree<br>ii. an obsessive group that tends lovingly to said tree<br><div id="disable_tips" class="regular_button" onclick="disableTips()">Turn off Tips</div>'
     },
     '#story_line':{
         'title':'The Story',
@@ -37,7 +37,7 @@ intro_library = {
     },
     'read':{
         'title':'Read',
-        'content':'the story by choosing a branch, <br>(the lines on the bottom half of the page) <br>\'ENTER\' chooses the most popular story'
+        'content':'the story by choosing each line, <br>(it\'s like a choose your own adventure) <br>\'ENTER\' chooses the most popular branch'
     },
     'write':{
         'title':'Write',

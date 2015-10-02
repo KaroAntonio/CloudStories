@@ -378,8 +378,8 @@ function showBannerTip(i) {
     $('#banner_nav')[0].innerHTML = "";
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_left' class='nav_button' onclick='showBannerTip("+(i-1)+")'><-</div>";
     $('#banner_nav')[0].innerHTML += "<div id='next_button' class='nav_button' onclick='showBannerTip("+(i+1)+")'>NEXT></div>";
-    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='nav_button' onclick='location.href=\"/auth/register\"'>REGISTER</div>";
-    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='nav_button'>LATER</div>";
+    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='words_link' onclick='location.href=\"/auth/register\"'><a class='nav_button'>REGISTER<a></div>";
+    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='regular_button'>LATER</div>";
     
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_right' class='nav_button' onclick='showBannerTip("+(i+1)+")'>-></div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_register' class='nav_link' onclick='location.href=\"/auth/register\"'>register</div>";
@@ -535,12 +535,23 @@ function drawBranches() {
             .domain([0, branches[0].visits])
             .clamp(true);
         
-        if (branches.length <= 3)
-            $('#branches').height($('.line').height()*branches.length);
+        if (branches.length <= 3) {
+            /*
+            var lh = $('.line').height();
+            var padding = Math.min(lh/2,
+                                   (branches.length - 1) * lh).toString() + "px"
+            $('#branches').css('padding-top', padding)
+            $('#branches').css('padding-bottom', padding)
+            */
+            $('#branches').height(
+                $('.line').height()*branches.length
+                //Math.min($('.line').height()*branches.length, $('.line').height())
+            );
+        }
         
         //Display Top Three Branches
         for (i = 0; i < branches.length ; i++)
-            drawLine(branches[i],branchColorScale,$('#branches'));
+            drawLine(branches[i],branchColorScale,$('#branches'), i==0);
             
         //Display The rest of the branches
         for (i = 0; i < tiers.length; i++ )
@@ -564,7 +575,8 @@ function colorLine(d, cs, line, parent) {
         line.style.color = cs(storyLine.indexOf(d));
 }
 
-function drawLine(d, cs, parent) {
+function drawLine(d, cs, parent, isFirst) {
+    isFirst = typeof isFirst !== 'undefined' ?  isFirst : false;
     //Draw info
     var line_info = document.createElement("DIV");
     if (d.author_name != 'Anonymous' && d.author_name != undefined)
@@ -580,6 +592,11 @@ function drawLine(d, cs, parent) {
     new_line.id = 'line_' + d.id;
     new_line.className = 'line';
     new_line.innerHTML = d.line;
+    
+    if (isFirst) {
+        //new_line.innerHTML  = "> " + new_line.innerHTML + " <"
+        //new_line.style['border-bottom'] = '2px dashed #ff0000';
+    }
     
     var m_enter = function(line, info, d) { 
         return function() { 
@@ -665,11 +682,11 @@ function blendColors(c0, c1, p) {
     return "#"+(0x1000000+(Math.round((R2-R1)*p)+R1)*0x10000+(Math.round((G2-G1)*p)+G1)*0x100+(Math.round((B2-B1)*p)+B1)).toString(16).slice(1);
 }
 
-//js object binding elements to their tip content
+//js objects binding elements to their tip content
 tip_library = {
     'default':{
         'title':'wrdcvlt',
-        'content':'[wurd-kuhlt] noun<br>i. a branching story tree<br>ii. an obsessive group that tends lovingly to said tree<br><div id="disable_tips" class="nav_button" onclick="disableTips()">Turn off Tips</div>'
+        'content':'[wurd-kuhlt] noun<br>i. a branching story tree<br>ii. an obsessive group that tends lovingly to said tree<br><div id="disable_tips" class="regular_button" onclick="disableTips()">Turn off Tips</div>'
     },
     '#story_line':{
         'title':'The Story',
@@ -704,7 +721,7 @@ intro_library = {
     },
     'read':{
         'title':'Read',
-        'content':'the story by choosing a branch, <br>(the lines on the bottom half of the page) <br>\'ENTER\' chooses the most popular story'
+        'content':'the story by choosing each line, <br>(it\'s like a choose your own adventure) <br>\'ENTER\' chooses the most popular branch'
     },
     'write':{
         'title':'Write',
