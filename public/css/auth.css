@@ -14,6 +14,7 @@
     color: #ddd;
     font-family: info;
     font-size: 160px; /*120*/
+    cursor: pointer;
 }
 
 .title a { 

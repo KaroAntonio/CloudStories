@@ -29,7 +29,7 @@
 <div id='welcome_banner'>
          <div class="title-container">
     <div class="title">
-        <a>
+        <a onclick='hideBannerTip()'>
             @include('content/title')
         </a>
         
@@ -52,7 +52,9 @@
 <!--<script language="javascript" src="p5/addons/p5.dom.js"></script>-->
 <!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
+
 <script src="js/0_resource.min.js" type="text/javascript"></script>
+
 <!--
 <script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
