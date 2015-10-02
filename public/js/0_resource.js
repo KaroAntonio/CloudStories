@@ -698,7 +698,7 @@ intro_library = {
     },
     'read':{
         'title':'Read',
-        'content':'the story by choosing a branch, <br>(the lines on the bottom half of the page) <br>\'ENTER\' pulls you down most popular story'
+        'content':'the story by choosing a branch, <br>(the lines on the bottom half of the page) <br>\'ENTER\' chooses the most popular story'
     },
     'write':{
         'title':'Write',
