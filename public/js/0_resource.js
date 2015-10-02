@@ -491,6 +491,12 @@ function drawBranches() {
     if (generatedLine != "")
         branches.push(generated);
     
+    var lh = $('.line').height();
+    var padding = Math.min(lh/2,
+                           (branches.length - 1) * lh).toString() + "px"
+    //$('#branches').css('padding-top', padding)
+    $('#branches').css('padding-bottom', padding)
+    
     $('#branches').empty();
     if (branches.length > 0) {
         //SORT braches wrt to visits
@@ -536,16 +542,9 @@ function drawBranches() {
             .clamp(true);
         
         if (branches.length <= 3) {
-            /*
-            var lh = $('.line').height();
-            var padding = Math.min(lh/2,
-                                   (branches.length - 1) * lh).toString() + "px"
-            $('#branches').css('padding-top', padding)
-            $('#branches').css('padding-bottom', padding)
-            */
             $('#branches').height(
-                $('.line').height()*branches.length
-                //Math.min($('.line').height()*branches.length, $('.line').height())
+                //$('.line').height()*branches.length
+                Math.min($('.line').height()*branches.length, $('.line').height())
             );
         }
         
@@ -559,7 +558,7 @@ function drawBranches() {
                 drawLine(tiers[i][j],branchColorScale,$('#branches'));
     } else {
         selected = null
-        $('#branches').height(3);
+        $('#branches').height(10);
     }
     
     //Focus Form
