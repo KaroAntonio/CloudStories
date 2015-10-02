@@ -43,4 +43,8 @@ intro_library = {
         'title':'Write',
         'content':'the story from any line,<br>growing a new branch'
     },
+    'start':{
+        'title':'Register',
+        'content':'to become a part of the cvlt,<br>or just start wording around...'
+    },
 }

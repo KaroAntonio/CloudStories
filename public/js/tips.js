@@ -71,7 +71,9 @@ function showBannerTip(i) {
     $('#banner_nav')[0].innerHTML = "";
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_left' class='nav_button' onclick='showBannerTip("+(i-1)+")'><-</div>";
     $('#banner_nav')[0].innerHTML += "<div id='next_button' class='nav_button' onclick='showBannerTip("+(i+1)+")'>NEXT></div>";
-    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='nav_button'>START</div>";
+    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='nav_button' onclick='location.href=\"/auth/register\"'>REGISTER</div>";
+    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='nav_button'>LATER</div>";
+    
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_right' class='nav_button' onclick='showBannerTip("+(i+1)+")'>-></div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_register' class='nav_link' onclick='location.href=\"/auth/register\"'>register</div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_login' class='nav_link' onclick='location.href=\"/auth/login\"'>login</div>";
@@ -83,6 +85,7 @@ function showBannerTip(i) {
         //$('#tip_nav_right')[0].style.visibility = 'hidden';
         $('#next_button')[0].style.display = 'none';
     } else {
+        $('#banner_register')[0].style.display = 'none';
         $('#start_button')[0].style.display = 'none';
     }
     $('#close_tips').on('click',hideBannerTip);

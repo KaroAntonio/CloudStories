@@ -129,10 +129,12 @@ function releaseKey(code) {
     
 function triggerKey(code) {
     //Disable Keys if form is active
+    var test = document.forms["line_form"]["line"].value.trim();
     if (document.activeElement.name == 'line') {
         if (code == 13) submitForm();
         return
-    }
+    } else
+        $("#line").blur();
     
     //On enter key, 'click' selected branch
     if (code == 13) {
@@ -271,8 +273,11 @@ function submitForm() {
     //Validate
     //Discard empty lines
     if (test == "") {
-        if (branches != 0)
+        if (branches != 0) {
             clickStory(branches[0])
+        } 
+        if (document.activeElement.name == 'line')
+            $("#line").blur();
         return
     }
         
@@ -373,7 +378,9 @@ function showBannerTip(i) {
     $('#banner_nav')[0].innerHTML = "";
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_left' class='nav_button' onclick='showBannerTip("+(i-1)+")'><-</div>";
     $('#banner_nav')[0].innerHTML += "<div id='next_button' class='nav_button' onclick='showBannerTip("+(i+1)+")'>NEXT></div>";
-    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='nav_button'>START</div>";
+    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='nav_button' onclick='location.href=\"/auth/register\"'>REGISTER</div>";
+    $('#banner_nav')[0].innerHTML += "<div id='start_button' class='nav_button'>LATER</div>";
+    
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_right' class='nav_button' onclick='showBannerTip("+(i+1)+")'>-></div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_register' class='nav_link' onclick='location.href=\"/auth/register\"'>register</div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_login' class='nav_link' onclick='location.href=\"/auth/login\"'>login</div>";
@@ -385,6 +392,7 @@ function showBannerTip(i) {
         //$('#tip_nav_right')[0].style.visibility = 'hidden';
         $('#next_button')[0].style.display = 'none';
     } else {
+        $('#banner_register')[0].style.display = 'none';
         $('#start_button')[0].style.display = 'none';
     }
     $('#close_tips').on('click',hideBannerTip);
@@ -701,6 +709,10 @@ intro_library = {
     'write':{
         'title':'Write',
         'content':'the story from any line,<br>growing a new branch'
+    },
+    'start':{
+        'title':'Register',
+        'content':'to become a part of the cvlt,<br>or just start wording around...'
     },
 }
 function buildTree(stories, rootID) {

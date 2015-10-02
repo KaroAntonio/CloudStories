@@ -71,10 +71,12 @@ function releaseKey(code) {
     
 function triggerKey(code) {
     //Disable Keys if form is active
+    var test = document.forms["line_form"]["line"].value.trim();
     if (document.activeElement.name == 'line') {
         if (code == 13) submitForm();
         return
-    }
+    } else
+        $("#line").blur();
     
     //On enter key, 'click' selected branch
     if (code == 13) {

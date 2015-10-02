@@ -120,8 +120,11 @@ function submitForm() {
     //Validate
     //Discard empty lines
     if (test == "") {
-        if (branches != 0)
+        if (branches != 0) {
             clickStory(branches[0])
+        } 
+        if (document.activeElement.name == 'line')
+            $("#line").blur();
         return
     }
         
