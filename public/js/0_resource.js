@@ -1804,7 +1804,7 @@ function drawAll() {
     drawBranches();
     drawStats();
     //drawBackground();
-    //drawTree();
+    if (enableTree) drawTree();
 }
 
 function drawTree() {
@@ -2063,7 +2063,7 @@ tip_library = {
     },
     '#line_form':{
         'title':'The Next Line...',
-        'content':'is yours to write'
+        'content':'is yours to write<br>\'ENTER\' to submit your words'
     },
     '#user_stats':{
         'title':'Literary Stats',

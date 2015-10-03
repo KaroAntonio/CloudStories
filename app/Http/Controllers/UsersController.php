@@ -73,6 +73,18 @@ class UsersController extends Controller {
 		//
 	}
     
+    public function sendAdminNotification() {
+        $user = Auth::user();
+        try {
+            Mail::send('emails.new_cvltist', ['user' => $user] , function ($m)  use ($user){
+                $m->from('mailbot@wrdcvlt.com', 'wrdcvlt');
+                $m->to('karoantonio@gmail.com', 'The Cvlt')->subject('+1 Cvltists');
+            });
+        } catch (Exception $e) {
+            dd('Validation Email Send Failure');
+        }
+    }
+    
     public function sendValidationEmail() {
         $user = Auth::user();
         try {
@@ -98,6 +110,7 @@ class UsersController extends Controller {
     public function onRegister()
     {
         $this->sendValidationEmail();
+        $this->sendAdminNotification();
         return redirect('/');
     }
     
