@@ -3,7 +3,7 @@ function drawAll() {
     drawBranches();
     drawStats();
     //drawBackground();
-    //drawTree();
+    if (enableTree) drawTree();
 }
 
 function drawTree() {

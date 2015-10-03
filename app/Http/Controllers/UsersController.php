@@ -74,11 +74,11 @@ class UsersController extends Controller {
 	}
     
     public function sendValidationEmail() {
-        $user = null;
+        $user = Auth::user();
         try {
             Mail::send('emails.validation', ['user' => $user] , function ($m)  use ($user){
                 $m->from('mailbot@wrdcvlt.com', 'wrdcvlt');
-                $m->to('karoantonio@gmail.com', 'The Cvlt')->subject('Prove yourself to the cvlt');
+                $m->to($user->email, 'The Cvlt')->subject('Prove yourself to the cvlt');
             });
         } catch (Exception $e) {
             dd('Validation Email Send Failure');

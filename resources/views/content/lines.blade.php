@@ -105,7 +105,8 @@ var fontSize = 30,
     enableWarning = false, //Input warning that lines will not be commited
     tips_enabled = true,
     visited = false, //the site has been visited before
-    debug = true;
+    debug = true,
+    enableTree = false;
     
 //Request & Ajax params
 var subtree_depth = 15;
@@ -168,7 +169,11 @@ initPrefs(preferences);
     
 //INITIALIZE Tips
 if (user != null) {
-    tips_enabled = preferences['tips_enabled']
+    try {
+        tips_enabled = preferences['tips_enabled'];
+    } catch (e) {
+        tips_enabled = true;
+    }
 } else {
 }
     
