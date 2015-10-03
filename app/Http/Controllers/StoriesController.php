@@ -158,7 +158,7 @@ class StoriesController extends Controller {
         
         //Set First Story (For Tweaking)
         if ($id == 1) {
-            $story->line = "Once Upon a Time...";
+            $story->line = "Chapter 1";
             $story->top = true;
         }
         $story->save();
