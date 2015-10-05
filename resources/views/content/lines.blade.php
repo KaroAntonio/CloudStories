@@ -106,7 +106,8 @@ var fontSize = 30,
     tips_enabled = true,
     visited = false, //the site has been visited before
     debug = true,
-    enableTree = false;
+    enableTree = false,
+    debug_ids = true;
     
 //Request & Ajax params
 var subtree_depth = 15;

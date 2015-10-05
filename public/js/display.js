@@ -60,6 +60,15 @@ function drawBranches() {
     
     $('#branches').empty();
     if (branches.length > 0) {
+        //Hidden Branch
+        if (user == null || user.id != 1){
+            for (var i = 0; i < branches.length; i++) {
+                if (branches[i].id == 263) {
+                    branches.splice(i,1);
+                }
+            }
+        }
+        
         //SORT braches wrt to visits
         branches.sort(function(a,b) { 
             return parseFloat(a.visits) - parseFloat(b.visits) 
@@ -144,6 +153,7 @@ function drawLine(d, cs, parent, isFirst) {
     line_info.id = 'info_' + d.id;
     line_info.className = 'info';
     if (debug) line_info.innerHTML += " : " + d.visits + "";
+    if (debug_ids) line_info.innerHTML += " : " + d.id+ "";
     
     //Draw Line
     var new_line = document.createElement("DIV");

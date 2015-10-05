@@ -4,6 +4,7 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Story;
 use Mail;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -127,6 +128,21 @@ class UsersController extends Controller {
             return view('auth.login', compact('msg'));
         }
         return redirect('/');
+    }
+    
+    public function buildLineIDs($id) 
+    {
+        $user = User::find($id);
+        if ($user == null)
+            return ('No Such User');
+        $lines = Story::where('authorID', '=', $id)->get();
+        $lineIDs = [];
+        for ($x = 0; $x < sizeof($lines); $x++) {
+            $lineIDs[] = $lines[$x]->id;
+        } 
+        $user->line_ids = json_encode($lineIDs);
+        $user->save();
+        dd($user);
     }
     
     public function settings()

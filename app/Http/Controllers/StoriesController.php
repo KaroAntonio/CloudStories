@@ -126,8 +126,7 @@ class StoriesController extends Controller {
         //a portion of the preceding storyline
         
         //Find First Story
-        
-        if (Story::where('id', '=', $id)->exists() != true)
+        if (!Story::where('id', '=', $id)->exists())
             $id=1;
         $story = Story::find($id);
         
@@ -272,6 +271,49 @@ class StoriesController extends Controller {
         $_SESSION["newBranch"] = $id;
         
         return $story;
+    }
+    
+    public function buildStory($id){
+        $story = Story::find($id);
+        if ($story == null)
+            return ("That story hasn't been written");
+        $storyLine = [];
+        $storyLine[] = $story->line;
+        while ($story->id != 1) {
+            $story = Story::find($story->parentID);
+            $storyLine[] = $story->line;
+        }
+        return(array_reverse ($storyLine));
+    }
+    
+    public function destroy($id) 
+    {
+        //TODO add handling for users currently on line to be deleted
+        if (Auth::user() == null) {
+            return ('Who are you?');    
+        }
+        if (Auth::user()->id == 1) {
+            $story = Story::find($id);
+            if ($story == null) 
+                return ('story does not exist');
+            //To Destroy Line
+            //Find Children
+            $children = Story::where('parentID', '=', $story->id)->get();
+            //Remove from author's line ID aray
+            $author = User::find($story->authorID);
+            $line_ids = json_decode($author->line_ids);
+            $line_ids = array_diff($line_ids, array($id));
+            
+            if (sizeof($children) > 0) {
+                return ("Unable to destroy, this line has children to care for :(");
+            }
+            $author->line_ids = json_encode($line_ids);
+            $author->save();
+            $story->delete();
+            return ($story->line." destroyed");
+        } else {
+            return ('You do not have that power');
+        }
     }
     
 }

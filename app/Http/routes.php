@@ -19,6 +19,8 @@ Route::get('/', 'StoriesController@begin');
 Route::get('/get_subtree/{id}/{depth}', ['uses' =>'StoriesController@getSubtree']);
 Route::get('/update_current_line/{id}', ['uses' =>'StoriesController@updateCurrentLine']);
 Route::post('/store', 'StoriesController@store');
+//**DANGEROUS**
+Route::get('/destroy_line/{id}', 'StoriesController@destroy');
 
 //DISABLE IF NOT IN USE *LOTS OF DANGER*
 //Route::get('/reset_prestige', ['uses' =>'StoriesController@resetPrestige']);
@@ -36,8 +38,10 @@ Route::get('/opt_in', 'UsersController@optIn');
 Route::get('/on_register', 'UsersController@onRegister');
 
 //Users
+Route::get('/build_story/{id}', 'StoriesController@buildStory');
+Route::get('/build_line_ids/{id}', 'UsersController@buildLineIDs');
 //**DANGEROUS**
-Route::get('/destroy_user/{email}', 'UsersController@destroy');
+Route::get('/destroy_user/{id}', 'UsersController@destroy');
 
 //Preferences
 Route::post('/update_prefs', 'UsersController@updatePreferences');
