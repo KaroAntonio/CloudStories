@@ -2,7 +2,7 @@
 tip_library = {
     'default':{
         'title':'wrdcvlt',
-        'content':'[wurd-kuhlt] noun<br>i. a branching story tree<br>ii. an obsessive group that tends lovingly to said tree<br><div id="disable_tips" class="regular_button" onclick="disableTips()">Turn off Tips</div>'
+        'content':"<div id='banner_register' class='words_link' onclick='location.href=\"/auth/register\"'><a class='big_button'>REGISTER<a></div><div id='disable_tips' class='regular_button' onclick='disableTips()'>Turn off Tips</div>"
     },
     '#story_line':{
         'title':'The Story',
@@ -46,9 +46,5 @@ intro_library = {
     'write':{
         'title':'Write',
         'content':'the story from any line,<br>growing a new branch'
-    },
-    'start':{
-        'title':'Register',
-        'content':'to become a part of the cvlt,<br>or just start wording around...'
     },
 }

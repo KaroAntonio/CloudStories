@@ -75,7 +75,7 @@ html, body {
 .nav_button {
     margin-left: 24px;
     margin-right: 24px;
-    display: inline-block;
+    /*display: inline-block;*/
     color: #ccc;
     font-size: 28px;
 }
@@ -89,10 +89,31 @@ html, body {
 }
 
 .regular_button {
-    display: inline-block;
     color: #ccc;
 }
 
+.auth_button {
+    display: inline-block;
+    color: #ccc;
+    font-size: 35px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.big {
+    display: inline-block;
+    color: #ccc;
+    font-size: 20px;
+}
+
+.big_button {
+    display: inline-block;
+    color: #ccc;
+    font-size: 40px;
+}
+
+.big_button:hover,
+.auth_button:hover,
 .regular_button:hover {
     cursor: pointer;
     color: #FF6666;

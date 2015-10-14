@@ -38,8 +38,10 @@
     </div>
 </div>
 </div>
+    
     <div id='banner_tips'></div>
     <div id='banner_nav'></div>
+    
 </div>
 <!--JQUERY-->
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -55,9 +57,9 @@
 <!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
 
-<script src="js/0_resource.min.js" type="text/javascript"></script>
+<!--<script src="js/0_resource.min.js" type="text/javascript"></script>-->
 
-<!--
+
 <script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
 <script src="js/tips.js" type="text/javascript"></script>
@@ -69,7 +71,7 @@
 <script src="js/sketch.js" type="text/javascript"></script>
 <script src="js/sentence_gen.js" type="text/javascript"></script>
 <script src="js/nonsense_gen.js" type="text/javascript"></script>
--->
+
 
 
 <script>
@@ -179,8 +181,10 @@ if (user != null) {
 }
     
 //Banner Tips
-if (user == null) showBannerTip(0);
-else hideBannerTip();
+if (user == null) {
+    if (false && is_cookie("banner_enabled")) hideBannerTip();
+    else showBannerTip(0);
+} else hideBannerTip();
     
 //Explorational Tips
 initTips();
