@@ -170,6 +170,24 @@ class UsersController extends Controller {
         Auth::user()->save();
         return Auth::user()->wants_mail;
     }
+    
+    /**
+	 * Display a list of all Users
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function displayUsers()
+	{
+        if (Auth::user() == null) {
+            return ('Who are you?');    
+        }
+        if (Auth::user()->id == 1) {
+            return User::all();
+        } else {
+            return ('You do not have that power');
+        }
+	}
 
 	/**
 	 * Remove the specified resource from storage.

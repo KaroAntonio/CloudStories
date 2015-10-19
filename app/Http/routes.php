@@ -40,6 +40,7 @@ Route::get('/on_register', 'UsersController@onRegister');
 //Users
 Route::get('/build_story/{id}', 'StoriesController@buildStory');
 Route::get('/build_line_ids/{id}', 'UsersController@buildLineIDs');
+Route::get('/display_users', 'UsersController@displayUsers');
 //**DANGEROUS**
 Route::get('/destroy_user/{id}', 'UsersController@destroy');
 

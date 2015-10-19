@@ -1,1 +1,1 @@
-Moar
+{{ Auth::user()->name }} !!*~*~!!! XXXX :3
