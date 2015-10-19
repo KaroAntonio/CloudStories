@@ -8,7 +8,7 @@
 @section('content')
 <div id="centered">
 <div id="prefs_container" class="">
-
+{{Auth::user()->name}} 
 {{Auth::user()->email}} 
 @if(!Auth::user()->validated)
 <div class="inline">

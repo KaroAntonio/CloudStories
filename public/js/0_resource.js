@@ -1708,6 +1708,7 @@ function hideTip(tip_key) {
         $(tip_key).css('background','transparent')
         $(tip_key).css('border','none')
     }
+    
 }
 
 function showTip(tip_key, tag, showTitle, large, library) {
@@ -1746,8 +1747,11 @@ function showBannerTip(i) {
     //$('#banner_tips')[0].innerHTML += '<div id="banner_nav"></div>'
     $('#banner_nav')[0].innerHTML = "";
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_left' class='nav_button' onclick='showBannerTip("+(i-1)+")'><-</div>";
-    $('#banner_nav')[0].innerHTML += "<div id='next_button' class='nav_button' onclick='showBannerTip("+(i+1)+")'>NEXT></div>";
-    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='words_link' onclick='location.href=\"/auth/register\"'><a class='nav_button'>REGISTER<a></div>";
+    
+    $('#banner_nav')[0].innerHTML += "<div id='banner_register' class='words_link auth_button' onclick='location.href=\"/auth/register\"'><a class='auth_button'>NEW<a></div>";
+    $('#banner_nav')[0].innerHTML += "<div id='banner_login' class='words_link auth_button' onclick='location.href=\"/auth/login\"'><a class='auth_button'>RETURN<a></div>";
+    
+    $('#banner_nav')[0].innerHTML += "<div id='next_button' class='nav_button' onclick='showBannerTip("+(i+1)+")'>NEXT\></div>";
     $('#banner_nav')[0].innerHTML += "<div id='start_button' class='regular_button'>LATER</div>";
     
     //$('#banner_nav')[0].innerHTML += "<div id='tip_nav_right' class='nav_button' onclick='showBannerTip("+(i+1)+")'>-></div>";
@@ -1755,13 +1759,14 @@ function showBannerTip(i) {
     //$('#banner_nav')[0].innerHTML += "<br><div id='banner_login' class='nav_link' onclick='location.href=\"/auth/login\"'>login</div>";
     //$('#banner_nav')[0].innerHTML += "<br><div id='close_tips' class='nav_button'>X</div>";
     
-    
-    //if (i == 0) $('#tip_nav_left')[0].style.visibility = 'hidden';
     if (getTipKey(intro_library, i+1) == undefined) {
         //$('#tip_nav_right')[0].style.visibility = 'hidden';
+        //window.location.href = "/auth/register";
         $('#next_button')[0].style.display = 'none';
+        //$('#banner_register')[0].style.display = 'none';
+        $('#start_button')[0].style.display = 'none';
     } else {
-        $('#banner_register')[0].style.display = 'none';
+        //$('#banner_register')[0].style.display = 'none';
         $('#start_button')[0].style.display = 'none';
     }
     $('#close_tips').on('click',hideBannerTip);
@@ -1771,6 +1776,7 @@ function showBannerTip(i) {
 
 function hideBannerTip() {
     $('#veil').css('display', 'none');
+    set_cookie( "banner_enabled", false, 200 );
 }
 function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain ) {
     // http://www.thesitewizard.com/javascripts/cookies.shtml
@@ -2057,7 +2063,7 @@ function blendColors(c0, c1, p) {
 tip_library = {
     'default':{
         'title':'wrdcvlt',
-        'content':'[wurd-kuhlt] noun<br>i. a branching story tree<br>ii. an obsessive group that tends lovingly to said tree<br><div id="disable_tips" class="regular_button" onclick="disableTips()">Turn off Tips</div>'
+        'content':"<div id='banner_register' class='words_link' onclick='location.href=\"/auth/register\"'><a class='big_button'>REGISTER<a></div><div id='disable_tips' class='regular_button' onclick='disableTips()'>Turn off Tips</div>"
     },
     '#story_line':{
         'title':'The Story',
@@ -2101,10 +2107,6 @@ intro_library = {
     'write':{
         'title':'Write',
         'content':'the story from any line,<br>growing a new branch'
-    },
-    'start':{
-        'title':'Register',
-        'content':'to become a part of the cvlt,<br>or just start wording around...'
     },
 }
 function buildTree(stories, rootID) {
