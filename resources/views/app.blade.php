@@ -65,9 +65,10 @@
                 
 				<ul class="nav navbar-nav">
 					<li>
+                        <!--
                         @if (Auth::guest())
                         <a  href="{{ url('/auth/register') }}">
-                        <!--<img class="kickstarter-logo" src="assets/kickstarter-logo-grey.png" alt="kick me">-->
+                        
                         <img class="kickstarter-logo" src="../assets/kickstarter-logo-grey.png" 
 onmouseover="this.src='../assets/kickstarter-logo-light.png'"
 onmouseout="this.src='../assets/kickstarter-logo-grey.png'" />
@@ -77,6 +78,7 @@ onmouseout="this.src='../assets/kickstarter-logo-grey.png'" />
                         <a  id="countdown" href="https://www.kickstarter.com/projects/2043140548/1156187219?token=de89b4d1">
                         </a>
                         @endif
+                        -->
                     </li>
 				</ul>
                 
