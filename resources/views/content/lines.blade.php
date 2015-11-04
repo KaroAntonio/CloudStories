@@ -20,6 +20,7 @@
 
     <div id='alpha_warning'>WARNING: wrdcvlt is in testing, anything written is dust in the wind.</div>
 <div id='user_stats'></div>
+<div id='tree_toggle' onclick='toggle_tree()'>tree</div>
 </div>
 </div>
     <div id='tips_container'>
@@ -188,7 +189,18 @@ if (user == null) {
     
 //Explorational Tips
 initTips();
-
+    
+//TREE TOGGLE 
+if (user != null) {
+    if (!(user.id in [1,32]))
+        $('#tree_toggle').css('display','none');
+} else $('#tree_toggle').css('display','none');
+function toggle_tree() {
+    enableTree = !enableTree;
+    drawAll()
+    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+}
+    
 //SET Cursor
 document.getElementsByTagName("body")[0].style.cursor = "default";
 //SET form listeners

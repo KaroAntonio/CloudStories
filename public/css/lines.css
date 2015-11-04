@@ -307,6 +307,11 @@ html, body {
     margin-right: auto;
 }
 
+#tree_toggle {
+    color: #ddd;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   /* UNDER 500px CSS here */
     #story_break {
