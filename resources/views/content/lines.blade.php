@@ -192,7 +192,7 @@ initTips();
     
 //TREE TOGGLE 
 if (user != null) {
-    if (!(user.id in [1,32]))
+    if (!(user.id in [32,14,1]))
         $('#tree_toggle').css('display','none');
 } else $('#tree_toggle').css('display','none');
 function toggle_tree() {
