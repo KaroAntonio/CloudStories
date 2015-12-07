@@ -32,7 +32,8 @@
 <div id='welcome_banner'>
          <div class="title-container">
     <div class="title">
-        <a onclick='hideBannerTip()'>
+        <!--<a onclick='hideBannerTip()'>-->
+        <a>
             @include('content/title')
         </a>
         
@@ -58,8 +59,8 @@
 <!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
 
-<script src="js/0_resource.min.js" type="text/javascript"></script>
-<!--
+<!--<script src="js/0_resource.min.js" type="text/javascript"></script>-->
+
 <script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
 <script src="js/tips.js" type="text/javascript"></script>
@@ -71,7 +72,7 @@
 <script src="js/sketch.js" type="text/javascript"></script>
 <script src="js/sentence_gen.js" type="text/javascript"></script>
 <script src="js/nonsense_gen.js" type="text/javascript"></script>
--->
+
 
 
 
@@ -90,6 +91,7 @@ var stories = <?php echo json_encode($stories); ?>,
     
 var storyLine,
     branches,
+    locations,
     selected,
     dictionary,
     num_lines;
@@ -191,7 +193,6 @@ if (user == null) {
 initTips();
     
 //TREE TOGGLE 
-    
 if (user != null) {
     if ([32,14,1].indexOf(Number(user.id)) == -1)
         $('#tree_toggle').css('display','none');
@@ -201,7 +202,7 @@ function toggle_tree() {
     drawAll()
     $("html, body").animate({ scrollTop: $(document).height() }, 1000);
 }
-    
+
 //SET Cursor
 document.getElementsByTagName("body")[0].style.cursor = "default";
 //SET form listeners
@@ -213,7 +214,8 @@ if (enableWarning) {
 disable_form('#line_form');
 buildStoryLine(1);
 listen_for_bumps();
-
+init_location_listener(1000);
+    
 //DISPLAY current lines
 if (user != null) {
     if (user['line_ids'] != "")

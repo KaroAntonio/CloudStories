@@ -7,18 +7,85 @@ function listen_for_bumps() {
         var eSource = new EventSource("/updateStories.php");
         //detect message receipt
         eSource.onmessage = function(event) {
-            //route page to new address if the parent line has a new branch
+            //bump user to a new line if current line has a new branch
             var data = JSON.parse(event.data);
-            if (storyLine[0]['id'] == Number(data[0])){
-                requestSubtree(Number(data[0]))
-                if (findLine(data[1]) != null) {
-                    buildStoryLine(data[1]);
-                    branches = findBranches(data[1]);
-                    drawAll();
+            if (data != null) {
+                if (storyLine[0]['id'] == Number(data[0])){
+                    requestSubtree(Number(data[0]))
+                    if (findLine(data[1]) != null) {
+                        buildStoryLine(data[1]);
+                        branches = findBranches(data[1]);
+                        drawAll();
+                    }
                 }
             }
         };
     }
+}
+
+function init_location_listener(frequency) {
+    //repeatedly request locations in order to update the locations of users
+    requestLocations();
+    //return setInterval(requestLocations, frequency);
+}
+
+function removeUserIcons() {
+    //clear current users drawn to the DOM
+    $('.user_icon').remove();
+}
+
+function requestLocations() {
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET","/get_locations", true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            locations = eval("(" + xmlhttp.responseText + ")");
+            //drawAll();
+            removeUserIcons()
+            drawUserIcons();
+        }
+      }
+    return true;
+}
+
+function requestSubtree(id, depth, callback) {
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    if (id == undefined) id = 1;
+    xmlhttp.open("GET","/get_subtree/"+id+"/"+depth, true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            var subtree = eval("(" + xmlhttp.responseText + ")");
+            appendSubtree(subtree);
+            if (branches.length == 0) {
+                showStory(storyLine[0].id)
+            }
+            if (callback !== undefined) {
+                if (callback == 'click')
+                    clickStory(subtree[0])
+                else
+                    callback();
+            }
+        }
+      }
+    return true;
 }
 
 function initPrefs(p) {

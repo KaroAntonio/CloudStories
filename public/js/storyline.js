@@ -44,37 +44,6 @@ function findLine(id) {
     return null
 }
 
-function requestSubtree(id, depth, callback) {
-    var xmlhttp;
-    if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-      }
-    else
-      {// code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-    if (id == undefined) id = 1;
-    xmlhttp.open("GET","/get_subtree/"+id+"/"+depth, true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            var subtree = eval("(" + xmlhttp.responseText + ")");
-            appendSubtree(subtree);
-            if (branches.length == 0) {
-                showStory(storyLine[0].id)
-            }
-            if (callback !== undefined) {
-                if (callback == 'click')
-                    clickStory(subtree[0])
-                else
-                    callback();
-            }
-        }
-      }
-    return true;
-}
-
 function appendSubtree(subtree) {
     storyIDs = [];
     for (var i = 0; i < stories.length; i++)

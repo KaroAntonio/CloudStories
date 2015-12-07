@@ -47,6 +47,10 @@ Route::get('/destroy_user/{id}', 'UsersController@destroy');
 //Preferences
 Route::post('/update_prefs', 'UsersController@updatePreferences');
 
+//Locations
+Route::get('/display_user_locations','StoriesController@getUserLocations');
+Route::get('/get_locations','StoriesController@getUserLocations');
+
 
 Route::get('home', 'WelcomeController@index');
 //Route::get('home', 'StoriesController@begin');

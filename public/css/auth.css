@@ -14,8 +14,9 @@
     color: #ddd;
     font-family: info;
     padding-left: 26px;
-    font-size: 160px; /*120*/
-    cursor: pointer;
+    /*font-size: 160px; *//*120*/
+    font-size: 120px; 
+    /*cursor: pointer;*/
 }
 
 .title_vanilla {

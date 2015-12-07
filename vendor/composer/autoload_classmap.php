@@ -12,6 +12,7 @@ return array(
     'AddValidationToUsersTable' => $baseDir . '/database/migrations/2015_09_17_144547_add_validation_to_users_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateStoriesTable' => $baseDir . '/database/migrations/2015_03_19_151527_createStoriesTable.php',
+    'CreateUserLocationsTable' => $baseDir . '/database/migrations/2015_12_06_231907_create_user_locations_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2015_08_03_151625_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

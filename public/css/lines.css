@@ -248,6 +248,19 @@ html, body {
     transition: color 2s;
 }
 
+.user_icon {
+    text-align: center;
+    float: left;
+    color: purple;
+    border: 2px solid purple;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 800;
+    padding-bottom: 20px;
+    font-style: normal;
+}
+
 #story_break {
     height: 1px;
     width: 60%;

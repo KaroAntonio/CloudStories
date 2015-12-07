@@ -10,6 +10,9 @@ flush();
 
 function number() {
     session_start(); 
-    return [$_SESSION["lastUpdated"], $_SESSION["newBranch"]];
+    if (isset($_SESSION["lastUpdated"]))
+    {
+        return [$_SESSION["lastUpdated"], $_SESSION["newBranch"]];
+    }    
 }
 ?>

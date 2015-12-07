@@ -2,8 +2,25 @@ function drawAll() {
     drawStoryLine();
     drawBranches();
     drawStats();
+    drawUserIcons();
     //drawBackground();
     if (enableTree) drawTree();
+}
+
+function drawUserIcons() {
+    //draw users at their respctive locations
+    if (locations == null) return;
+    
+    for(var i = 0; i < locations.length;i++) {
+        if (locations[i].uid != user.id) {
+            console.log(locations[i].uid);
+            var icon = $('<div></div>');
+            icon.attr('id','user_icon_'+locations[i].uid);
+            icon.addClass('user_icon');
+            icon.html(locations[i].name[0]);
+            $('#line_'+locations[i].line_id).append(icon)
+        }
+    }
 }
 
 function drawTree() {

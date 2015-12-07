@@ -2,6 +2,7 @@
 
 use App\Story;
 use App\User;
+use App\Location;
 use Request;
 use DB;
 use Auth;
@@ -47,12 +48,28 @@ class StoriesController extends Controller {
         dd($authors);
     }
     
+    /**
+	 *Update the current Line and User
+	 *
+	 * 
+	 */
     public function updateCurrentLine($id) 
     {
         $reader = Auth::user();
         if ($reader == null)
             return;
         
+        //Update reader location
+        $loc = null;
+        if (Location::where('uid', '=', $reader->id)->exists()) {
+            $loc = Location::where('uid', $reader->id)->get()->first();
+            
+        } else {
+            $loc = new Location;
+            $loc->uid = $reader->id;
+        }
+        $loc->line_id = $id;
+        $loc->save();
         
         //Find previous line
         $prev_line_id = $reader->current_line;
@@ -119,6 +136,26 @@ class StoriesController extends Controller {
         Auth::user()->save();
     }
     
+    /**
+	 *Return User locations
+	 *
+	 * 
+	 */
+    public function getUserLocations()
+    {
+        $locations = DB::table('locations')
+            ->leftJoin('users', 'locations.uid', '=', 'users.id')
+            ->get();
+        return $locations;
+    }
+    
+    /**
+	 *Display Locations 
+     *(debugging)
+	 *
+	 * 
+	 */
+    
     public function getSubtree($id=1, $depth = 11) 
     {
         //Returns 
@@ -140,20 +177,6 @@ class StoriesController extends Controller {
         //Update Current Line
         if ($id != 1)
             $this->updateCurrentLine($id);
-        
-        //Increment Story Visits
-        //$story->visits = $story->visits + 1;
-        
-        //Award Prestige to author
-        /*
-        $author = User::find($story->authorID);
-        if ($author != null) {
-            if ($author->id != $reader->id) {
-                $author->prestige += 1;
-                $author->save();
-            }
-        }
-        */
         
         //Set First Story (For Tweaking)
         if ($id == 1) {
