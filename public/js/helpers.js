@@ -25,8 +25,8 @@ function listen_for_bumps() {
 
 function init_location_listener(frequency) {
     //repeatedly request locations in order to update the locations of users
-    requestLocations();
-    //return setInterval(requestLocations, frequency);
+    //requestLocations();
+    return setInterval(requestLocations, frequency);
 }
 
 function removeUserIcons() {
