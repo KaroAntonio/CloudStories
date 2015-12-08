@@ -199,21 +199,20 @@ class StoriesController extends Controller {
         $locations = DB::table('locations')
             ->leftJoin('users', 'locations.uid', '=', 'users.id')
             ->get();
-        $ul = Auth::user()->current_line;
-        for ($i = 0; $i < count($locations); $i++) {
-            $yca = $this->getYoungestAncestor($ul,$locations[$i]->line_id);
-            
-            //Set flag to indicate other user is not in immediate branch
-            if ($locations[$i]->line_id!=$yca->id)
-                $locations[$i]->in_distance = true;
-            else $locations[$i]->in_distance = false;
-            /*
-            if ($i == 1)
-                dd($yca,$ul,$locations[$i]->line_id);*/
-            $locations[$i]->line_id = $yca->id;
-            
-            
-            
+        if (Auth::user() != null) {
+            $ul = Auth::user()->current_line;
+            for ($i = 0; $i < count($locations); $i++) {
+                $yca = $this->getYoungestAncestor($ul,$locations[$i]->line_id);
+
+                //Set flag to indicate other user is not in immediate branch
+                if ($locations[$i]->line_id!=$yca->id)
+                    $locations[$i]->in_distance = true;
+                else $locations[$i]->in_distance = false;
+                /*
+                if ($i == 1)
+                    dd($yca,$ul,$locations[$i]->line_id);*/
+                $locations[$i]->line_id = $yca->id;
+            }
         }
         return $locations;
     }

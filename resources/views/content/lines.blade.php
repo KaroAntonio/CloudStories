@@ -59,8 +59,8 @@
 <!--<script language="javascript" src="p5/addons/p5.sound.js"></script>-->
 <!--My JS-->
 
-<!--<script src="js/0_resource.min.js" type="text/javascript"></script>-->
-
+<script src="js/0_resource.min.js" type="text/javascript"></script>
+<!--
 <script src="js/colors.js" type="text/javascript"></script>
 <script src="js/helpers.js" type="text/javascript"></script>
 <script src="js/tips.js" type="text/javascript"></script>
@@ -72,7 +72,7 @@
 <script src="js/sketch.js" type="text/javascript"></script>
 <script src="js/sentence_gen.js" type="text/javascript"></script>
 <script src="js/nonsense_gen.js" type="text/javascript"></script>
-
+-->
 
 
 
@@ -203,6 +203,19 @@ function toggle_tree() {
     drawAll()
     $("html, body").animate({ scrollTop: $(document).height() }, 1000);
 }
+    
+//GOTO Form
+$('#goto_form').submit(function(e){
+    //prevent the form from actually submitting.
+    e.preventDefault();
+    var v = $(this).serializeArray()[0].value
+    requestSubtree(
+        v,
+        5,
+        'click')
+    
+    return false;
+});
 
 //SET Cursor
 document.getElementsByTagName("body")[0].style.cursor = "default";

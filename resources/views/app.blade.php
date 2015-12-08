@@ -97,6 +97,16 @@ onmouseout="this.src='../assets/kickstarter-logo-grey.png'" />
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+                                @if (Auth::user()->id==1)
+                                <li>
+                                    <a>
+                                    <form id="goto_form">
+                                    <input type="text" name="goto" size="8">
+                                    <input type="submit" value=">">
+                                    </form>
+                                    </a>
+                                </li>
+                                @endif
                                 <li><a href="{{ url('/settings') }}">Preferences</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>

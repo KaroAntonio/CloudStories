@@ -1416,18 +1416,85 @@ function listen_for_bumps() {
         var eSource = new EventSource("/updateStories.php");
         //detect message receipt
         eSource.onmessage = function(event) {
-            //route page to new address if the parent line has a new branch
+            //bump user to a new line if current line has a new branch
             var data = JSON.parse(event.data);
-            if (storyLine[0]['id'] == Number(data[0])){
-                requestSubtree(Number(data[0]))
-                if (findLine(data[1]) != null) {
-                    buildStoryLine(data[1]);
-                    branches = findBranches(data[1]);
-                    drawAll();
+            if (data != null) {
+                if (storyLine[0]['id'] == Number(data[0])){
+                    requestSubtree(Number(data[0]))
+                    if (findLine(data[1]) != null) {
+                        buildStoryLine(data[1]);
+                        branches = findBranches(data[1]);
+                        drawAll();
+                    }
                 }
             }
         };
     }
+}
+
+function init_location_listener(frequency) {
+    //repeatedly request locations in order to update the locations of users
+    //requestLocations();
+    return setInterval(requestLocations, frequency);
+}
+
+function removeUserIcons() {
+    //clear current users drawn to the DOM
+    $('.user_icon').remove();
+}
+
+function requestLocations() {
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET","/get_locations", true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            locations = eval("(" + xmlhttp.responseText + ")");
+            //drawAll();
+            removeUserIcons()
+            drawUserIcons();
+        }
+      }
+    return true;
+}
+
+function requestSubtree(id, depth, callback) {
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    if (id == undefined) id = 1;
+    xmlhttp.open("GET","/get_subtree/"+id+"/"+depth, true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            var subtree = eval("(" + xmlhttp.responseText + ")");
+            appendSubtree(subtree);
+            if (branches.length == 0) {
+                showStory(storyLine[0].id)
+            }
+            if (callback !== undefined) {
+                if (callback == 'click')
+                    clickStory(subtree[0])
+                else
+                    callback();
+            }
+        }
+      }
+    return true;
 }
 
 function initPrefs(p) {
@@ -1527,6 +1594,11 @@ function buildStoryLine(id) {
     branches = findBranches(storyLine[0].id);
 }
 
+function goto (e) {
+    console.log(e);
+    return false;
+}
+
 function isTop(id){
     var line = findLine(id);
     var siblings = findBranches(line.parentID);
@@ -1552,37 +1624,6 @@ function findLine(id) {
         if (stories[i].id == id)
             return stories[i]
     return null
-}
-
-function requestSubtree(id, depth, callback) {
-    var xmlhttp;
-    if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-      }
-    else
-      {// code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-    if (id == undefined) id = 1;
-    xmlhttp.open("GET","/get_subtree/"+id+"/"+depth, true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            var subtree = eval("(" + xmlhttp.responseText + ")");
-            appendSubtree(subtree);
-            if (branches.length == 0) {
-                showStory(storyLine[0].id)
-            }
-            if (callback !== undefined) {
-                if (callback == 'click')
-                    clickStory(subtree[0])
-                else
-                    callback();
-            }
-        }
-      }
-    return true;
 }
 
 function appendSubtree(subtree) {
@@ -1809,8 +1850,43 @@ function drawAll() {
     drawStoryLine();
     drawBranches();
     drawStats();
+    drawUserIcons();
     //drawBackground();
     if (enableTree) drawTree();
+}
+
+function drawUserIcons() {
+    //draw users at their respctive locations
+    //styling split between here and css class
+    //TODO: only recent users are drawn
+    var icon_width = 20;
+    if (locations == null) return;
+    var ipl = {}      //icons per line
+    for(var i = 0; i < locations.length;i++) {
+        var l = locations[i]
+        if ((l.uid != user.id) & (!(l.line_id in ipl) | (l.line_id in ipl & ipl[l.line_id] < 4))) {
+            var icon = $('<div></div>');
+            icon.attr('id','user_icon_'+l.uid);
+            icon.addClass('user_icon');
+            icon.html(l.name[0]);
+            icon.css('left',icon_width*ipl[l.line_id]+1+'px');
+            
+            //SET Icon color
+            //update to display users chosen color
+            //display chosen symbol
+            if (l.in_distance) {
+                icon.css('color',colorScale(colorRange));
+                icon.css('border-color',colorScale(colorRange));
+            } else {
+                icon.css('color',colorScale(0));
+                icon.css('border-color',colorScale(0));
+            }
+            $('#line_'+l.line_id).append(icon)
+            if (l.line_id in ipl)
+                ipl[l.line_id]++
+            else ipl[l.line_id] = 1
+        }
+    }
 }
 
 function drawTree() {

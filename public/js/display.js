@@ -10,6 +10,7 @@ function drawAll() {
 function drawUserIcons() {
     //draw users at their respctive locations
     //styling split between here and css class
+    //TODO: only recent users are drawn
     var icon_width = 20;
     if (locations == null) return;
     var ipl = {}      //icons per line

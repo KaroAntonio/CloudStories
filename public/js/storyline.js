@@ -17,6 +17,11 @@ function buildStoryLine(id) {
     branches = findBranches(storyLine[0].id);
 }
 
+function goto (e) {
+    console.log(e);
+    return false;
+}
+
 function isTop(id){
     var line = findLine(id);
     var siblings = findBranches(line.parentID);
