@@ -38,6 +38,59 @@ class StoriesController extends Controller {
         dd($storyline);
     }
     
+    /**
+	 *Find and return the youngest ancestor of two
+	 *
+	 * param: the ids of two lines
+	 */
+    public function getYoungestAncestor($id1, $id2)
+    {
+        $a1 = $this->getAncestry($id1);
+        $a2 = $this->getAncestry($id2);
+        $youngestAncestor = null;
+        $shortest = min(count($a1),count($a2));
+        for ($i = 0; $i < $shortest; $i++) {
+            if ($i < count($a2) && $a1[$i]['id'] == $a2[$i]['id'])
+                $youngestAncestor = $a1[$i];
+        }
+        
+        $b = $this->getBranches($a1[$shortest-1]['id']);
+        //$b2 = $this->getBranches($a2[count($a2)-1]['id']);
+        
+        //$c1 = $this->commonStory($a1, $b);
+        $c = $this->commonStory($a2, $b);
+        
+        //dd($b1,$b2);
+        /*
+        if (count($a1) != $shortest & $c1 != null)
+            return $c1;*/
+        //dd(count($a1) ,count($a2),$shortest);
+        if (count($a2) != $shortest & $c != null)
+            return $c;
+        
+        
+        return $youngestAncestor;
+        
+        
+    }
+    
+    /**
+	 *Find and return common story in two collections
+	 *
+	 * param: two collections
+     * return: a common element if it exists
+     *          else null
+	 */
+    public function commonStory($a, $b) {
+        for ($i = 0; $i < count($a); $i++)
+            for ($j = 0; $j < count($b); $j++)
+                if ($a[$i]['id'] == $b[$j]['id'])
+                    return $a[$i];
+        return null;
+            
+        
+    }
+        
     public function resetPrestige()
     {
         $authors = User::get();
@@ -146,15 +199,34 @@ class StoriesController extends Controller {
         $locations = DB::table('locations')
             ->leftJoin('users', 'locations.uid', '=', 'users.id')
             ->get();
+        $ul = Auth::user()->current_line;
+        for ($i = 0; $i < count($locations); $i++) {
+            $yca = $this->getYoungestAncestor($ul,$locations[$i]->line_id);
+            
+            //Set flag to indicate other user is not in immediate branch
+            if ($locations[$i]->line_id!=$yca->id)
+                $locations[$i]->in_distance = true;
+            else $locations[$i]->in_distance = false;
+            /*
+            if ($i == 1)
+                dd($yca,$ul,$locations[$i]->line_id);*/
+            $locations[$i]->line_id = $yca->id;
+            
+            
+            
+        }
         return $locations;
     }
     
     /**
-	 *Display Locations 
-     *(debugging)
+	 *Return Branches of a line
 	 *
 	 * 
 	 */
+    public function getBranches($id)
+    {
+        return Story::where('parentID', '=', $id)->get();
+    }
     
     public function getSubtree($id=1, $depth = 11) 
     {
@@ -234,6 +306,27 @@ class StoriesController extends Controller {
         }
         return $tree;
         
+    }
+    
+    /**
+	 *Traverse tree to root
+     *param: line id
+	 *return collection of all parents including line
+	 * 
+	 */
+    public function getAncestry($id)
+    {
+        $story = Story::find($id);
+        $trunk = new \Illuminate\Database\Eloquent\Collection;
+        $trunk->push( $story );
+        //Append preceding lines
+        while (true) {
+            if ($story->id == 1)
+                break;
+            $story = Story::find($story->parentID);
+            $trunk->push( $story );
+        }
+        return $trunk->reverse();
     }
     
     public function begin()

@@ -21,6 +21,7 @@ Route::get('/update_current_line/{id}', ['uses' =>'StoriesController@updateCurre
 Route::post('/store', 'StoriesController@store');
 //**DANGEROUS**
 Route::get('/destroy_line/{id}', 'StoriesController@destroy');
+Route::get('/get_youngest_ancestor/{id1}/{id2}', 'StoriesController@getYoungestAncestor');
 
 //DISABLE IF NOT IN USE *LOTS OF DANGER*
 //Route::get('/reset_prestige', ['uses' =>'StoriesController@resetPrestige']);
@@ -50,7 +51,6 @@ Route::post('/update_prefs', 'UsersController@updatePreferences');
 //Locations
 Route::get('/display_user_locations','StoriesController@getUserLocations');
 Route::get('/get_locations','StoriesController@getUserLocations');
-
 
 Route::get('home', 'WelcomeController@index');
 //Route::get('home', 'StoriesController@begin');

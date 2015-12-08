@@ -13,7 +13,6 @@ function drawUserIcons() {
     
     for(var i = 0; i < locations.length;i++) {
         if (locations[i].uid != user.id) {
-            console.log(locations[i].uid);
             var icon = $('<div></div>');
             icon.attr('id','user_icon_'+locations[i].uid);
             icon.addClass('user_icon');
