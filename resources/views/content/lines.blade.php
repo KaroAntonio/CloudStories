@@ -112,7 +112,7 @@ var fontSize = 30,
     visited = false, //the site has been visited before
     debug = false,
     enableTree = false,
-    debug_ids = true;
+    debug_ids = false;
     
 //Request & Ajax params
 var subtree_depth = 15;
@@ -142,9 +142,10 @@ var maxBranchColor = '#6B24B2';
 //var maxBranchColor = '#3385AD';
 //var maxBranchColor = inverse(forwardColor);
 var branchColorScale;
+var colorRange = 7;
 var colorScale = d3.scale.linear()
     .range([forwardColor, backColor]) 
-    .domain([0, 7])
+    .domain([0, colorRange])
     .clamp(true);
     
 //Scales

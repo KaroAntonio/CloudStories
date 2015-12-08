@@ -9,15 +9,33 @@ function drawAll() {
 
 function drawUserIcons() {
     //draw users at their respctive locations
+    //styling split between here and css class
+    var icon_width = 20;
     if (locations == null) return;
-    
+    var ipl = {}      //icons per line
     for(var i = 0; i < locations.length;i++) {
-        if (locations[i].uid != user.id) {
+        var l = locations[i]
+        if ((l.uid != user.id) & (!(l.line_id in ipl) | (l.line_id in ipl & ipl[l.line_id] < 4))) {
             var icon = $('<div></div>');
-            icon.attr('id','user_icon_'+locations[i].uid);
+            icon.attr('id','user_icon_'+l.uid);
             icon.addClass('user_icon');
-            icon.html(locations[i].name[0]);
-            $('#line_'+locations[i].line_id).append(icon)
+            icon.html(l.name[0]);
+            icon.css('left',icon_width*ipl[l.line_id]+1+'px');
+            
+            //SET Icon color
+            //update to display users chosen color
+            //display chosen symbol
+            if (l.in_distance) {
+                icon.css('color',colorScale(colorRange));
+                icon.css('border-color',colorScale(colorRange));
+            } else {
+                icon.css('color',colorScale(0));
+                icon.css('border-color',colorScale(0));
+            }
+            $('#line_'+l.line_id).append(icon)
+            if (l.line_id in ipl)
+                ipl[l.line_id]++
+            else ipl[l.line_id] = 1
         }
     }
 }

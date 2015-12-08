@@ -247,7 +247,9 @@ class StoriesController extends Controller {
         }
         
         //Update Current Line
-        if ($id != 1)
+        //used to be set to exclude 1..?
+        //may be buggy
+        if ($id != 0)   
             $this->updateCurrentLine($id);
         
         //Set First Story (For Tweaking)
