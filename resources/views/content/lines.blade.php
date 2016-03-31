@@ -32,8 +32,7 @@
 <div id='welcome_banner'>
          <div class="title-container">
     <div class="title">
-        <!--<a onclick='hideBannerTip()'>-->
-        <a>
+        <a onclick='hideBannerTip()'>
             @include('content/title')
         </a>
         

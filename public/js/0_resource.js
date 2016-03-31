@@ -1861,6 +1861,7 @@ function drawUserIcons() {
     //TODO: only recent users are drawn
     var icon_width = 20;
     if (locations == null) return;
+	if (user == null) return;
     var ipl = {}      //icons per line
     for(var i = 0; i < locations.length;i++) {
         var l = locations[i]
