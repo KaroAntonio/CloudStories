@@ -1,0 +1,282 @@
+JSON formatter
+https://www.jsoneditoronline.org/
+
+Future Features:
+Add Children and Branches
+Collaborative Poetry
+Read/Write tree to database (sqlite ideally) 
+Add collision resolution to sperate nodes into horizontal lines
+poetry parser
+
+https://sodadb.com/QlyTN8mTTCIY3sqZl0w6
+
+Database Columns
+ID	ParentID	NumVisits	Text	
+
+NAMES:
+CloudStories
+CloudYarn
+CloudChestnut
+CloudyChestnuts
+
+pass to view, the current story, all the branch stories,
+
+showBeginning
+showStory
+
+the view passes back 
+the ID of the selected branch 
+OR
+the text of a new branch to be entered along with the id of the parent
+
+Indicate the depth of each subtree from a branch x
+
+Visual Design Principles:
+The Interface is divided into the PAST and the FUTURE x
+the Future must be clearly indicated x
+The Future js ideally more Vibrant/interesting/noticeable x
+The size of a branches subtree is indicated by it’s saturation x
+
+How Many Beginnings are there? Infinite? Or a set Beginning?
+
+functionality to optionally replace a line in a story
+
+Functions to Add
+Login With Google 
+Save bookmarks
+An information icon
+Each user can only vote for one story
+Parse a book and add it in line by line
+
+How are tiers proportioned?
+
+Point feed back for lines written 
+point feedback for lines read
+
+Kickstarter supporter tiers for readers and authors
+
+readers get books
+
+authors get $$ related to lines printed
+
+ourwords
+openLegend
+ourLegend
+NetWords
+WordNet
+WordFlo
+cloudwords
+cloudstories
+ourstories
+
+The Most popular branch is always showed, this gives the most popular branch a bias but it also encourages longer, as opposed to broader stories. 
+
+It represents a compromise to develop deep stories.
+
+A 'detour' symbol indicates when you are on a branch that is not the most popular branch,
+
+Kickstarter Video
+
+Story, two very different people, writing a love story together, both imagining sexy girls writing the other lines
+
+backer tiers are named inspired by famous writers/poets
+
+wrdcvlt:
+
+push server data to client
+http://www.developerdrive.com/2012/03/pushing-updates-to-the-web-page-with-html5-server-sent-events/
+
+scp
+scp u-troubadordelta@ssh37.eu1.frbit.com:~/htdocs/storage/database.sqlite ~/Desktop
+
+Aug 4, 2015 :: Gamified Design Outline
+
+Goals of app, to encourage participation, meaningful reading and writing 
+pts for writing, reading, and being read.
+
+xp: worthless, mainly used to give superficial rewards
+prestige: is awarded by being read, cannot be 'spent' just reallocated
+rank: is either a decorative title or a lvl which can be bought or acheived with prestige
+
+Each user can only award points to the story they are currently reading.
+    (Add current story to user table)
+
+READING is almost worthless because it's so difficult to verify that you're reading effecitvely
+
+WRITING earns xp just for writing (100xp maybe), lines earn xp + prestige when read.
+
+OR Everytime a story is read, all of it's parents also gain prestige, simplifying the system 
+    Still has the problem of multiple reads of the same line artificially inflate a story's value.
+    
+FANS - you get feedback on how many fans you have, who's your biggest fan, etc...
+
+send messages to your no. 1 fans? No. the only form of writing contributes to the story
+
+CUSTOMIZE branch layout, whether the top branch is at the top, a random branch is at the top
+
+the system should reward good writing, not high prestige.
+
+In order to encourage good writing, only x amount of lines are allowed per person...?
+
+Does that mean you must be logged in to write lines?
+
+Anonymous lines are culled after a certain amount of time if they have no visits.
+
+UNLOCK Tree View
+more prestige/ rank allows you to write more?
+
+Voting on your story:
+Only users award prestige through reading.
+
+The game then uses a user backed currency.
+
+Offer a smaller, cheaper, shorter poetry/short story award
+offer an award for $1 and $5 categories
+
+launch October (16-20) on a tuesday
+
+Offer different Tiers for Toronto, Canada Wide and US.
+
+Dedicate a few pages to listing every author in the book, authors names are scaled to reflect the number of pages written
+
+For word cult(ure) advertise with physical print of generated stories 
+
+SQL DATABASE
+if the site sees more the 100K hits per day, upgrade the database
+
+BOOKMARK Feature
+
+Add A search feature, search for a phrase in the tree
+
+use mailchimp to send emails
+
+i. upgrade the database and website infratructure so it can handle more people
+ii. email validation
+iii. social feedback
+iv. bookmarking
+v. search
+vi. ranks
+vii. experience benefits
+
+you can buy/earn characters (how many characters per line)
+
+ADD Admin control, list users, add/drop users, ...modify users? .. add/drop lines, send emails
+
+Speed Up!
+https://varvy.com/pagespeed/
+
+HTACCESS MODS
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+<ifModule mod_headers.c> Header set Connection keep-alive </ifModule>
+
+concat and minify JS/CSS with:
+cat colors.js countdown.min.js nonsense_gen.js sentence_gen.js helpers.js storyline.js tips.js cookies.js display.js sketch.js tip_library.js tree.js > 0_resource.js && minify 0_resource.js
+
+minify JS/CSS with:
+minify [filename] 
+
+Dissapearing Scroll bars
+High frequency spam protection
+http://codepen.io/rtcoms/pen/rVeLwX
+
+Indicate the ***CHOSEN POTENTIAL NEXT LINE***
+
+Show 3:
++sexier looking
++doesn't imply the user must scroll through all
+-takes up more space
+
+Show 1.5:
++reduce decision making drastically
++indicate directly that the line is one option of many
+-not as sexy
+-narrows the choices down perhaps too much
+-increases focus
+
+BACKUP DATABASE
+scp u-troubadordelta@ssh37.eu1.frbit.com:~/htdocs/storage/database.sqlite wrdcvlt_backup_oct_02_2015.sqlite
+
+UPLOAD DATABASE
+scp database.sqlite u-troubadordelta@ssh37.eu1.frbit.com:~/htdocs/storage/database_new.sqlite
+
+SSH
+ssh u-troubadordelta@ssh37.eu1.frbit.com
+
+ABOUT INFO
+Add more info on the about
+Call for contribution
+
+How to correct / update lines ...?
+
+Optimize SEO.... what....
+
+Facebook post
+
+Q: Can the internet write a good crowdsourced story?
+
+wrdcvlt is probably the best bet to answer that. Of course, she's my baby, so I'm biased.
+
+It works like this:
+You start at the first line, choosing each line you want to read, kind of like a choose your own adventure.
+When you come to a point where you feel like your imagination is better than the story you're reading, you add to the story and write your own lines.
+wrdcvlt keeps track of how popular stories and lines are: as you read, you're automatically voting on the story, that's how the invevitable randomness of the internet is organized.
+
+Some people like reading, some writing, some both, (some neither...what?) if you're curious to see how this experiment will work out but don't really want to write, share! I'm pretty excited to see how this will pllocay out so any help to make it happen is really appreciated : )
+
+VII
+LETS WRITE A ST0RY, INTERNET
+wrdcvlt.
+
+1. Read the beginning of the story.
+2. Read 2 or three more lines...
+3. Decide you're too smart for this shit
+4. Write a better ending for the story
+5. Some other guy writes a new line, un-ending the story
+6. go to step 3
+
+These are the electric sheep of which androids dream
+
+As an alternative to email spam:
+    an in app feed that users have to log in to view
+    *persistant,dynamic and in the main display
+    
+New leaves/buds feed
+check if leaves written 
+maintain a table of 'parent author notified'
+or maintain a list in user of all new leaves they've been notified of
+
+CHAR RNN
+http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+Display other users location in wordcclt with icon to indicate which line they are on and faint icon to indicate they are on a branch of a specific line
+
+Have you ever been playing a game and thought, man, why aren’t I writing a story at the same time? Have you ever been reading a book and thought, why arent I earning any points for this?
+
+Hey Internet, let's write a book together, it's going to be internet good 
+
+For wrdcvlt have a list of readers/authors that are close to you
+
+USER LOCATION TABLE    
+UID     ->unique
+line ID 
+time
+
+
+Indication of scrollability for branches and story
+Lag in line writing
+
+TODO: 
+    recent additions to your branches!
+    wrdcvlt global stats
+
+Rita.js for text processing

@@ -1,0 +1,151 @@
+This is the plan of attack for the wrdcvlt kickstarter campaign.
+
+UPGRADE FORT RABBIT ACCOUNT
+
+Guides:
+http://thecomicstarter.com/2014/03/15/11-things-all-failed-kickstarter-projects-do-wrong/
+http://www.indiewire.com/article/heres-what-i-learned-from-my-failed-kickstarter-campaign
+
+Name Tiers after athors I love
+Budget Tiers accounting for 10% lost from pledges to Kickstarter
+
+Create in Publishing
+
+Do things at CANZINE october 17, 
+https://www.kickstarter.com/help/handbook/your_story
+
+TIERS:
+    $1 The Oscar Wilde : Some sort of perk on website
+    $5 The Hunter S. Thompson : Some sort of digital literature 
+    $10 The Walt Whitman : Zine
+    $20 The Kurt Vonnegut : Limited Edition Book
+    $30 The Jack Kerouac : Unique Book 
+    $60 The David Foster Wallace : Unique Book + Something else
+
+The Video:
+The Main Idea of the project: It's an experiment, Remind people to share!
+What does the project have? a beta version platform that we can write on right. now.
+A better platform, better accessibility, better user features, more users.
+
+September 16: Pre-Campaign
+    Post Link to Website along with a hook caption to:
+    Facebook,
+    IG?,
+    Reddit!
+    Tumblr,
+    Prosthetic Knowledge,
+    twitter?
+    boosthouse,
+    
+Maximalist NEt art for aesthetics
+
+BAnner (for kickstarter and other) 
+maximalist net art collage background
+    -W in inverse colors
+    -W in glitch
+    -W in deep dream (no)
+    -wrdcvlt in white
+    -W in marble
+    -W in recursive
+    -W in bad 3d
+
+Just as by observing an electron you affect its inherent state, reading influences the writing
+
+http://www.tbook.constantvzw.org/wp-content/death_authorbarthes.pdf
+
+Kickstarter video is a bad infomercial...
+
+Narrator: Are you sick and tired of how dead and lifeless books are?
+
+[poking book with remote control, with stick, slapping it, in b+w]
+
+Narrator: Do authors always ruin the plot for you?
+
+["Once there was a fish-> then the fish was dead"(Captioned with"Spoiler Alert")]"Ugh, so obvious"/Angrily tearing apart the page/burn the page from the center/throw a peice of toast on the page
+
+[explosion]
+
+INTRODUCE WRDCVLT w. elevator Music
+
+
+Narrator: (whispers)There's a better way
+
+Narrator: Wrdcvlt, the dynamic, internet-enabled, Future of Words
+
+WRDCVLT flashing on screen
+ 
+Narrator: Wrdcvlt is a branching tree of lines; you choose where the story goes next
+
+[line 1: Once there was a fish, line 2: then the fish was dead./the fish blew a bubble -> and drank bubble tea -> and lived in a bubble house -> and had a gorgeous bubble bum(choose second choice)]
+
+Narrator: or, expand the universe and write something!
+[write line"and had an acute phobia of drowning"]
+
+Narrator: In wrdcvlt you'll never be dissapointed with an ending, there is none! [write'the end'->'is nigh!'->'fish mantras never cease to disappoint these days']
+
+Narrator: Wrdcvlt is at least 28% more social than reading a book 
+
+Narrator: Join us in realizing the prophesized "Death of the Author" [foot note (1) Barthes] and make reading really, truly, honestly about the reader; you.
+
+2 testimonials: one from the 'mom', 1 from 'dad'
+
+Either your mom should rave and your dad should be wearing a blue jays hat and be reluctant and then act like someone is whispering furiously at him off camera and he says "it's great, if you like that stuff" OR
+
+Your mom and your dad think they are there for something totally different like being on a cooking show and your mom keeps saying "where is Rachel Ray? When do we get to see her?" And then your dad is just soooo lost and you cut out of the testimonials at the end when your dad starts coughing uncontrollably and a camera man comes into frame to pat him on the back and give him some water"
+
+or have a disclaimer at the end:"*It was not within the budget of this promotional film to hire actors for testimonials so instead we will provide the scripts that they would have read:
+    
+Vanilla Kickstarter Video
+
+(INTRODUCTION)
+Hi, My Name is Karo, I make art and study Artificial Intelligence, 
+and this project is wrdcvlt.
+
+(THE THESIS)
+The goal of wrdcvlt is to inspire writing and to create written works beyond what could be made individually with social technology.
+
+(THE EXPLANATION)
+Wrdcvlt is a tree story. It starts at one point and branches out and then branches again and again and again. 
+
+You read it starting at the beginning, there's only one beginning. Every line has one or more branches, you choose the story you want to read from all the stories written.
+
+It's not just predifined though, you can, at any point you like, add your own branch and grow the tree. Now other people can see and read your story as well. 
+
+And then here's the magic, Wrdcvlt keeps track of the lines you read, so as you read, you're voting on which story you think is the most interesting. 
+
+It's a simple idea, but it means that just by reading, you are also writing and contributing to the story. 
+
+wrdcvlt is writing and reading compressed until you can't tell where one begins and one ends
+
+(ADDITIONAL INFO)
+Beyond these core ideas, wrdcvlt also has a number of features that encourage reading and writing like feedback to see how many people read your lines, for which you would get recognition, social feedback so you can see who's reading the story with you, a writing feed so new lines are automatically sent to you... to name a few.
+
+(THE BACKSTORY)
+wrdcvlt is the child of two inspirations:
+of making stories with my friends, huge epic adventures created built line by line, back and forth in tandem
+
+and of the idea of search trees -an AI conept-, which here is a giant branching story of lines and the tree is evaluated by us, the readers
+
+(THE MOTIVATION)
+Wrdcvlt needs people in order to work, so the main goal of this project is to get more people interested. wrdcvlt is live right now, you can use it and grow the story, but it's in development still, the money raised from this campaign will allow me to add more interesting features, maintain the code and keep spreading the project!
+
+Funding this project means we have enough people involved in wrdcvlt that we'll be able to write a story.
+
+i. upgrade the database and website infratructure so it can handle more people
+ii. email validation
+iii. social feedback
+iv. bookmarking
+v. search
+vi. ranks
+vii. experience benefits
+
+[explain clear benifits to funding the project]
+
+(DESCRIBE THE REWARDS)
+
+(DESCRIBE THE MATH TO THE FUNDING GOAL)
+
+finish the kickstarter page, THEN record the video
+make a flow chart explaining the structure of wrdcvlt
+
+set up as an installation
