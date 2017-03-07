@@ -1,0 +1,730 @@
+1|2015-03-21 17:34:18|2017-03-07 01:25:01|Chapter 1|0|31|1|0
+2|2015-03-21 17:34:51|2015-11-04 02:20:30|Pluck the last feather off the chicken|1|1||0
+3|2015-03-21 17:35:38|2015-10-26 00:43:12|Hand the chicken to your mother|2|1||0
+4|2015-03-21 17:35:58|2015-10-26 00:43:11|She smirks, it's been three hours since you started working on the bird|3|1||0
+5|2015-03-21 17:36:11|2016-03-31 00:49:47|Kick the bucket|1|2||0
+6|2015-03-21 17:36:21|2015-10-26 06:40:26|literally, not metaphorically|5|0||0
+7|2015-03-21 17:37:28|2016-06-25 00:41:53|"This is a fucking tree, you don't just cut down trees"|1|27||0
+8|2015-03-21 17:38:07|2015-10-26 20:08:20|Staring down the old man, I reach for his axe|7|0||0
+9|2015-03-21 17:38:50|2016-06-25 00:41:53|He spits on your hand with the accuracy of|7|25||0
+10|2015-03-21 17:39:20|2016-06-25 00:41:53|old age cynicism and an overall ennui |9|30||0
+11|2015-03-21 17:40:03|2016-03-31 00:56:47|a veteran sniper with absolutely no shell shock to speak of|9|2||0
+12|2015-03-21 17:40:23|2015-08-05 01:09:11|a man who spits at a lot of things|9|0||0
+13|2015-03-21 17:41:02|2015-08-05 00:15:39|The cow shit spills all over the kitchen floor|6|0||0
+14|2015-03-21 17:41:10|2015-08-05 00:15:39|the freshly scrubbed kitchen floor|13|0||0
+15|2015-03-21 17:41:46|2015-08-05 00:15:39|the maid dies inside and stares at you with newly redeadened eyes|14|0||0
+16|2015-03-21 17:42:55|2015-08-05 00:15:39|"you don't know me" your shout back |15|0||0
+17|2015-03-21 17:43:07|2015-08-05 00:15:39|entirely through body language and posture|16|0||0
+18|2015-03-21 17:50:26|2015-12-02 19:52:19|After you jump, the cliff, the ocean surface, the rocks |1|0||0
+19|2015-03-21 17:51:18|2015-12-02 19:52:19|are a series of stills flashing by at a leisurely rate|18|0||0
+20|2015-03-21 18:09:17|2016-06-25 00:41:53|...|10|19||0
+21|2015-03-21 18:10:10|2016-06-25 00:41:53|Dunes shifting molasses-like over each other|20|12||0
+22|2015-03-21 18:11:00|2016-06-25 00:41:53|molding, shaping, evaporating, alive, dead|21|7||0
+23|2015-03-21 18:11:27|2016-06-25 00:41:53|the sands already too full of life to support any kind of ecosystem|22|8||0
+24|2015-03-21 18:12:23|2016-06-25 00:41:53|The biological sort of vitality would be out of place here|23|7||0
+25|2015-03-21 18:40:14|2016-04-04 17:39:09|a middle aged alpaca with a chip on its shoulder|9|0||0
+26|2015-03-24 00:45:33|2015-08-05 20:47:59|My place here is unknown|20|0||0
+27|2015-03-24 00:45:45|2015-08-05 20:47:59|Haw many ways do you know|26|0||0
+28|2015-03-24 00:45:57|2015-08-05 20:47:59|Take me where you will|27|0||0
+29|2015-03-24 02:35:09|2015-12-02 19:52:19|a flash of a serious series of talks |19|0||0
+30|2015-03-24 02:37:55|2015-12-02 19:52:09|And maybe a few less serious moments of banter|29|0||0
+31|2015-03-24 03:25:39|2015-08-05 00:15:39|His eyes, Our eyes|8|0||0
+32|2015-03-24 03:26:54|2015-10-26 20:08:20|The rain pours harder, my grip tightens|8|0||0
+33|2015-03-24 03:31:18|2015-10-26 20:08:20|Eyes lock and he reaches for a rock|32|0||0
+34|2015-03-24 03:31:37|2015-08-05 00:15:39|we leave kisses hanging in the air|31|0||0
+35|2015-03-24 03:32:05|2015-08-05 00:15:39|...|34|0||0
+36|2015-03-24 03:32:09|2015-08-05 00:15:39|but then...|35|0||0
+37|2015-03-24 03:32:12|2015-08-05 00:15:39|we kiss|36|0||0
+38|2015-03-24 03:32:18|2015-08-05 00:15:39|the end|37|0||0
+39|2015-03-24 03:33:54|2015-08-05 00:15:39|basketball|34|0||0
+40|2015-03-24 03:33:56|2015-08-05 00:15:39|djisjds|39|0||0
+41|2015-03-24 03:33:57|2015-08-05 00:15:39|jsdijsidjsi|40|0||0
+42|2015-03-24 03:33:57|2015-08-05 00:15:39|d|41|0||0
+43|2015-03-24 03:33:58|2015-08-05 00:15:39|jfosjfopjsdfo|42|0||0
+44|2015-03-24 03:34:03|2015-08-05 00:15:39|oooooooo hoops |43|0||0
+45|2015-03-26 06:27:06|2016-04-04 17:39:09|after you tried to pet it.|25|1||0
+46|2015-03-26 06:28:13|2016-04-04 17:39:09|I don't even know what a fucking tree is?|45|0||0
+47|2015-03-26 06:55:44|2016-03-30 23:20:14|earth|24|1||0
+48|2015-03-26 06:55:54|2016-03-30 23:20:14|Flawed|47|1||0
+49|2015-03-26 06:55:59|2016-03-30 23:20:13|Science|48|2||0
+50|2015-03-28 06:12:02|2015-10-19 02:53:50|boooo|30|0||0
+51|2015-03-28 06:12:15|2015-10-19 02:53:50|but|50|0||0
+52|2015-03-28 06:12:26|2015-10-19 02:53:50|ogala oogala|51|0||0
+53|2015-03-28 06:12:42|2015-10-19 02:53:50|boob|52|0||0
+54|2015-03-28 06:13:46|2016-03-31 00:49:47|and fall over wailing|5|1||0
+55|2015-03-28 06:14:44|2015-11-04 02:33:03|Die|1|0||0
+56|2015-03-28 06:15:15|2016-06-25 00:41:05|am i a hamburgere?|1|3||0
+57|2015-03-28 06:16:03|2016-04-04 17:38:22|the dolphin is the way of there spider|1|1||0
+58|2015-03-28 06:18:54|2015-11-04 02:25:04|then the dolphin eats the spider|57|0||0
+59|2015-03-28 06:18:57|2015-10-26 20:08:47|and then pukes|58|0||0
+60|2015-03-28 06:19:03|2015-10-26 20:08:47|and then dolphin is dead|59|0||0
+61|2015-03-28 06:19:07|2015-10-26 20:08:47|poor dolphin|60|0||0
+62|2015-03-28 06:19:12|2015-10-26 20:08:47|now we eat dolphin|61|0||0
+63|2015-03-28 06:19:16|2015-10-26 20:08:47|fat spider family|62|0||0
+64|2015-03-28 06:19:25|2015-10-26 20:08:47|small sacrifice for small gains|63|0||0
+65|2015-04-03 08:33:24|2015-11-04 02:24:32|asdasdasd|49|0||0
+66|2015-04-03 09:05:28|2015-08-05 20:47:59|Until I cease to grow|28|0||0
+67|2015-04-03 22:10:43|2015-12-07 03:06:19|Lamp|1|0||0
+68|2015-04-03 22:12:11|2016-04-05 02:32:37|Takes you by the scruff of your collar and|10|0||0
+69|2015-04-03 23:26:21|2015-08-05 20:47:59|back|66|0||0
+70|2015-04-03 23:36:58|2016-03-31 00:49:47|Why do my grandchildren never help milk the cows anymore?|54|1||0
+71|2015-04-03 23:39:10|2016-03-31 00:49:47|These poor cows, so neglected|70|0||0
+72|2015-04-03 23:42:16|2015-08-05 00:15:39|both muddy brown|31|0||0
+73|2015-04-03 23:43:16|2015-10-23 18:55:49|Cough|1|0||0
+74|2015-05-07 21:36:35|2016-03-31 00:49:43|The badger stares you down sternly|7|5||0
+75|2015-05-07 21:36:54|2015-10-28 20:30:34|long enough for you to wilt an appropriate amount|74|1||0
+76|2015-05-07 21:37:15|2015-12-24 05:50:24|nope.|56|1||0
+77|2015-05-07 21:37:35|2016-06-25 00:41:05|wer is mi lettoos???|56|1||0
+78|2015-05-08 01:04:16|2016-03-30 23:20:12|That's ok, we don't have to sequester ourselves |49|5||0
+79|2015-05-08 01:12:23|2015-10-28 20:30:33|which is, in this case, to the floor|75|1||0
+80|2015-05-08 01:12:32|2015-10-28 20:30:32|where you puddle for several hours|79|0||0
+81|2015-05-08 03:16:38|2015-11-04 02:12:35|The tree stares back|7|0||0
+82|2015-05-08 03:25:50|2015-08-05 00:15:39|And dinner is served|6|0||0
+83|2015-05-08 03:26:02|2015-08-05 00:15:39|Repeat|55|0||0
+84|2015-05-08 07:04:18|2015-12-27 01:07:32|Tickling is never as fun as it's made out to be|1|1||0
+85|2015-05-08 07:05:21|2015-12-27 01:07:32|Hold my hand|84|0||0
+86|2015-05-08 07:05:38|2015-12-11 03:49:52|I can't see the bottom and the fish are terrifying|85|0||0
+87|2015-05-08 07:06:27|2015-12-11 03:49:52|This is the denote my grandparents washed themselves in|86|0||0
+88|2015-05-08 07:06:36|2015-08-05 00:15:39|and their grandparents|87|0||0
+89|2015-05-08 07:07:09|2015-08-05 00:15:39|and whatever forest creature spawned them|88|0||0
+90|2015-05-08 07:09:21|2015-08-05 00:15:39|I assume the bottom, if there is one, is covered in bones|89|0||0
+91|2015-05-08 07:11:31|2016-03-30 23:20:12|But here in the oasis, we are safe|78|2||0
+92|2015-05-08 07:24:09|2016-01-08 03:19:21|safe from the bees|91|1||0
+93|2015-05-08 07:33:41|2015-10-19 03:17:40|but I don'|74|0||0
+94|2015-05-08 07:33:53|2015-08-05 00:15:39| take shit from badgers anymore|93|0||0
+95|2015-05-08 07:35:31|2015-08-05 00:15:39|a quick slap on the belly and the badger is suitably shamed|94|0||0
+96|2015-05-08 07:36:22|2015-08-05 00:15:39|shame being the crux of a badger's proud existence|95|0||0
+97|2015-05-08 07:46:12|2015-10-19 03:19:06|normally this would't phase me|81|0||0
+98|2015-05-08 07:47:27|2015-10-19 03:19:03|after nearly being choked out of existence by a wishbone|97|0||0
+99|2015-05-08 07:47:33|2015-10-19 03:19:03|in my chicken soup though,|98|0||0
+100|2015-05-08 07:47:42|2015-10-19 03:19:03|I'm feeling a little ruffled|99|0||0
+101|2015-05-08 07:47:48|2015-10-19 03:19:03|In the feathers that is|100|0||0
+102|2015-05-08 23:23:24|2016-01-08 03:19:21|The oasis is mostly just the wreckage of some old boeing|92|2||0
+103|2015-05-08 23:24:21|2016-01-08 03:19:21|The metal blocks out some of the sun, |102|1||0
+104|2015-05-08 23:24:29|2016-01-08 03:19:21|protects from the wind|103|1||0
+105|2015-05-08 23:24:59|2016-01-08 03:19:21|Rusty bowls collect flash showers|104|1||0
+106|2015-05-08 23:25:15|2016-01-08 03:19:21|It's a post-societal utopia|105|1||0
+107|2015-05-08 23:41:03|2016-01-08 03:19:21|Complete with comics some former kid brought with them on the flight|106|2||0
+108|2015-05-08 23:42:38|2016-01-08 03:19:21|Isabel looks at me, miserable|107|3||0
+109|2015-05-08 23:42:54|2016-01-08 03:19:21|although I came here by choice,|108|1||0
+110|2015-05-08 23:43:05|2015-08-05 01:04:24|she's here out of desperation|109|0||0
+111|2015-05-08 23:43:20|2015-08-05 01:04:24|I'm not entirely sure what kind of desperation|110|0||0
+112|2015-05-08 23:43:29|2015-08-05 01:04:24|where it comes from|111|0||0
+113|2015-05-08 23:43:52|2015-08-05 01:04:24|but it it's obviously dragging her around by the heart|112|0||0
+114|2015-05-09 01:32:00|2015-08-05 00:15:39|and death shortly follows.|6|0||0
+115|2015-05-09 01:33:26|2015-08-05 00:15:39|the sentence never ends it will continue on and on and on and on and on and on a|114|0||0
+116|2015-05-09 01:42:45|2016-06-25 00:40:51|Sneeze|1|0||0
+117|2015-05-12 20:29:08|2015-08-05 00:15:39|Let go of the rest|116|0||0
+118|2015-05-15 02:25:24|2015-08-05 01:09:11|You've met men like him before|12|0||0
+119|2015-05-15 02:25:30|2015-08-05 00:15:39|the careless with their saliva|118|0||0
+120|2015-05-17 02:55:31|2016-01-15 10:35:00|Hold your breath|1|0||0
+121|2015-05-19 00:26:19|2015-10-19 03:18:58|but today I had yet to eat my breakfast.|97|0||0
+122|2015-05-19 00:32:27|2015-10-19 03:18:58|:(|121|0||0
+123|2015-05-21 02:02:59|2016-04-05 02:32:37|kisses through you|68|0||0
+124|2015-05-21 02:05:05|2015-10-10 06:48:52|Out and in|1|0||0
+125|2015-05-28 16:07:02|2015-10-23 18:55:49|sigh|73|0||0
+126|2015-05-28 16:11:13|2015-08-05 00:15:39|"por que?" whispers the maid|17|0||0
+127|2015-05-28 16:11:22|2015-08-05 00:15:39|you have no answers|126|0||0
+128|2015-06-03 22:50:22|2015-12-27 01:08:02|what happens if you input text|116|0||0
+129|2015-06-04 15:39:38|2016-01-08 03:19:21|she's lost|109|4||0
+130|2015-06-04 20:08:31|2015-10-02 04:40:16|a pea-shooting 5 year old|9|0||0
+131|2015-06-05 04:11:28|2015-11-03 22:00:16|breath|1|1||0
+132|2015-06-05 04:11:33|2015-10-26 00:42:40|death|131|0||0
+133|2015-06-05 04:11:36|2015-10-26 00:42:39|need|132|0||0
+134|2015-06-05 04:12:10|2015-08-05 00:15:39|and on and on and on|115|0||0
+135|2015-06-05 04:12:18|2015-12-27 01:07:13|achoo|1|2||0
+136|2015-06-05 05:20:07|2015-08-05 00:15:39|the air as the |35|0||0
+137|2015-06-05 05:20:11|2015-08-05 00:15:39|eyes can reach |136|0||0
+138|2015-06-05 05:20:20|2015-08-05 00:15:39|can i find old |137|0||0
+139|2015-06-05 05:20:24|2015-08-05 00:15:39|you on the |138|0||0
+140|2015-06-05 05:20:45|2015-08-05 00:15:39|hanging on the old goose |139|0||0
+141|2015-06-05 05:21:08|2015-08-05 00:15:39|gay old man |72|0||0
+142|2015-06-05 05:21:15|2015-08-05 00:15:39|for a woman man |141|0||0
+143|2015-06-05 05:21:55|2015-08-05 00:15:39|down on the |72|0||0
+144|2015-06-05 05:22:28|2015-08-05 00:15:39|floor, trying to avoid each other's gazes|143|0||0
+145|2015-06-05 05:22:46|2015-08-05 00:15:39|brown hair , blue eyes |144|0||0
+146|2015-06-05 05:24:02|2015-08-05 00:15:39|only have eyes for you |145|0||0
+147|2015-06-05 12:49:29|2016-02-08 01:06:28|a study of the |9|0||0
+148|2015-06-05 12:49:35|2016-02-08 01:06:28|the hands of just |147|0||0
+149|2015-06-05 12:50:06|2016-02-08 01:06:28|the cutest little voles|148|0||0
+150|2015-06-07 04:25:21|2015-08-05 00:15:39|Shade|67|0||0
+151|2015-06-07 04:26:56|2015-08-05 00:15:39|Fade|67|0||0
+152|2015-06-07 04:27:23|2016-01-15 10:35:00|Explode|120|0||0
+153|2015-06-07 04:27:59|2015-06-07 04:27:59|Plague|73|0||0
+154|2015-06-07 06:31:09|2015-12-02 19:51:55|Outhale|1|0||0
+155|2015-06-07 06:36:10|2015-08-05 22:30:06|Undie|55|0||0
+156|2015-06-07 06:37:58|2015-10-26 00:42:39|all of it|133|0||0
+157|2015-06-07 06:38:39|2015-12-07 03:06:19|Braid|67|0||0
+158|2015-06-07 06:39:03|2015-12-07 03:06:49|Ex|1|0||0
+159|2015-06-07 06:40:51|2015-06-07 06:40:51|In and Out|124|0||0
+160|2015-06-07 06:41:31|2016-06-25 00:41:05|where ice mi boorger??!|77|1||0
+161|2015-06-07 06:42:03|2015-12-07 16:36:02|Religion|48|0||0
+162|2015-06-07 06:43:11|2015-11-03 22:01:06|safe from ourselves|91|0||0
+163|2015-06-07 06:43:42|2015-11-03 22:01:06|our enemy numero uno|162|0||0
+164|2015-06-07 06:45:58|2015-10-19 03:47:57|she reminds you of your fourth grade grammarian|74|0||0
+165|2015-06-07 06:46:44|2015-10-19 03:47:53|the one who use to bribe the kids into massaging her feet|164|0||0
+166|2015-06-07 06:48:52|2015-10-28 20:30:31|attracting earth worms, water skeeters and the ilk|80|2||0
+167|2015-06-07 06:52:29|2015-10-19 03:17:40|like eye contact much no more|93|0||0
+168|2015-06-07 06:54:17|2015-11-04 02:12:35|with those wooden eyes|81|0||0
+169|2015-06-07 06:59:25|2015-11-03 22:12:15|You burn trees|7|0||0
+170|2015-06-07 07:00:42|2015-08-05 00:15:39|unholy ash|168|0||0
+171|2015-06-07 07:01:33|2015-08-05 00:15:39|smoky and sultry|170|0||0
+172|2015-06-07 07:02:33|2015-06-07 07:02:33|pollen oozing off it's boughs|171|0||0
+173|2015-06-07 16:38:36|2015-08-05 01:25:16|congesting, devouring, eroding|21|0||0
+174|2015-06-07 16:59:24|2015-08-05 01:04:24|and it's pretty gross|113|0||0
+175|2015-06-07 18:24:01|2016-03-31 00:56:43|not even a turtle's|11|0||0
+176|2015-06-07 18:24:55|2015-10-21 16:27:39|From years in the alpaca pit|25|0||0
+177|2015-06-07 18:27:47|2015-11-02 17:29:05|and you're especially violent about it|84|1||0
+178|2015-06-07 18:28:35|2015-08-07 01:42:21|the forrest fills|152|0||0
+179|2015-06-07 18:29:06|2015-08-07 01:42:21|with the whooshing sound of air escaping my lungs|178|0||0
+180|2015-06-07 18:29:35|2015-08-05 20:47:18|lungs now inside out|179|0||0
+181|2015-06-07 18:31:22|2015-11-06 17:26:22|"Trees cut you down"|7|0||0
+182|2015-06-07 18:31:56|2015-08-05 00:15:39|big things, small things|12|0||0
+183|2015-06-07 18:32:15|2015-08-05 00:15:39|short things, tall things|182|0||0
+184|2015-06-07 18:35:38|2016-03-31 00:49:43|over his half moon glasses|74|1||0
+185|2015-06-07 18:36:16|2016-03-31 00:49:43|moons reminding you of your first love|184|1||0
+186|2015-06-07 18:37:32|2015-11-04 02:12:35|the knots in it's trunk tightening|168|0||0
+187|2015-06-07 18:37:51|2015-11-04 02:12:35|It's boughs dipping lower towards me|186|0||0
+188|2015-06-07 18:42:55|2015-10-26 20:08:20|and then he's frozen|33|0||0
+189|2015-06-07 18:44:00|2016-03-31 00:49:43|your first love being the moon|185|2||0
+190|2015-06-07 18:45:33|2016-03-31 00:49:43|But the badger is still staring|189|2||0
+191|2015-06-07 18:46:49|2016-03-31 00:49:43|He passes you the blunt|190|2||0
+192|2015-06-07 21:35:37|2015-10-26 00:33:17|"I don't burn trees"|191|2||0
+193|2015-06-07 21:37:32|2015-08-05 00:15:39|the sloth with their words|119|0||0
+194|2015-06-07 21:37:50|2015-08-05 00:15:39|the short|193|0||0
+195|2015-06-07 21:39:54|2015-10-26 00:42:16|He's really not all that bad|10|0||0
+196|2015-06-07 21:40:52|2015-10-26 00:42:16|Mostly he's just racist and hateful because he feels he has to be|195|0||0
+197|2015-06-07 21:42:01|2015-08-05 01:04:24|I can't stand the sentiment of it|174|0||0
+198|2015-06-07 22:21:09|2015-10-19 02:53:31|Get Ripped|1|0||0
+199|2015-06-07 23:10:25|2016-06-25 00:40:51|I clean my nose, it's embarrasing|116|0||0
+200|2015-06-08 00:13:01|2015-08-05 01:04:24|So we don't hang out much|197|0||0
+201|2015-06-08 00:13:22|2015-08-05 01:04:24|even though there isn't really the luxury of avoiding each other|200|0||0
+202|2015-06-08 00:13:49|2015-08-05 01:04:24|She knows how to catch birds|201|0||0
+203|2015-06-08 00:13:54|2015-08-05 01:04:24|I know how to cook them|202|0||0
+204|2015-06-08 00:14:21|2015-08-05 01:04:24|I can lift the hull when it's blown over|203|0||0
+205|2015-06-08 00:14:28|2015-08-05 01:04:24|she can engineer it's supports|204|0||0
+206|2015-06-08 00:14:42|2015-08-05 01:04:24|She knows medicine better than me|205|0||0
+207|2015-06-08 00:14:50|2015-08-05 01:04:24|So we're stuck|206|0||0
+208|2015-08-03 04:06:00|2015-12-11 03:46:44|too full of god damn L.I.F.E.|23|0||0
+209|2015-08-03 04:20:03|2015-08-05 01:04:24|together|207|0||0
+210|2015-08-03 04:28:54|2015-12-11 03:46:42|the kind you find wrapped up at the end of dim-sum|208|1||0
+211|2015-08-03 04:29:25|2015-12-11 03:46:42|I could use a lucky dragon these days|210|2||0
+212|2015-08-03 14:58:14|2015-08-05 01:04:24|alone|209|0||0
+213|2015-08-04 00:53:25|2015-08-05 01:04:12|Or maybe I can't stand it because of the jealousy?|174|0||0
+214|2015-08-04 00:54:40|2015-08-05 00:50:10|I should be the answer to that desperation, there's no one else between us here.|213|0||1
+215|2015-08-04 01:39:13|2015-08-05 00:15:39|I crush a rat skull under my boot|214|0||2
+216|2015-08-04 01:45:29|2016-01-08 03:19:21|she has't said a word in three days,|129|4||2
+217|2015-08-04 01:45:37|2016-01-08 03:19:21|no eye contact either|216|3||2
+218|2015-08-04 01:49:08|2015-10-27 00:50:25|she follows a carefully delineated path through our little empire, |217|6||2
+219|2015-08-04 01:50:48|2015-10-27 00:50:24|eyes drying out on the sand|218|3||2
+220|2015-08-04 01:52:40|2015-10-27 00:50:24|her foot prints leave a comfortable pattern behind her though|219|3||2
+221|2015-08-04 01:59:59|2015-10-27 00:50:24|until the wind erases her, anyway|220|2||2
+222|2015-08-04 02:02:12|2015-10-27 00:50:23|I know it's doing the same to me, increasingly less slowly|221|3||2
+223|2015-08-04 02:05:08|2015-10-27 00:50:23|If I stand still long enough|222|6||2
+224|2015-08-04 02:05:43|2015-09-10 02:32:18|Ill look like that guy from the indiana jones movie with the cup|222|0||2
+225|2015-08-04 02:06:25|2015-10-27 00:50:23|I'll petrify|223|5||2
+226|2015-08-04 02:09:19|2015-10-27 00:50:23|When that eventual half-dead outcast makes it over the dunes|225|6||2
+227|2015-08-04 02:09:26|2015-10-27 00:50:23|and finds our little oasis,|226|6||2
+228|2015-08-04 02:09:44|2015-10-27 00:50:23|I'll play sufi and rub a smudge of dirt onto his forehead|227|4||2
+229|2015-08-04 02:10:13|2015-10-26 02:28:15|I'll nod sagely and mumble to myself|228|4||2
+230|2015-08-04 02:12:28|2015-08-07 02:13:43|nod sagely and mumble the civ 4 theme song to myself|228|0||2
+231|2015-08-04 02:13:29|2015-10-26 02:28:15|the disciple will faint,|229|3||2
+232|2015-08-04 02:13:39|2015-08-05 22:31:11|I'll tell myself from enlightenment|229|0||2
+233|2015-08-04 02:15:50|2015-10-26 02:28:14|And then here's the tricky part, wrt to my own internal monologue|231|2||2
+234|2015-08-04 02:16:23|2015-10-26 02:28:14|do I allow myself cannibalism?|233|2||2
+235|2015-08-04 02:16:33|2015-10-23 18:53:09|more importantly, do I share with isabel?|234|2||2
+236|2015-08-04 04:39:35|2015-08-05 01:04:24|Chapter 2.|212|0||1
+237|2015-08-04 04:44:45|2015-08-05 01:04:24|Swans gag on party balloons every 48 mins|236|0||1
+238|2015-08-04 21:58:05|2015-08-05 01:04:24|the party in their throats is of the un-fun variety|237|0||1
+239|2015-08-06 01:20:46|2015-11-03 22:28:51|the tree falls|20|0||0
+240|2015-08-07 01:39:14|2015-08-07 01:42:21|fweesh|179|0||1
+241|2015-08-07 01:41:48|2015-08-07 01:42:21|fwash|240|0||1
+242|2015-08-07 01:47:29|2015-08-07 02:06:10|and I'll have a little giggle|231|0||1
+243|2015-08-07 01:47:45|2015-08-07 02:06:05|giggles are worth their weight in gold round these parts|242|0||1
+244|2015-09-11 03:04:18|2016-06-25 00:41:16|you turn them into paper|7|0||0
+245|2015-09-13 20:15:57|2015-12-27 01:09:18|I read the first line of the book|1|2||0
+246|2015-09-13 20:16:23|2015-12-27 01:09:17|Once there was a fish,|245|1||0
+247|2015-09-13 20:16:33|2015-10-19 03:05:58|then the fish was dead.|246|1||0
+248|2015-09-13 20:17:05|2015-12-02 19:51:15|And then remember I can't read|245|4||0
+249|2015-09-13 20:17:31|2015-12-27 01:09:17|the fish blew a bubble|246|0||0
+250|2015-09-13 20:17:40|2015-12-27 01:09:17|and drank bubble tea|249|0||0
+251|2015-09-13 20:17:54|2015-12-27 01:09:09|and lived in a bubble house|250|0||0
+252|2015-09-13 20:18:25|2015-09-13 20:18:25|and had a gorgeous bubble bum|251|0||0
+253|2015-09-13 20:20:57|2016-01-15 18:58:56|then the fish was dead.|1|6||0
+254|2015-09-13 20:21:10|2015-10-21 16:26:11|The End.|253|0||0
+255|2015-09-13 20:24:30|2015-09-13 20:24:30|and chewed bubble gum|252|0||0
+256|2015-09-13 20:24:50|2015-09-13 20:24:50|on her off hours|255|0||0
+257|2015-09-13 20:25:22|2015-09-13 20:25:22|Most days the fish hid under her favourite rock, where anything could happen|256|0||0
+258|2015-09-13 20:28:38|2015-09-13 20:28:38|and had an acute phobia of drowning|252|0||0
+259|2015-09-13 20:28:55|2015-09-13 20:28:55|the end|258|0||0
+260|2015-09-13 20:28:58|2015-09-13 20:28:58|is nigh!|259|0||0
+261|2015-09-13 20:29:12|2015-09-13 20:29:12|fish mantras never cease to disappoint these days...|260|0||0
+262|2015-09-18 20:20:49|2016-03-30 23:20:12|...not really|91|3||0
+263|2015-09-28 04:21:22|2016-05-02 20:58:30|Are you there?|1|0||0
+264|2015-09-28 04:21:32|2015-09-28 04:21:32|Can you hear me?|263|0||0
+265|2015-09-28 04:22:30|2015-09-28 04:22:30|stomach aches you are|264|0||0
+266|2015-09-28 04:22:37|2015-09-28 04:22:37|always aching deep and sore|265|0||0
+267|2015-09-28 04:22:46|2015-09-28 04:22:46|aching like ive never ached before|266|0||0
+268|2015-09-28 04:22:57|2015-09-28 04:22:57|forgetting the details when it's light out|267|0||0
+269|2015-09-28 04:23:04|2015-09-28 04:23:04|and gathering them back under the moon|268|0||0
+270|2015-09-28 04:23:10|2015-09-28 04:23:10|so soon i compromise|269|0||0
+271|2015-09-28 04:23:29|2015-09-28 04:23:29|a desolate landscape seems more of a prize|270|0||0
+272|2015-09-28 04:23:39|2015-09-28 04:23:39|because it's vacancy is naturally defined|271|0||0
+273|2015-09-28 04:23:53|2015-09-28 04:23:53|yours feels like a committed crime|272|0||0
+274|2015-09-28 04:23:57|2015-09-28 04:23:57|punishment or fine|273|0||0
+275|2015-09-28 04:24:02|2015-09-28 04:24:02|so sore|274|0||0
+276|2015-09-28 04:24:15|2015-09-28 04:24:15|as if ive known violence before|275|0||0
+277|2015-09-28 04:24:23|2015-09-28 04:24:23|i flinch at the rise and fall|276|0||0
+278|2015-09-28 04:24:32|2015-09-28 04:24:32|the beat in my body of memory|277|0||0
+279|2015-09-28 04:24:40|2015-09-28 04:24:40|the delicate branches of speech|278|0||0
+280|2015-09-28 04:24:45|2015-09-28 04:24:45|yearning to breathe|279|0||0
+281|2015-09-28 04:24:56|2015-09-28 04:24:56|entangled in dark green weed|280|0||0
+282|2015-09-28 04:25:13|2015-09-28 04:25:13|scorching and strangling each seed|281|0||0
+283|2015-09-28 04:25:15|2015-09-28 04:25:15|so i ache|282|0||0
+284|2015-09-28 04:25:24|2015-09-28 04:25:24|at these battles of skin and mind|283|0||0
+285|2015-09-28 04:25:42|2015-09-28 04:25:42| i never want to twirl the sheets around my ankles in anxious pleasure|284|0||0
+286|2015-09-28 04:25:54|2015-09-28 04:25:54|or even remember the sheets at all|285|0||0
+287|2015-09-28 04:26:08|2015-09-28 04:26:08|or taste vanilla|286|0||0
+288|2015-09-28 04:26:15|2015-09-28 04:26:15|smell the rotting leaves of fall|287|0||0
+289|2015-09-28 04:26:28|2015-09-28 04:26:28|or dance next to bodies when the bodies are all|288|0||0
+290|2015-09-28 04:26:34|2015-09-28 04:26:34|nobodies|289|0||0
+291|2015-09-28 04:26:40|2015-09-28 04:26:40|i crawl|290|0||0
+292|2015-09-28 04:26:47|2015-09-28 04:26:47|because to walk would mean to say|291|0||0
+293|2015-09-28 04:26:53|2015-09-28 04:26:53|im going to leave|292|0||0
+294|2015-09-28 04:26:56|2015-09-28 04:26:56|i know the way|293|0||0
+295|2015-09-28 04:27:10|2015-09-28 04:27:10|on my knees i don't have to achieve anything|294|0||0
+296|2015-09-28 04:27:26|2015-09-28 04:27:26|but to keep my head off the ground in order to breathe|295|0||0
+297|2015-09-28 04:27:46|2015-09-28 04:27:46|through heaving lungs, polluted with irrationality|296|0||0
+298|2015-09-28 04:27:58|2015-09-28 04:27:58|to indulge in the burn of a closing throat|297|0||0
+299|2015-09-28 04:28:08|2015-09-28 04:28:08|that would rather die, than be alone |298|0||0
+300|2015-09-30 14:47:50|2015-11-30 03:57:22|Elahni|1|0||0
+301|2015-09-30 14:48:13|2015-11-30 03:57:20|The mirror's a little a lot warped from time|300|0||0
+302|2015-09-30 19:42:13|2015-10-26 00:42:34|, you are living, right?|131|1||0
+303|2015-09-30 19:42:34|2015-09-30 19:42:34|Out|1|0||0
+304|2015-09-30 19:48:20|2015-10-10 06:49:21|Up|1|0||0
+305|2015-09-30 20:09:37|2016-01-15 18:58:56|...mostly|253|3||0
+306|2015-09-30 20:12:44|2016-01-08 03:23:23|99%|253|3||0
+307|2015-09-30 20:17:53|2015-12-27 01:09:46|Finished|253|1||0
+308|2015-10-02 04:22:43|2015-10-23 18:55:48|it was a cold day|125|0||0
+309|2015-10-02 04:22:51|2015-10-23 18:55:48|all was lost|308|0||0
+310|2015-10-02 04:24:59|2015-10-19 02:53:30|smoke weed|198|1||0
+311|2015-10-02 04:25:30|2015-10-19 02:53:30|DANCE ALL NIGHT|310|0||0
+312|2015-10-02 04:25:39|2015-10-19 02:53:29|PARTY TILL YOUR FINGERS BLEED|311|2||0
+313|2015-10-02 04:25:43|2015-10-19 02:53:28|WOOT WOOT|312|2||0
+314|2015-10-02 04:27:42|2015-10-02 04:27:42|I HIT THE GROUND|240|0||0
+315|2015-10-02 04:27:57|2015-10-02 04:27:57|I DIDNT KNWO WHAT TO DO|314|0||0
+316|2015-10-02 04:29:56|2015-10-21 16:26:28|I didnt know what else to do, he had been our class pet since sk.|305|0||0
+317|2015-10-02 04:30:56|2015-10-26 00:43:05|jeez mm|4|1||0
+318|2015-10-02 04:30:59|2015-10-26 00:43:05|kind of  abich|317|1||0
+319|2015-10-02 04:31:03|2015-10-26 00:43:05|dpwsdf]op|318|1||0
+320|2015-10-02 04:31:04|2015-10-26 00:43:05|dkws[|319|1||0
+321|2015-10-02 04:31:04|2015-10-26 00:43:05|dkp47|320|0||0
+322|2015-10-02 04:46:25|2016-05-02 20:58:08|We will get along fine; your ghost and I|1|0||0
+323|2015-10-02 14:36:43|2016-06-25 00:41:16|or money|244|0||0
+324|2015-10-02 14:50:59|2015-12-24 05:50:24|But I could be an orange.|76|0||0
+325|2015-10-02 14:51:03|2015-12-24 05:50:24|My life is a lie.|324|0||0
+326|2015-10-02 14:51:20|2015-12-24 05:50:24|I suffer indescribably.|325|0||0
+327|2015-10-02 14:58:22|2015-10-19 02:53:27|Then realize the self that you truly are.|313|1||0
+328|2015-10-02 14:58:34|2015-10-02 14:58:34|In|303|0||0
+329|2015-10-02 14:58:35|2015-10-02 14:58:35|Out|328|0||0
+330|2015-10-02 14:58:36|2015-10-02 14:58:36|In|329|0||0
+331|2015-10-02 15:13:17|2015-10-28 20:31:21|Take a deep breath.|1|0||0
+332|2015-10-02 15:13:24|2015-10-28 20:31:10|Look around you.|331|0||0
+333|2015-10-02 15:42:08|2015-10-28 20:31:10|The design confuses all.|332|0||0
+334|2015-10-02 18:43:29|2016-03-31 01:17:53|a bow of +4 Acc|9|0||0
+335|2015-10-03 00:18:31|2016-04-05 02:32:37|Nihilism always strikes for the heart.|123|0||0
+336|2015-10-03 13:58:50|2015-10-28 20:31:10|That stolen figurine revels in authority.|333|0||0
+337|2015-10-08 17:12:49|2015-12-07 02:45:21|You plant them|1|0||0
+338|2015-10-08 17:13:12|2015-12-07 02:45:20|you plant those trees|337|0||0
+339|2015-10-10 06:34:50|2015-11-03 22:22:35|You love them with the respect of a thousand grand parents|7|0||15
+340|2015-10-10 06:36:13|2015-11-03 22:22:35|That's what a wise man once told me|339|0||15
+341|2015-10-10 06:36:48|2015-11-03 22:22:35|We sat together often|340|0||15
+342|2015-10-10 06:37:26|2015-11-03 22:22:35|In a place of moving waters, sunrises, sunsets and coffee breaks|341|0||15
+343|2015-10-10 06:39:20|2015-11-03 22:22:35|The coffee was shit. The conversations were amazing|342|0||15
+344|2015-10-10 06:39:50|2015-11-03 22:22:35|It was like we were just getting to know one another|343|0||15
+345|2015-10-10 06:39:57|2015-11-03 22:22:35|and yet..|344|2||15
+346|2015-10-10 06:40:32|2015-11-03 22:22:34|It was as if we knew each other for a lifetime|345|0||15
+347|2015-10-10 06:44:48|2015-10-26 00:33:17|"I burn rubber baby"|192|2||15
+348|2015-10-10 06:45:09|2015-10-26 00:33:17|The badger is confused|347|2||15
+349|2015-10-10 06:45:36|2015-10-26 00:33:17|He looks as though he may do something rash|348|1||15
+350|2015-10-10 06:47:26|2015-10-10 06:48:52|Is a movie staring Kevin Kline|124|0||15
+351|2015-10-10 06:47:39|2015-10-10 06:48:52|But that's besides the point|350|0||15
+352|2015-10-10 06:48:18|2015-10-10 06:48:52|"It's not what's on the outside, It's what's on the inside"|351|0||15
+353|2015-10-10 06:48:25|2015-10-10 06:48:42|Bologna|352|0||15
+354|2015-10-10 06:49:21|2015-11-19 16:54:25|Missed the boat|1|1||15
+355|2015-10-10 06:50:13|2015-11-19 16:54:25|"when the hell did i get so fat?"|354|0||15
+356|2015-10-10 06:50:36|2015-11-04 02:20:27|Is what i thought to myself as i looked over the edge|355|1||15
+357|2015-10-10 06:50:46|2015-11-04 02:20:27|I was going to do it|356|1||15
+358|2015-10-10 06:51:24|2015-11-04 02:20:27|I was tired, and apparently fat..|357|1||15
+359|2015-10-10 06:51:42|2015-11-04 02:20:27|"Give me a break would ya!"|358|1||15
+360|2015-10-10 06:52:49|2015-11-04 02:20:27|I screamed out towards the snowy mountains of the kootneys|359|1||15
+361|2015-10-10 06:53:46|2015-11-04 02:20:26|The skyline was something to be jealous of|360|1||15
+362|2015-10-10 06:54:24|2015-10-26 00:42:33|Insignificance takes the world for granted.|302|0||15
+363|2015-10-10 06:55:12|2015-12-02 19:51:13|And then remember i can..|248|5||15
+364|2015-10-10 06:55:31|2015-12-02 19:51:12|Nope. I've forgotten again|363|3||15
+365|2015-10-19 02:40:33|2015-12-01 21:13:20|and finally sighs in exasperation.|74|1||16
+366|2015-10-19 02:43:45|2015-12-01 21:13:20|She turns away from you and looks back at the shredded carnage.|365|1||16
+367|2015-10-19 02:47:30|2015-10-19 02:53:26|These were the words he left with me when died.|327|0||17
+368|2015-10-19 02:48:11|2015-10-19 02:53:24|It has been almost 20 years since that day, but even now, i still hear them|367|1||17
+369|2015-10-19 02:48:36|2015-10-19 02:53:24|urging me out of my shell|368|0||17
+370|2015-10-19 02:48:57|2015-10-19 02:53:22|the 9/5 drawl, the office job, all this safety|369|1||17
+371|2015-10-19 02:51:27|2015-10-19 02:53:22|my 3 legged cat.|370|0||17
+372|2015-10-19 02:51:39|2015-10-19 02:53:19|Obviously i chose to ignore him|371|2||17
+373|2015-10-19 02:51:46|2015-10-19 02:53:19|and carry on this life|372|1||17
+374|2015-10-19 02:52:04|2015-10-19 02:53:19|what can i say, security and safety suit me|373|0||17
+375|2015-10-19 02:52:24|2015-10-19 02:53:15|I can pay for fluffy's foodstuff, my own hobbies|374|1||17
+376|2015-10-19 02:52:29|2015-10-19 02:53:15|(button collecting)|375|0||17
+377|2015-10-19 02:52:34|2015-10-19 02:53:11|its really nice down here.|376|0||17
+378|2015-10-19 02:52:39|2015-10-19 02:53:11|The weather is temperate|377|0||17
+379|2015-10-19 02:52:43|2015-10-19 02:53:07|so are the women|378|0||17
+380|2015-10-19 02:52:51|2015-10-19 02:53:07|not that I've ever been with one, but i plan on it someday|379|0||17
+381|2015-10-19 02:54:44|2015-10-19 02:59:33|Mr. Wallace at the auction house interspersed with your mothers sobs|30|0||17
+382|2015-10-19 02:54:59|2015-10-19 02:59:33|and then a splash, and crunch, and darkness.|381|0||17
+383|2015-10-19 02:58:25|2015-10-19 02:59:33|and then comes the splash, crunch, and darkness|382|0||17
+384|2015-10-19 03:00:26|2015-12-02 19:51:12|It is a good thing we have auto-narrators in the 24th century|364|3||17
+385|2015-10-19 03:00:49|2015-12-02 19:51:12|elsewise a simple farmer like me wouldunt have stood a chance|384|4||17
+386|2015-10-19 03:02:01|2015-10-19 03:05:57|Murdered by a raving literary critic, too self absorbed to see|247|0||17
+387|2015-10-19 03:02:26|2015-10-19 03:05:56|how to start a proper story without killing it in less time than it|386|1||17
+388|2015-10-19 03:03:23|2015-10-19 03:05:56|takes a tween to tweet about a 400 dollar christmas present|387|0||17
+389|2015-10-19 03:03:48|2015-12-02 19:51:12|Come on urple (that's my pup)|385|2||0
+390|2015-10-19 03:03:54|2015-10-19 03:05:54|.|388|1||17
+391|2015-10-19 03:04:44|2015-10-19 03:05:54|Covered in fish blood, the literary critic ran out on to the street|390|0||17
+392|2015-10-19 03:04:59|2015-10-19 03:05:52|he ran harder and longer than a run on sentence attempting to salvage|391|1||17
+393|2015-10-19 03:05:03|2015-10-19 03:05:52|a plot branch|392|1||17
+394|2015-10-19 03:05:09|2015-10-19 03:05:52|it didn't work.|393|1||17
+395|2015-10-19 03:05:11|2015-10-19 03:05:14|he died.|394|0||17
+396|2015-10-19 03:05:17|2015-12-02 19:51:12|he's half craw-fish, mostly he just scuttles|389|1||1
+397|2015-10-19 03:05:26|2015-12-02 19:51:12|and Im not sure what the other half is?|396|1||1
+398|2015-10-19 03:09:02|2016-03-31 00:49:43|"I burn trees"|191|1||17
+399|2015-10-19 03:09:20|2016-03-31 00:49:43|You are growing incredibly uncertain of how to proceed|398|0||17
+400|2015-10-19 03:13:04|2016-03-31 00:49:43|"Look, if you're unsure about this situation,|399|2||17
+401|2015-10-19 03:13:22|2015-11-03 21:59:42|try a different branch."|400|2||17
+402|2015-10-19 03:14:26|2015-11-03 21:59:42|You pause. "Are you talking about wordcvlt, devious badger?"|401|1||17
+403|2015-10-19 03:14:56|2015-11-03 21:59:34|He fidgets with his adorable vest uncomfortably, and motions to the blunt|402|1||17
+404|2015-10-19 03:15:48|2015-10-19 03:48:40|Your mind swirls with thoughts of trees, blunts and branches|403|0||17
+405|2015-10-19 03:20:02|2016-03-31 01:17:53|You grimace as the dungeon master reads your punishment in a mixture|334|0||17
+406|2015-10-19 03:20:30|2016-03-31 01:17:53|of joy and pain, as you ruin his campaign for the 4th time.|405|0||17
+407|2015-10-19 03:20:59|2016-03-31 01:17:52|"WE START IN THE HOLY GARDEN FOR A REASON, TRY TALKING TO THEM BEFORE|406|0||17
+408|2015-10-19 03:21:21|2016-03-31 01:17:52|YOU UP AND START RUINING MY GEEAAAAAMMMME" he screams|407|0||17
+409|2015-10-19 03:22:20|2015-12-02 19:51:12|that would make him quarter fish, and quarter craw|397|0||18
+410|2015-10-19 03:22:38|2015-12-02 19:51:12|he loves his books though, it's the only thing he eats these days|409|1||18
+411|2015-10-19 03:22:44|2015-12-02 19:51:12|what with watching his weight and all|410|0||18
+412|2015-10-19 03:25:36|2015-10-26 02:27:37|Tranquility says goodbye to the shooter.|219|0||18
+413|2015-10-19 03:26:07|2015-10-26 20:10:46|"In this family, we're sheep dogs"|11|2||17
+414|2015-10-19 03:26:16|2015-12-07 02:58:01|You dont get strange references|11|0||17
+415|2015-10-19 03:47:32|2015-12-01 21:13:20|"My grandparents planted that one, it was over 400 years old."|366|1||17
+416|2015-10-19 03:51:14|2015-11-03 21:59:34|"Oh what the heck, I've been on a tolerance break for a while"|403|0||17
+417|2015-10-19 03:52:12|2015-11-03 21:59:33|You think, as you take a blunt from the intolerant badger|416|0||17
+418|2015-10-19 03:54:57|2015-11-03 21:59:33|forgetting any sort of cvlt meta as the smoke swirls around your head|417|0||17
+419|2015-10-19 03:56:54|2015-11-03 21:59:33|"Now," Says the badger. "Lets get down to business."|418|0||17
+420|2015-10-19 03:57:21|2015-11-03 21:59:33|"It seems we have an imposter among out ranks|419|1||17
+421|2015-10-19 03:58:20|2015-11-03 21:59:33|someone has infiltrated the cvlt to the highest order|420|1||17
+422|2015-10-19 03:59:04|2015-11-03 21:59:33|even the administration can't be ruled out."|421|1||17
+423|2015-10-19 04:07:31|2015-11-03 21:59:33|I am beginning to understand that this meeting of the woodland critters|422|1||17
+424|2015-10-19 04:08:12|2015-11-03 21:59:32|is no laughing matter.|423|1||17
+425|2015-10-19 04:08:39|2015-11-03 21:59:32|"The squirrels have reported strange happenings in the west, and|424|1||17
+426|2015-10-19 04:09:00|2015-11-03 21:59:32|the league of librarian lemurs are still at the great library analyzing the data|425|1||17
+427|2015-10-19 04:09:20|2015-11-03 21:59:32|but it's clear that anomalies have been popping up everywhere. there|426|1||17
+428|2015-10-19 04:09:49|2015-11-03 21:59:32|is simply no denying it anymore. Every branch of this story|427|1||17
+429|2015-10-19 04:10:18|2015-11-03 21:59:32|is being afflicted with poor grammar, and even poorer word choice."|428|0||17
+430|2015-10-19 04:11:31|2015-11-03 21:59:32|Pausing for a moment, he pulls out a binder made of bark and acorn pulp|429|1||17
+431|2015-10-19 04:13:52|2015-11-03 21:59:32|"See here, section A41, subsection B, Branch reality 4? Total Sarcasm.|430|1||17
+432|2015-10-19 04:15:10|2015-11-03 21:59:32|section A1, branch 3 even. A dead fish? It's clear someone very high up|431|1||17
+433|2015-10-19 04:15:37|2015-11-03 21:59:31|would have this world destroyed. For what we still haven't a clue."|432|0||17
+434|2015-10-19 05:25:39|2015-12-01 21:13:20|"Fuck," you whisper under your breath.|415|1||16
+435|2015-10-21 16:17:38|2015-12-27 01:07:13|Bless you|135|2||22
+436|2015-10-21 16:18:09|2015-12-27 01:07:13|A token of gratitude ever stuns the onlooker.|435|2||22
+437|2015-10-21 16:18:42|2015-12-02 19:50:42|An apple a day keeps thr doctor away?|436|2||22
+438|2015-10-21 16:19:17|2015-12-02 19:50:42|That apple is not an apple.|437|2||22
+439|2015-10-21 16:45:14|2015-12-02 19:50:41|Then what is it?|438|2||22
+440|2015-10-21 16:45:35|2015-12-02 19:50:41|Your doctor knows the answer to that.|439|2||22
+441|2015-10-22 23:18:43|2015-10-22 23:18:43|when im about 90|380|0||0
+442|2015-10-22 23:19:31|2015-10-22 23:19:31|A shooting star shot the sheriff.|441|0||0
+443|2015-10-23 18:37:19|2015-12-08 16:22:11|Don't trust the trains man, they're faster than they look|1|0||23
+444|2015-10-23 18:55:32|2015-10-23 18:55:48|A passionate evening wanted the TRUTH!|309|0||25
+445|2015-10-23 23:35:05|2015-10-27 00:48:08|You never know when you are going to get shanked by a train|443|0||0
+446|2015-10-24 15:21:07|2015-12-27 01:09:33|Wondering, spitting eyes and hearts a blunder|7|6||29
+447|2015-10-24 15:22:49|2015-12-07 03:06:05|Jack stared into the knot before him|446|2||29
+448|2015-10-24 15:23:26|2015-12-07 03:06:05|Heaved and chipped away|447|1||29
+449|2015-10-24 15:24:14|2015-12-07 03:06:05|"now this FUCKING Treee"|448|4||29
+450|2015-10-24 15:24:28|2015-12-07 03:06:05|he swore as his hatchet struck|449|5||29
+451|2015-10-24 15:24:45|2015-12-07 03:06:05|"is a heartbreaker"|450|3||29
+452|2015-10-24 15:25:40|2015-12-07 03:00:46|"you don't just cut down trees, you kill old lovers, past failures and present|451|1||29
+453|2015-10-25 17:49:42|2015-12-08 16:22:11|All the bums that hopped them got off at some point, either by force or will|443|0||30
+454|2015-10-25 19:28:57|2016-04-04 17:38:22|the spider was still alive inside the dolphin|57|1||31
+455|2015-10-26 00:32:06|2015-10-26 00:33:17|You decide to waste him|349|0||32
+456|2015-10-26 00:32:14|2015-10-26 00:32:20|"Pew Pew|455|0||32
+457|2015-10-26 00:32:45|2015-10-26 00:33:17|"Pew Pew" Goes your assault rifle as his face melts|455|0||32
+458|2015-10-26 00:33:07|2015-10-26 00:33:17|You instantly regret killing the only talking badger|457|0||32
+459|2015-10-26 00:33:11|2015-10-26 00:33:17|you ever remember talking to|458|0||32
+460|2015-10-26 00:33:51|2016-06-25 00:41:53|in its wake, only madness.|24|2||32
+461|2015-10-26 00:33:55|2016-06-25 00:41:53|Chapter 2|460|1||32
+462|2015-10-26 00:34:11|2015-12-11 03:46:40|Chapter 2|211|1||32
+463|2015-10-26 00:34:27|2015-10-26 20:10:46|"Not Sheep!"|413|1||32
+464|2015-10-26 00:34:40|2015-10-26 20:10:46|Shouts Bradley Cooper in American Sniper, you look left|463|1||32
+465|2015-10-26 00:34:54|2015-10-26 20:10:46|your sister is sleeping in the theater|464|1||32
+466|2015-10-26 00:35:07|2015-10-26 20:10:45|filthy vegan, you aren't any type of patriot are you||465|1||32
+467|2015-10-26 00:38:11|2015-10-26 00:42:15|It's what happens when you dont get laid for 13 odd years|196|0||32
+468|2015-10-26 00:38:28|2015-10-26 00:42:15|we were never meant to bottle up that much.. force you see|467|0||32
+469|2015-10-26 00:38:59|2015-10-26 00:42:15|next thing you know, you're walking around in socks and cardboard|468|0||32
+470|2015-10-26 00:39:21|2015-10-26 00:42:15|defending a shrub in the middle of a traffic circle, soaked in your own piss|469|0||32
+471|2015-10-26 00:39:53|2015-10-26 00:42:15|I digress though, he didn't even take the time to differentiate his foliage|470|0||32
+472|2015-10-26 00:40:13|2015-10-26 00:42:15|Thats whats really getting to me in this moment, as my 3 kids wail in the back|471|0||32
+473|2015-10-26 00:46:04|2015-12-02 19:51:54|Our home, the last stop before the wilds of the craw-lands|154|0||32
+474|2015-10-26 00:46:24|2015-12-02 19:51:54|place where a man might get a beer and a good fight but not much else|473|0||32
+475|2015-10-26 00:46:39|2015-10-26 00:46:47|Chapter 2|253|0||32
+476|2015-10-26 00:46:47|2015-10-26 20:09:36|Chapter 2|1|0||32
+477|2015-10-26 00:47:30|2015-12-08 16:22:11|Combine that with the energy being put into maintaining a proper speed|453|0||32
+478|2015-10-26 00:47:41|2015-12-08 16:22:11|now you got a train going at least 3 km faster than if it weren't of been|477|0||32
+479|2015-10-26 00:47:58|2015-12-08 16:22:11|carrying a bunch of them hobo's at one time or another.|478|1||32
+480|2015-10-26 00:48:08|2015-12-08 16:22:11|Now look here son, here comes one now|479|0||32
+481|2015-10-26 00:48:40|2015-12-08 16:22:10|he-hey-hey-hey-HEY-HEY-HEY-HEY-HEEEEYYYYNOOOOOOOOW- HEEEEY NOOOoooowww -ow -ow|480|2||32
+482|2015-10-26 00:48:52|2015-12-08 16:22:10|See son, now thats what we call the OutKast effect|481|2||32
+483|2015-10-26 00:49:11|2015-12-08 16:22:10|seems like every train coming on by is singing hey now as it passes|482|0||32
+484|2015-10-26 00:49:30|2015-12-08 16:22:04|but it's an illusion. its actually the sound of the ignition remix|483|0||32
+485|2015-10-26 00:49:44|2015-12-08 16:22:01|because trains are powered by str8 fia|484|0||32
+486|2015-10-26 00:50:01|2015-12-08 16:22:01|grampa looks at me and winks like the mischevious badger her is|485|0||32
+487|2015-10-26 00:50:15|2015-12-08 16:21:57|i derp de slerpaa derh|486|1||32
+488|2015-10-26 00:54:43|2015-10-28 20:30:30|this is the last time I visit the Rona green house|166|0||32
+489|2015-10-26 00:54:58|2015-10-26 06:45:10|I'm tired of how judgemental the lawn ornaments are here|488|0||32
+490|2015-10-26 02:24:30|2015-10-27 19:45:09|a spectacular farting thought of a brain|249|1||33
+491|2015-10-26 02:25:04|2015-10-27 19:45:09|popped into a marvelous idea|490|1||33
+492|2015-10-26 02:31:54|2015-12-07 03:00:46|, the forrest grows faster than I can cut"|452|1||0
+493|2015-10-26 02:33:53|2015-12-07 03:00:46|the axe splinters in his grip, into his grip|492|0||0
+494|2015-10-26 02:36:15|2015-12-07 03:00:44|a drummer caught up in his own rhythm, the beat of the axe|493|1||0
+495|2015-10-26 02:36:48|2015-10-26 02:36:48|Capitulo Tres|476|0||0
+496|2015-10-26 02:36:54|2015-10-26 02:36:54|IV|495|0||0
+497|2015-10-26 06:34:19|2015-10-26 06:45:10|time passes|489|0||32
+498|2015-10-26 06:35:21|2015-10-26 06:35:31|being alive in there, he was not going to take it for the wrong dolphin|454|0||32
+499|2015-10-26 06:35:28|2015-10-26 06:35:31|then he dead|498|0||32
+500|2015-10-26 06:35:53|2016-03-31 00:49:47|so full of the honey of the cow|71|1||32
+501|2015-10-26 06:36:05|2016-03-31 00:49:47|nectar of bones|500|1||32
+502|2015-10-26 06:36:28|2015-12-02 19:51:52|syrup of bovine|501|0||32
+503|2015-10-26 06:37:18|2015-12-02 19:51:52|white gold|502|0||32
+504|2015-10-26 06:37:44|2015-12-02 19:51:52|the family just don't see it, ever since we started raising spiders|503|0||32
+505|2015-10-26 06:38:31|2015-12-02 19:51:52|they've all lost their collective milk marbles|504|1||32
+506|2015-10-26 06:38:45|2015-12-02 19:51:52|speaking of milk marbles|505|0||32
+507|2015-10-26 06:38:52|2015-12-02 19:51:52|these cows are FULL OF THEM|506|0||32
+508|2015-10-26 06:39:10|2015-12-02 19:51:52|although they haven't been turned from their liquid form|507|1||32
+509|2015-10-26 06:39:15|2015-12-02 19:51:52|into a true milk marble per say|508|1||32
+510|2015-10-26 06:39:51|2015-12-02 19:51:47|I still remember the days when we couldve sold at least a hund'ed of em|509|1||32
+511|2015-10-26 06:39:54|2015-12-02 19:51:45|a day at the market!|510|1||32
+512|2015-10-26 06:41:25|2015-11-03 22:22:34|Those times couldn't last though|346|0||32
+513|2015-10-26 06:41:40|2015-11-03 22:22:34|he eventually graduated from grade 4 and left for primary school|512|0||32
+514|2015-10-26 06:41:54|2015-11-03 22:22:35|leaving me to my own devices, surround by absolute morons|513|0||32
+515|2015-10-26 06:41:59|2015-11-03 22:17:28|in the 2nd grade.|514|1||32
+516|2015-10-26 06:42:31|2015-11-03 22:17:28|We had met at a resistance meeting|515|1||32
+517|2015-10-26 06:43:09|2015-11-03 22:17:28|underground stuff, you know the type. Taking down corrupt lunch ladies|516|1||32
+518|2015-10-26 06:43:15|2015-11-03 22:17:28|bribing an official here and there|517|1||32
+519|2015-10-26 06:43:28|2015-11-03 22:17:28|typical backstreets shit on the playground.|518|1||32
+520|2015-10-26 06:44:00|2015-11-03 22:17:28|He had been leading the movement against the oppressors for years|519|1||32
+521|2015-10-26 06:44:45|2015-11-03 22:17:28|I was just a fresh recruit that day, hadn't even been initiated|520|0||32
+522|2015-10-26 06:46:02|2015-10-30 21:24:23|he adjusts his adorable little vest and says in a pleasant british accent|184|0||32
+523|2015-10-26 06:46:41|2015-10-30 21:24:19|"And you had best remember that for the rest of your stay here|522|0||32
+524|2015-10-27 00:49:44|2015-12-08 16:21:55|'a slerp derp erp herpa'|487|0||1
+525|2015-10-27 00:51:36|2015-12-08 16:21:51|is the customary polite response in our culture|524|0||18
+526|2015-10-27 00:52:58|2016-03-30 23:20:12|Chapter 3|262|0||18
+527|2015-10-27 00:57:45|2015-11-04 02:20:26|skylines most likely were not jealous of me and my probable fatness|361|1||18
+528|2015-10-27 01:03:58|2015-11-04 02:20:26|then again, skylines don|527|1||18
+529|2015-10-27 01:04:11|2015-11-04 02:20:26|even have the option|528|1||18
+530|2015-10-27 15:25:21|2016-01-08 03:24:06|so i made sure of it|305|2||35
+531|2015-10-27 15:25:43|2016-01-08 03:24:06|and then i ate him|530|2||35
+532|2015-10-27 15:26:07|2016-01-08 03:24:06|all at once|531|1||35
+533|2015-10-27 15:26:20|2016-01-08 03:24:05|long and firm, and quite thick|532|0||35
+534|2015-10-27 15:26:34|2016-01-08 03:24:05|he felt good inside me|533|0||35
+535|2015-10-28 20:29:29|2015-10-28 20:30:30|Nothingness loves a good joke!|488|0||36
+536|2015-10-28 20:29:46|2015-10-28 20:30:26|Nothingness ever stuns the onlooker.|535|0||36
+537|2015-10-28 20:31:20|2016-05-02 20:57:50|Camouflage paint does not make any sense.|1|0||36
+538|2015-10-28 20:32:03|2016-05-02 20:57:50|Chair number eleven is not yet ready to die.|537|0||36
+539|2015-10-28 20:32:58|2015-10-28 20:33:36|The last sentence you saw comes asking for bread.|10|0||36
+540|2015-10-30 21:25:45|2015-11-03 21:59:31|I gasp|433|0||32
+541|2015-10-30 21:28:29|2015-11-03 21:59:31|"They might be onto me."|540|0||32
+542|2015-11-01 23:45:18|2015-11-02 17:29:05|Maybe next time that someone is tickled you should get an octopus to help you.|177|1||0
+543|2015-11-01 23:45:53|2015-11-01 23:45:53|just before I decided to jump.|355|0||0
+544|2015-11-01 23:46:56|2015-11-01 23:46:56|I jumped, the water was cold as it surrounded my body|357|0||0
+545|2015-11-01 23:47:54|2015-12-02 19:50:41|He says it is your past, present and future leading you to your destiny.|440|0||0
+546|2015-11-01 23:50:47|2015-12-02 19:52:09|Turned you into someone you didnt want to be|30|0||0
+547|2015-11-01 23:50:57|2015-12-02 19:52:09|somebody you feared yet admired|546|0||0
+548|2015-11-01 23:51:47|2015-12-02 19:52:09|the more you tried to resist the temptation|547|0||0
+549|2015-11-01 23:52:11|2015-12-02 19:52:09|the more that feeling of remorse haunted your existence|548|0||0
+550|2015-11-01 23:53:04|2015-12-02 19:52:09|you try to fight it|549|0||0
+551|2015-11-01 23:53:52|2015-12-02 19:52:09|looking away, thinking about anything but the jump|550|1||0
+552|2015-11-01 23:54:14|2015-12-02 19:52:09|that haunting pitiless fall|551|1||0
+553|2015-11-01 23:55:05|2015-12-02 19:52:09|all of this and more goes through your mind as weightlessness surrounds you|552|0||0
+554|2015-11-02 17:26:37|2015-11-02 17:26:37|Nothing of importance is like a painted flower; it never wilts.|55|0||0
+555|2015-11-02 17:27:28|2015-11-02 17:27:28|But the tragically long life followed by entropy is worse than death|554|0||0
+556|2015-11-03 22:00:38|2016-06-25 00:41:05|VAT IS THEESE CHEESEBURGER DUING IN MA SAUCIES|160|0||32
+557|2015-11-03 22:01:34|2015-12-24 05:51:41|The moonlight shone across the room where Dan Brown was sleeping|526|0||32
+558|2015-11-03 22:02:00|2016-04-04 17:39:08|It's clear that the forests weren't meant for my type|46|0||32
+559|2015-11-03 22:13:08|2015-11-03 22:17:28|but the day i walked into that office, it was like electricity between us|521|0||32
+560|2015-11-03 22:13:21|2015-11-03 22:17:27|we knew we would make an unbreakable team|559|0||32
+561|2015-11-03 22:23:06|2015-11-03 22:28:50|you are beginning to feel perturbed|239|0||32
+562|2015-11-04 02:09:24|2016-03-30 23:48:53|A sickingly prodigous profile brings both pleasure and pain.|7|0||32
+563|2015-11-04 02:09:52|2015-11-04 02:12:34|I am the tree, look at me|187|0||32
+564|2015-11-04 02:09:56|2015-11-04 02:12:34|I look at the tree|563|0||32
+565|2015-11-04 02:24:28|2015-11-04 02:24:32|Fashion has its world rocked by trees (or rocks)|65|0||32
+566|2015-11-04 02:37:12|2015-11-04 02:49:20|Whiskey on the table rains heavily.|557|0||32
+567|2015-11-06 05:36:56|2015-11-06 17:26:22|You take a tree a tree, make it into paper, now you can own another tree|181|0||39
+568|2015-11-06 17:36:33|2015-12-07 03:06:25|That's going to make an ugly baby|1|2||40
+569|2015-11-06 17:38:10|2015-12-07 03:06:25|Organisational culture tells the tale of towers.|568|2||40
+570|2015-11-11 17:49:27|2015-11-11 17:49:27|lkjflkjfdf|306|1||41
+571|2015-11-11 17:49:27|2016-01-08 03:23:22|dsf|306|1||41
+572|2015-11-11 17:49:27|2015-11-11 17:49:32|ds|306|0||41
+573|2015-11-11 17:49:27|2015-12-10 20:08:15|f|306|1||41
+574|2015-11-11 17:49:28|2016-01-08 03:23:22|f|571|1||41
+575|2015-11-11 17:49:28|2015-11-11 17:49:32|sd|572|0||41
+576|2015-11-11 17:49:29|2015-11-11 17:49:32|f|573|0||41
+577|2015-11-11 17:49:29|2015-11-11 17:49:33|ds|573|0||41
+578|2015-11-11 17:49:29|2015-11-11 17:49:33|fs|573|1||41
+579|2015-11-11 17:49:29|2015-12-10 20:08:15|df|573|0||41
+580|2015-11-11 17:49:30|2015-11-11 17:49:30|sdf|573|0||41
+581|2015-11-11 17:49:30|2016-01-08 03:23:22|f|574|0||41
+582|2015-11-11 17:49:31|2015-11-11 17:49:31|sd|575|0||41
+583|2015-11-11 17:49:31|2015-11-11 17:49:31|f|575|0||41
+584|2015-11-11 17:49:31|2015-11-11 17:49:31|ds|575|0||41
+585|2015-11-11 17:49:31|2015-11-11 17:49:31|s|575|0||41
+586|2015-11-11 17:49:31|2015-11-11 17:49:31|df|575|0||41
+587|2015-11-11 17:49:32|2015-11-11 17:49:32|ds|576|0||41
+588|2015-11-20 21:29:05|2015-12-01 21:13:20|This was not how you imagined the date going.|434|1||16
+589|2015-11-23 05:33:27|2015-12-24 05:51:38|his dreams formulaic as they were accessible|557|2||0
+590|2015-11-25 23:05:55|2015-12-02 19:51:26|It doesn't even matter, I'm a sith lord.|5|1||42
+591|2015-11-30 03:19:51|2016-04-11 20:09:17|You approach a giant tree in the distance, curious to what you may find there.|1|2||43
+592|2015-11-30 03:22:37|2016-04-11 20:09:17|Upon reaching the tree, you see that it bears three golden apples.|591|0||43
+593|2015-11-30 03:31:53|2016-04-11 20:09:17|(Take the lonely golden apple, barely hanging on a twig of the tree)|592|0||43
+594|2015-11-30 03:56:13|2016-04-11 20:09:17|(Take the large, delicious, golden apple)|593|0||43
+595|2015-11-30 03:56:53|2016-04-11 20:08:29|(Take the large, delicious, golden apple)|592|0||43
+596|2015-12-02 19:49:51|2016-03-31 01:17:52|"WHAT GAME?", a goblin asks.|408|0||43
+597|2015-12-02 19:50:14|2016-03-31 01:17:52|"This game", the dungeon master replies.|596|0||43
+598|2015-12-07 03:07:28|2015-12-08 16:21:50|Chapter 2|525|0||44
+599|2015-12-07 03:08:33|2015-12-08 15:41:54|Except on Tuesdays|525|1||44
+600|2015-12-07 03:10:36|2016-01-08 03:23:41|He lived a hearty life.|532|1||44
+601|2015-12-07 03:11:44|2015-12-24 05:50:24|I don't know what I am anymore. Can anyone help me?|326|0||44
+602|2015-12-08 16:22:37|2016-01-08 03:23:39|and he made a hearty meal|600|0||1
+603|2015-12-08 16:22:42|2016-01-08 03:23:39|such is such|602|0||1
+604|2015-12-10 20:11:05|2015-12-10 20:11:49|And I died.|245|0||41
+605|2015-12-10 20:11:27|2015-12-10 20:11:49|i was dead|604|0||41
+606|2015-12-10 20:11:41|2015-12-10 20:11:49|then i turned into a chicken.|605|0||41
+607|2015-12-10 20:12:18|2015-12-15 03:41:05|my|9|1||41
+608|2015-12-11 03:42:13|2015-12-11 03:42:51|You plant two trees, wait 118 years, then cut down a fucking tree.|1|0||45
+609|2015-12-15 03:44:03|2015-12-15 03:46:14|*narrated by liam neeson*|601|0||18
+610|2015-12-15 03:44:12|2015-12-15 03:46:14|and so the orange burger peeled himself|609|0||18
+611|2015-12-15 03:44:17|2015-12-15 03:46:14|right there on the street|610|0||18
+612|2015-12-15 03:45:25|2015-12-15 03:46:14|and parted his body into fleshy sections|611|0||18
+613|2015-12-15 03:45:38|2015-12-15 03:46:14|this it seemed, was the only solution;|612|0||18
+614|2015-12-15 03:46:06|2015-12-15 03:46:14|to live out his own preordained divine tragi-comedy|613|0||18
+615|2015-12-27 01:08:34|2015-12-27 01:09:04|and a girl with a bubble butt|251|0||46
+616|2016-01-15 10:33:51|2016-01-15 10:35:00|That's what happens when you fart|152|0||47
+617|2016-01-15 10:34:42|2016-01-15 10:35:00|A principal idea woke the prime minister.|616|0||47
+618|2016-01-15 10:35:14|2016-05-02 20:58:27|That way is running away.|1|1||47
+619|2016-03-30 23:49:02|2016-03-31 00:07:07|And then he woke up from his dream.|7|0||1
+620|2016-03-31 00:52:44|2016-03-31 00:52:44|Pleasure-pain|562|0||0
+621|2016-03-31 00:53:09|2016-03-31 00:53:09|that life path Dr. Harp loves to go on about|620|0||0
+622|2016-03-31 00:54:40|2016-03-31 00:55:15|Of course though, it immediately shrivels into a rotten husk|595|0||1
+623|2016-03-31 00:54:44|2016-03-31 00:55:15|remember|622|0||1
+624|2016-03-31 00:54:50|2016-03-31 00:55:15|you're in a greek myth|623|0||1
+625|2016-03-31 00:54:59|2016-03-31 00:55:15|there are lessons to be taught here|624|0||1
+626|2016-03-31 00:55:11|2016-03-31 00:55:15|and the reader must walk away satisfied|625|0||1
+627|2016-03-31 00:57:20|2016-03-31 01:17:52|yuuuuuup|597|0||1
+628|2016-03-31 00:57:37|2016-03-31 01:17:52|this is the moment where I take my infinite pouch and turn it inside out|627|0||1
+629|2016-03-31 00:58:16|2016-03-31 01:17:52|dungeon master looks at you with disgust|628|0||1
+630|2016-03-31 00:58:36|2016-03-31 01:17:52|and pushes the entire scenario into the shredder|629|0||1
+631|2016-03-31 00:58:45|2016-03-31 01:17:52|its become routine|630|0||1
+632|2016-03-31 00:59:03|2016-03-31 01:17:52|you really have no idea why he keeps inviting you back|631|0||1
+633|2016-03-31 01:00:44|2016-03-31 01:17:52|"SSCCREAAAAAAA"|632|0||1
+634|2016-03-31 01:01:03|2016-03-31 01:17:52|Mr. Dungeon Master throws himself onto the tables and sobs|633|0||1
+635|2016-03-31 01:01:12|2016-03-31 01:17:52|*also routine|634|0||1
+636|2016-03-31 01:01:50|2016-03-31 01:17:52|Maybe you should have taken that caddying in peru|635|0||1
+637|2016-03-31 01:01:53|2016-03-31 01:17:52|job|636|0||1
+638|2016-03-31 01:29:58|2016-03-31 01:32:01|Camo pants though|537|0||1
+639|2016-03-31 01:30:16|2016-03-31 01:32:01|are the one redeaming quality of the western world|638|0||1
+640|2016-03-31 01:32:49|2016-05-15 17:37:18|DREAM|1|2||1
+641|2016-03-31 01:33:17|2016-03-31 01:33:17|Chapter 4|476|0||0
+642|2016-03-31 01:33:20|2016-03-31 01:33:20|Epilogue|641|0||0
+643|2016-03-31 01:33:25|2016-03-31 01:33:25|Footnotes|642|0||0
+644|2016-03-31 01:33:30|2016-03-31 01:33:30|Afterword|643|0||0
+645|2016-03-31 01:33:32|2016-03-31 01:33:32|Foreword|644|0||0
+646|2016-03-31 01:33:49|2016-03-31 01:33:49|Sleeve Comments|645|0||0
+647|2016-03-31 01:34:07|2016-03-31 01:34:07|Editor's Commentary|646|0||0
+648|2016-03-31 01:34:25|2016-03-31 01:34:25|Dedicated to _____________|647|0||0
+649|2016-04-04 17:36:42|2016-04-11 20:09:17|Sevenworm can get both high and low.|594|0||48
+650|2016-04-04 17:37:29|2016-06-25 00:41:52|A caring mother makes people shiver.|461|3||48
+651|2016-04-04 17:37:53|2016-06-25 00:41:52|That is so not true!|650|3||48
+652|2016-04-04 17:38:05|2016-06-25 00:41:51|That memory we used to share is nonsensical, much like me.|651|2||48
+653|2016-04-04 17:38:35|2016-04-04 17:39:08|Fin.|558|0||48
+654|2016-04-04 17:39:16|2016-05-02 20:59:27|I do!|1|1||48
+655|2016-04-04 17:39:19|2016-05-02 20:59:27|Fashion visits Japan in the winter.|654|0||48
+656|2016-04-08 01:52:40|2016-04-08 01:52:40|lol|7|0||0
+657|2016-04-08 01:52:45|2016-04-08 01:52:45|fdgdfgs|656|0||0
+658|2016-04-08 01:52:50|2016-04-08 01:52:50|hi|657|0||0
+659|2016-04-08 01:53:02|2016-04-08 01:53:02|fdg|658|0||0
+660|2016-04-08 01:53:03|2016-04-08 01:53:03|a|659|0||0
+661|2016-04-08 01:53:03|2016-04-08 01:53:03|b|660|0||0
+662|2016-04-08 01:53:05|2016-04-08 01:53:05|c|661|0||0
+663|2016-04-08 01:53:06|2016-04-08 01:53:06|d|662|0||0
+664|2016-04-08 01:53:06|2016-04-08 01:53:06|e|663|0||0
+665|2016-04-08 01:53:07|2016-04-08 01:53:07|f|664|0||0
+666|2016-04-08 01:53:07|2016-04-08 01:53:07|g|665|0||0
+667|2016-04-08 01:53:08|2016-04-08 01:53:08|h|666|0||0
+668|2016-04-08 01:53:08|2016-04-08 01:53:08|j|667|0||0
+669|2016-04-08 01:53:09|2016-04-08 01:53:09|i|668|0||0
+670|2016-04-08 01:53:09|2016-04-08 01:53:09|j|669|0||0
+671|2016-04-08 01:53:10|2016-04-08 01:53:10|k|670|0||0
+672|2016-04-08 01:53:10|2016-04-08 01:53:10|l|671|0||0
+673|2016-04-08 01:53:10|2016-04-08 01:53:10|m|672|0||0
+674|2016-04-08 01:53:11|2016-04-08 01:53:11|no|673|0||0
+675|2016-04-08 01:53:26|2016-04-08 01:53:26|Nihilism can get both high and low.|674|0||0
+676|2016-04-11 20:08:54|2016-04-11 20:09:17|Sevenworm communicates back to the hive|649|0||1
+677|2016-04-11 20:09:02|2016-04-11 20:09:17|he has found the mother apple|676|0||1
+678|2016-04-11 20:09:09|2016-04-11 20:09:17|sixworm will be pleased|677|0||1
+679|2016-05-02 20:50:55|2016-05-02 20:50:55|Wake up|1|0||0
+680|2016-05-02 20:51:13|2016-05-02 20:51:13|my last dream is on the pink tip of my tongue|679|0||0
+681|2016-05-02 20:51:18|2016-05-02 20:51:18|ummm....|680|0||0
+682|2016-05-02 20:51:27|2016-05-02 20:51:27|nope, she gone|681|0||0
+683|2016-05-02 20:51:53|2016-05-02 20:51:53|the morning erotics take hold|682|0||0
+684|2016-05-02 20:52:09|2016-05-02 20:52:09|pet the pickle|683|0||0
+685|2016-05-02 20:52:21|2016-05-02 20:52:21|shuffle to the bathroom|684|0||0
+686|2016-05-02 20:52:27|2016-05-02 20:52:27|clean the pickle|685|0||0
+687|2016-05-02 20:52:42|2016-05-02 20:52:42|strangle the worm|683|0||0
+688|2016-05-02 20:53:03|2016-05-02 20:53:03|hush her back to safety|687|0||0
+689|2016-05-02 20:53:28|2016-05-02 20:53:28|fantasize getting Her pregnant|683|0||0
+690|2016-05-02 20:53:48|2016-05-02 20:53:48|milk to the wind in the trees outside the window|689|0||0
+691|2016-05-02 20:54:35|2016-05-02 20:54:35|with that one tree, build one chair|608|0||0
+692|2016-05-02 20:54:42|2016-05-02 20:54:42|sit in the chair for 118 more years|691|0||0
+693|2016-05-02 20:55:13|2016-05-02 20:55:13|count 118 x 365 sunrises|692|0||0
+694|2016-05-02 20:56:02|2016-05-02 20:56:02|after 2 x 118 years, consider cutting down the other tree|693|0||0
+695|2016-05-02 20:56:07|2016-05-02 20:56:07|to make a foot stool|694|0||0
+696|2016-05-02 20:56:11|2016-05-02 20:56:11|decline|695|0||0
+697|2016-05-02 21:01:52|2016-06-25 00:41:51|Ok, reiterate, a caring mother makes people tremble|652|1||1
+698|2016-05-02 21:02:05|2016-06-25 00:41:51|scratch, tingle|697|1||1
+699|2016-05-02 21:04:30|2016-06-25 00:41:51|scratch, uncomfortable|698|3||1
+700|2016-05-02 21:04:35|2016-06-25 00:41:51|scratch, comfortable|699|2||1
+701|2016-05-02 21:04:44|2016-06-25 00:41:51|clearly I never knew a caring mother|700|1||1
+702|2016-05-04 04:25:26|2016-05-15 17:37:18|the last dream you've ever dreamed|640|1||0
+703|2016-05-04 04:25:33|2016-05-15 17:37:18|live|702|1||0
+704|2016-05-04 04:25:35|2016-05-15 17:37:16|more|703|1||0
+705|2016-05-04 04:25:39|2016-05-15 17:37:16|faster|704|0||0
+706|2016-05-04 04:25:41|2016-05-15 17:37:16|stronger|705|0||0
+707|2016-05-04 04:25:57|2016-05-15 17:37:16|where's the sound?|706|0||0
+708|2016-05-04 04:26:14|2016-05-15 17:37:16|can you hear anything? smell anything? feel anything?|707|0||0
+709|2016-05-04 04:26:21|2016-05-15 17:37:16|alls what you see|708|1||0
+710|2016-05-04 04:26:30|2016-05-15 17:37:15|we need more|709|0||0
+711|2016-05-04 04:26:35|2016-05-15 17:37:15|we need more|710|0||0
+712|2016-05-04 04:26:42|2016-05-15 17:37:15|or else we wilt|711|0||0
+713|2016-05-04 04:27:34|2016-05-04 04:27:34|Im the keys|1|0||0
+714|2016-05-04 04:28:02|2016-05-04 04:28:02|the click clack under the influence of the screen|713|0||0
+715|2016-05-04 04:28:22|2016-05-04 04:28:22|hold up let me slip out a lil scream|714|0||0
+716|2016-05-15 17:35:24|2016-05-15 17:35:24|you take it a bite|545|0||0
+717|2016-05-15 17:35:29|2016-05-15 17:35:29|it tastes mostly like past|716|0||0
+718|2016-06-25 00:40:46|2016-06-25 00:40:51|Now my hand is all phlegmy|199|0||1
+719|2016-09-30 21:08:16|2016-09-30 21:08:16|Ok|7|0||0
+720|2016-09-30 21:08:33|2016-09-30 21:08:33|what should i say?|719|0||0
+721|2016-09-30 21:09:02|2016-09-30 21:09:02|fuck off karo|7|0||0
+722|2016-09-30 21:09:08|2016-09-30 21:09:08|I don't know|720|0||0
+723|2016-09-30 21:09:12|2016-09-30 21:09:12|jking <3|721|0||0
+724|2016-09-30 21:09:43|2016-09-30 21:09:43|1% alive 100% in my heart|306|0||0
+725|2016-11-14 18:03:39|2016-11-14 18:03:39|But he wont say unless you pay|440|0||0
+726|2017-01-13 01:20:21|2017-01-13 01:20:21|hey there buddy|1|0||0
+727|2017-02-06 04:23:45|2017-02-06 04:23:45|pusssy whip|699|0||0
+728|2017-02-06 04:23:50|2017-02-06 04:23:50|,|727|0||0
+729|2017-02-06 04:24:22|2017-02-06 04:24:22|Two-finger John would scare any linguist away.|728|0||0
+730|2017-02-06 04:24:32|2017-02-06 04:24:32|Nothingness takes the world for granted.|5|0||0
